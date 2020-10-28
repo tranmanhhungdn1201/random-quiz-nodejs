@@ -1,5 +1,18 @@
 {
-  "subjects": [],
+  "subjects": [
+    {
+      "id": "5953400309730983",
+      "name": "Bản đồ địa hình",
+      "slug": "ban-do-dia-hinh",
+      "desciption": "Bản đồ địa hình tham mưu"
+    },
+    {
+      "id": "6529432483309798",
+      "name": "Tâm lý học",
+      "slug": "tam-ly-hoc",
+      "desciption": "Tâm lý học quân sự"
+    }
+  ],
   "questions": [
     {
       "idSubject": "5953400309730983",

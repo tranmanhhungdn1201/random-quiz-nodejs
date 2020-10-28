@@ -257,4 +257,4 @@ module.exports = router;
 
 router.get('/de', fileController.getView)
 router.get('/tao-de', fileController.createTest)
-router.get('/list-quiz', quizController.list)
+router.get('/:slug', quizController.list)

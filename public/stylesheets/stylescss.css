@@ -5,7 +5,9 @@
 .Menu__Logo {
   font-size: 30px;
   font-weight: bold;
-  text-align: center; }
+  text-align: center;
+  color: white;
+  padding: 10px; }
 
 .Menu__Content {
   display: flex;
@@ -48,3 +50,26 @@
       color: orange; }
     .Subject__Item__Info__Hard b {
       color: red; }
+
+.ListQuiz .SubjectInfo .list {
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+  list-style-type: none; }
+
+.ListQuiz__content ul {
+  list-style-type: none; }
+
+.ListQuiz__content ul .quiz {
+  margin: 20px 0; }
+
+.ListQuiz .QuizItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.ListQuiz .QuizItem ul {
+  list-style-type: none; }
+
+.ListQuiz .QuizItem ul li {
+  padding: 10px 0; }

@@ -8,6 +8,8 @@
         font-size: 30px;
         font-weight: bold;
         text-align: center;
+        color: white;
+        padding: 10px;
     }
     &__Content {
         display: flex;
@@ -68,5 +70,40 @@
                 }
             }
         }
+    }
+}
+
+// List Quiz
+
+.ListQuiz {
+    .SubjectInfo {
+        .list {
+            margin: 0;
+            padding: 0;
+            padding-top: 20px;
+            list-style-type: none;
+        }
+    }
+
+    &__content ul {
+        list-style-type: none;
+    }
+
+    &__content ul .quiz {
+        margin: 20px 0;
+    }
+
+    .QuizItem {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .QuizItem ul {
+        list-style-type: none;
+    }
+
+    .QuizItem ul li {
+        padding: 10px 0;
     }
 }
