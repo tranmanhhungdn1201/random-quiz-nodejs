@@ -1,0 +1,72 @@
+.Container {
+    border: 2px solid green;
+    min-height: 500px;
+}
+
+.Menu {
+    &__Logo {
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+    }
+    &__Content {
+        display: flex;
+        border: 1px solid red;
+        justify-content: center;
+        &__Item {
+            background: black;
+            padding: 4px;
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+            &:hover {
+                background: chartreuse;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.Body {
+    min-height: 400px;
+}
+
+.Subject {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    &__Item {
+        width: 25%;
+        height: 150px;
+        margin: 10px;
+        padding: 10px;
+        background: #001628;
+        color: white;
+        &:hover {
+            cursor: pointer;
+            background: #010d18;
+            border: 2px solid greenyellow;
+        }
+        &__Name {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        &__Info {
+            &__Easy {
+                b {
+                    color: greenyellow;
+                }
+            }
+            &__Medium {
+                b {
+                    color: orange;
+                }
+            }
+            &__Hard {
+                b {
+                    color: red;
+                }
+            }
+        }
+    }
+}

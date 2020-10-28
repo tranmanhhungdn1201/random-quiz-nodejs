@@ -1,0 +1,50 @@
+.Container {
+  border: 2px solid green;
+  min-height: 500px; }
+
+.Menu__Logo {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center; }
+
+.Menu__Content {
+  display: flex;
+  border: 1px solid red;
+  justify-content: center; }
+  .Menu__Content__Item {
+    background: black;
+    padding: 4px;
+    color: white;
+    margin: 10px;
+    text-decoration: none; }
+    .Menu__Content__Item:hover {
+      background: chartreuse;
+      cursor: pointer; }
+
+.Body {
+  min-height: 400px; }
+
+.Subject {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+  .Subject__Item {
+    width: 25%;
+    height: 150px;
+    margin: 10px;
+    padding: 10px;
+    background: #001628;
+    color: white; }
+    .Subject__Item:hover {
+      cursor: pointer;
+      background: #010d18;
+      border: 2px solid greenyellow; }
+    .Subject__Item__Name {
+      font-size: 20px;
+      margin-bottom: 8px; }
+    .Subject__Item__Info__Easy b {
+      color: greenyellow; }
+    .Subject__Item__Info__Medium b {
+      color: orange; }
+    .Subject__Item__Info__Hard b {
+      color: red; }

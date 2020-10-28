@@ -1,21 +1,140 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <div>
-      <div>
-        <label>Choose file docx, doc</label>
-        <form method="POST" action="/">
-          <input type="file">
-          <button type="submit">OK</button>
-        
-        </form>
-      </div>
+<% include ./layout/header %>
+
+    <div class="Subject">
+        <div class="Subject__Item">
+            <div class="Subject__Item__Name">Tâm lý học</div>
+            <div class="Subject__Item__Info">
+                <div class="Subject__Item__Info__Total"><b>Tổng: </b></b>100 câu</div>
+                <div class="Subject__Item__Info__Easy"><b>Dễ: </b>40 câu</div>
+                <div class="Subject__Item__Info__Medium"><b>Vừa: </b>30 câu</div>
+                <div class="Subject__Item__Info__Hard"><b>Khó: </b>30 câu</div>
+            </div>
+        </div>
+        <div class="Subject__Item">
+            <div class="Subject__Item__Name">Tham mưu tác chiến</div>
+            <div class="Subject__Item__Info">
+                <div class="Subject__Item__Info__Total"><b>Tổng: </b></b>100 câu</div>
+                <div class="Subject__Item__Info__Easy"><b>Dễ: </b>40 câu</div>
+                <div class="Subject__Item__Info__Medium"><b>Vừa: </b>30 câu</div>
+                <div class="Subject__Item__Info__Hard"><b>Khó: </b>30 câu</div>
+            </div>
+        </div>
+        <div class="Subject__Item">
+            <div class="Subject__Item__Name">Giáo dục học</div>
+            <div class="Subject__Item__Info">
+                <div class="Subject__Item__Info__Total"><b>Tổng: </b></b>100 câu</div>
+                <div class="Subject__Item__Info__Easy"><b>Dễ: </b>40 câu</div>
+                <div class="Subject__Item__Info__Medium"><b>Vừa: </b>30 câu</div>
+                <div class="Subject__Item__Info__Hard"><b>Khó: </b>30 câu</div>
+            </div>
+        </div>
+        <div class="Subject__Item">
+            <div class="Subject__Item__Name">Bản đồ địa hình</div>
+            <div class="Subject__Item__Info">
+                <div class="Subject__Item__Info__Total"><b>Tổng: </b></b>100 câu</div>
+                <div class="Subject__Item__Info__Easy"><b>Dễ: </b>40 câu</div>
+                <div class="Subject__Item__Info__Medium"><b>Vừa: </b>30 câu</div>
+                <div class="Subject__Item__Info__Hard"><b>Khó: </b>30 câu</div>
+            </div>
+        </div>
+        <div class="Subject__Item">
+            <div class="Subject__Item__Name">Điều lệnh đội ngũ</div>
+            <div class="Subject__Item__Info">
+                <div class="Subject__Item__Info__Total"><b>Tổng: </b></b>100 câu</div>
+                <div class="Subject__Item__Info__Easy"><b>Dễ: </b>40 câu</div>
+                <div class="Subject__Item__Info__Medium"><b>Vừa: </b>30 câu</div>
+                <div class="Subject__Item__Info__Hard"><b>Khó: </b>30 câu</div>
+            </div>
+        </div>
+        <div class="Subject__Item">
+            <div class="Subject__Item__Name">Tâm lý học</div>
+            <div class="Subject__Item__Info">
+                <div class="Subject__Item__Info__Total"><b>Tổng: </b></b>100 câu</div>
+                <div class="Subject__Item__Info__Easy"><b>Dễ: </b>40 câu</div>
+                <div class="Subject__Item__Info__Medium"><b>Vừa: </b>30 câu</div>
+                <div class="Subject__Item__Info__Hard"><b>Khó: </b>30 câu</div>
+            </div>
+        </div>
+        <div class="Subject__Item">
+            <div class="Subject__Item__Name">Tham mưu tác chiến</div>
+            <div class="Subject__Item__Info">
+                <div class="Subject__Item__Info__Total"><b>Tổng: </b></b>100 câu</div>
+                <div class="Subject__Item__Info__Easy"><b>Dễ: </b>40 câu</div>
+                <div class="Subject__Item__Info__Medium"><b>Vừa: </b>30 câu</div>
+                <div class="Subject__Item__Info__Hard"><b>Khó: </b>30 câu</div>
+            </div>
+        </div>
+        <div class="Subject__Item">
+            <div class="Subject__Item__Name">Giáo dục học</div>
+            <div class="Subject__Item__Info">
+                <div class="Subject__Item__Info__Total"><b>Tổng: </b></b>100 câu</div>
+                <div class="Subject__Item__Info__Easy"><b>Dễ: </b>40 câu</div>
+                <div class="Subject__Item__Info__Medium"><b>Vừa: </b>30 câu</div>
+                <div class="Subject__Item__Info__Hard"><b>Khó: </b>30 câu</div>
+            </div>
+        </div>
+        <div class="Subject__Item">
+            <div class="Subject__Item__Name">Bản đồ địa hình</div>
+            <div class="Subject__Item__Info">
+                <div class="Subject__Item__Info__Total"><b>Tổng: </b></b>100 câu</div>
+                <div class="Subject__Item__Info__Easy"><b>Dễ: </b>40 câu</div>
+                <div class="Subject__Item__Info__Medium"><b>Vừa: </b>30 câu</div>
+                <div class="Subject__Item__Info__Hard"><b>Khó: </b>30 câu</div>
+            </div>
+        </div>
+        <div class="Subject__Item">
+            <div class="Subject__Item__Name">Điều lệnh đội ngũ</div>
+            <div class="Subject__Item__Info">
+                <div class="Subject__Item__Info__Total"><b>Tổng: </b></b>100 câu</div>
+                <div class="Subject__Item__Info__Easy"><b>Dễ: </b>40 câu</div>
+                <div class="Subject__Item__Info__Medium"><b>Vừa: </b>30 câu</div>
+                <div class="Subject__Item__Info__Hard"><b>Khó: </b>30 câu</div>
+            </div>
+        </div>
+        <div class="Subject__Item">
+            <div class="Subject__Item__Name">Tâm lý học</div>
+            <div class="Subject__Item__Info">
+                <div class="Subject__Item__Info__Total"><b>Tổng: </b></b>100 câu</div>
+                <div class="Subject__Item__Info__Easy"><b>Dễ: </b>40 câu</div>
+                <div class="Subject__Item__Info__Medium"><b>Vừa: </b>30 câu</div>
+                <div class="Subject__Item__Info__Hard"><b>Khó: </b>30 câu</div>
+            </div>
+        </div>
+        <div class="Subject__Item">
+            <div class="Subject__Item__Name">Tham mưu tác chiến</div>
+            <div class="Subject__Item__Info">
+                <div class="Subject__Item__Info__Total"><b>Tổng: </b></b>100 câu</div>
+                <div class="Subject__Item__Info__Easy"><b>Dễ: </b>40 câu</div>
+                <div class="Subject__Item__Info__Medium"><b>Vừa: </b>30 câu</div>
+                <div class="Subject__Item__Info__Hard"><b>Khó: </b>30 câu</div>
+            </div>
+        </div>
+        <div class="Subject__Item">
+            <div class="Subject__Item__Name">Giáo dục học</div>
+            <div class="Subject__Item__Info">
+                <div class="Subject__Item__Info__Total"><b>Tổng: </b></b>100 câu</div>
+                <div class="Subject__Item__Info__Easy"><b>Dễ: </b>40 câu</div>
+                <div class="Subject__Item__Info__Medium"><b>Vừa: </b>30 câu</div>
+                <div class="Subject__Item__Info__Hard"><b>Khó: </b>30 câu</div>
+            </div>
+        </div>
+        <div class="Subject__Item">
+            <div class="Subject__Item__Name">Bản đồ địa hình</div>
+            <div class="Subject__Item__Info">
+                <div class="Subject__Item__Info__Total"><b>Tổng: </b></b>100 câu</div>
+                <div class="Subject__Item__Info__Easy"><b>Dễ: </b>40 câu</div>
+                <div class="Subject__Item__Info__Medium"><b>Vừa: </b>30 câu</div>
+                <div class="Subject__Item__Info__Hard"><b>Khó: </b>30 câu</div>
+            </div>
+        </div>
+        <div class="Subject__Item">
+            <div class="Subject__Item__Name">Điều lệnh đội ngũ</div>
+            <div class="Subject__Item__Info">
+                <div class="Subject__Item__Info__Total"><b>Tổng: </b></b>100 câu</div>
+                <div class="Subject__Item__Info__Easy"><b>Dễ: </b>40 câu</div>
+                <div class="Subject__Item__Info__Medium"><b>Vừa: </b>30 câu</div>
+                <div class="Subject__Item__Info__Hard"><b>Khó: </b>30 câu</div>
+            </div>
+        </div>
     </div>
-  </body>
-</html>
+    <% include ./layout/footer %>
