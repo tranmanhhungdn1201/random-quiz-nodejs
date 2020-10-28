@@ -1,14 +1,50 @@
 var docx4js = require('docx4js');
 var fs = require("fs");
 var { Document, Packer, Paragraph, TextRun } = require("docx");
+var WordExtractor = require("word-extractor");
+var extractor = new WordExtractor();
+var { splitQuestion } = require('../helpers/functions')
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+const adapter = new FileSync('db.json')
+const db = low(adapter)
 
-function getView(req, res){
+function upload(req, res) {
+    console.log('fileee', req.file);
+    let file = req.file;
+    let filename = file.filename
+    if (filename) {
+        let questions = [];
+        var extracted = extractor.extract("files/de11.doc");
+        extracted.then(async function(doc) {
+            let data = doc.getBody().split(/\r?\n/);
+            const dataFormat = splitQuestion(data, 5);
+            await db.get('questions').push(...dataFormat).write()
+            res.send({
+                data: dataFormat
+            })
+        }).catch(err => {
+            return res.send({
+                msg: "Xử lý thất bại"
+            })
+        });
+    } else {
+        console.log('@3333');
+        res.send({
+            msg: "Chọn file thất bại"
+        })
+    }
+
+}
+
+function getView(req, res) {
     res.send({
-        a:222
+        a: 222
     })
 }
-function createTest(req, res){
-    
+
+function createTest(req, res) {
+
     // Create document
     const doc = new Document();
 
@@ -395,5 +431,6 @@ function createTest(req, res){
 
 module.exports = {
     getView,
-    createTest
+    createTest,
+    upload
 }

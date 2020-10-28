@@ -25,6 +25,11 @@
                 background: chartreuse;
                 cursor: pointer;
             }
+            &--FileUpload {
+                input {
+                    display: none;
+                }
+            }
         }
     }
 }

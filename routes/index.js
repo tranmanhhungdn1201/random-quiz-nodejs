@@ -4,7 +4,7 @@ var fileController = require('../controllers/file')
 var quizController = require('../controllers/QuizController')
 var homeController = require('../controllers/home')
 var subjectController = require('../controllers/subject')
-
+var upload = require('../middlewares/upload')
 var docx4js = require('docx4js');
 var parseString = require('xml2js').parseString;
 const low = require('lowdb')
@@ -31,6 +31,8 @@ function formatXml(xml, tab) { // tab = optional indent value, default is tab (\
 /* GET home page. */
 router.get('/', homeController.getHomepage);
 router.get('/mon-hoc/{slug}', subjectController.getSubject)
+router.post('/upload', upload.single("file"), fileController.upload)
+router.get('/sua-doi', subjectController.editUpload)
 
 router.get('/questions', async function(req, res) {
     let questions = db.get('questions')
@@ -45,7 +47,6 @@ function splitQuestion(data, num) {
     let id = (Math.random() + "").split('.')[1];
     while (data.length > num) {
         let questionArr = data.splice(0, 5);
-        I
 
         let regexExtract = /(^[DKV])*\(([DKV])\)(.*)/s.exec(questionArr[0])
 

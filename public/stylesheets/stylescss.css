@@ -22,6 +22,8 @@
     .Menu__Content__Item:hover {
       background: chartreuse;
       cursor: pointer; }
+    .Menu__Content__Item--FileUpload input {
+      display: none; }
 
 .Body {
   min-height: 400px; }

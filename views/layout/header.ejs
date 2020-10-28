@@ -9,6 +9,8 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel='stylesheet' href='/stylesheets/stylescss.css' />
 </head>
+<script src="/stylesheets/jquery-3.5.1.min.js"></script>
+<script src="/stylesheets/bootstrap.bundle.min.js"></script>
 
 <body>
     <div class="Container">
@@ -17,9 +19,43 @@
                 Hệ thống tạo đề thi
             </div>
             <div class="Menu__Content">
-                <div class="Menu__Content__Item">Chọn file đề</div>
+                <div class="Menu__Content__Item Menu__Content__Item--FileUpload">
+                    <form action="/upload">
+                        <input type="file" name="file" id="file">
+                        <label for="file">Chọn file đề</label>
+                    </form>
+                </div>
                 <a href="/" class="Menu__Content__Item">Danh sách môn học</a>
                 <a href="/tao-de" class="Menu__Content__Item">Tạo đề thi</a>
             </div>
         </div>
         <div class="Body">
+
+            <script>
+                $('#file').on('change', () => {
+                    console.log('1111', $('#file')[0].files);
+                    var fd = new FormData();
+                    var files = $('#file')[0].files;
+                    if (files.length > 0) {
+                        fd.append('file', files[0]);
+
+                        $.ajax({
+                            url: '/upload',
+                            type: 'post',
+                            data: fd,
+                            contentType: false,
+                            processData: false,
+                            success: function(response) {
+                                if (response != 0) {
+                                    console.log('OKKK', response);
+                                    location.href = '/sua-doi'
+                                } else {
+                                    alert('file not uploaded');
+                                }
+                            },
+                        });
+                    } else {
+                        alert("Please select a file.");
+                    }
+                })
+            </script>

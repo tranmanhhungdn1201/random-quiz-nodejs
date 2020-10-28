@@ -13,6 +13,15 @@ function getSubject(req, res) {
     })
 }
 
+async function editUpload(req, res) {
+    let questions = await db.get('questions').filter({ idSubject: "0" }).value()
+    console.log('questions', questions);
+    res.send({
+        questions
+    })
+}
+
 module.exports = {
-    getSubject
+    getSubject,
+    editUpload
 }
