@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var fileController = require('../controllers/file')
+var quizController = require('../controllers/QuizController')
 var homeController = require('../controllers/home')
 var subjectController = require('../controllers/subject')
 
@@ -256,3 +257,4 @@ module.exports = router;
 
 router.get('/de', fileController.getView)
 router.get('/tao-de', fileController.createTest)
+router.get('/list-quiz', quizController.list)

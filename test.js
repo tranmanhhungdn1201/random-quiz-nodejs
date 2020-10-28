@@ -31,34 +31,37 @@ function shuffle(a) {
 
 function getNQuestionsInArray(arrayQuestion, n){
   let questionShuffled = shuffle(JSON.parse(JSON.stringify(arrayQuestion)));
-  let arrayQuizDup = questionShuffled.filter((item) => item.isDup);
+  let arrayQuizDup = [];
+  let arrayQuiz = [];
+  for(let i = 0; i < questionShuffled.length; i++){
+    if(questionShuffled[i].isDup){
+      arrayQuizDup = [...arrayQuizDup, questionShuffled[i]];
+      continue;
+    }
+    arrayQuiz = [...arrayQuiz, questionShuffled[i]];
+  }
   let lengthQuizDup = arrayQuizDup.length;
-//   console.log('lengthQuizDup: ' + lengthQuizDup);
-//   console.log('questionShuffled: ' + questionShuffled.filter((item, i) => item.isDup || i < (n - lengthQuizDup)).length);
-  return [...arrayQuizDup, ...questionShuffled.filter((item, i) => i < (n - lengthQuizDup))];
-//   return shuffle([...arrayQuizDup, ...questionShuffled.filter((item, i) => i < (n - lengthQuizDup))]);
+  return shuffle([...arrayQuizDup, ...arrayQuiz.filter((item, i) => i < (n - lengthQuizDup))]);
 }
 
 function include(item, array){
   return array.some(_item =>_item.id === item.id);
 }
 
-function makeExceptChosen(arrayQuestions, chosen, percent, type =''){
+function makeExceptChosen(arrayQuestions, chosen, percent){
   let numOfPercent = Math.floor(percent/100*chosen.length);
-//   console.log('length: ' + type +' --- '+ arrayQuestions.filter(item => !include(item, chosen)).length);
-//   console.log('percent: ' + type +' --- '+ [...chosen].filter((item, i) => i < numOfPercent).map(x => Object.assign(x, {isDup: true})).length);
   //clear isDup
   chosen.map(item => {
     let iTemp = Object.assign(item);
     delete iTemp['isDup'];
     return iTemp;
   });
-  console.log('chosen', chosen);
   return [
     ...arrayQuestions.filter(item => !include(item, chosen)),
     ...chosen.filter((item, i) => i < numOfPercent).map(x => Object.assign(x, {isDup: true}))
   ]
 }
+
 let sode = 0;
 function makeTest(numOfTest, numOfEasy, numOfMedium, numOfHard, easies, mediums, hards, full){
   let _easy = getNQuestionsInArray(easies, numOfEasy)
@@ -69,7 +72,6 @@ function makeTest(numOfTest, numOfEasy, numOfMedium, numOfHard, easies, mediums,
     ..._mediums,
     ..._hards,
   ];
-  console.log('_easy ', _easy)
   if(result.length === 20){
       sode++;
   }else{
@@ -80,20 +82,9 @@ function makeTest(numOfTest, numOfEasy, numOfMedium, numOfHard, easies, mediums,
   if(numOfTest === 0){
     return full;
   }else{
-      let easy =  makeExceptChosen(easies, _easy, 30, 'de')
-      let medium =  makeExceptChosen(mediums, _mediums, 30, 'trungbinh')
-      let hard = makeExceptChosen(hards, _hards, 30, 'kho')
-      console.log('easy', easy);
-    //   let easy;
-    //   let medium;
-    //   let hard; 
-    //   do{
-    //     percent += 10;
-    //     easy =  makeExceptChosen(easies, _easy, percent)
-    //     medium =  makeExceptChosen(mediums, _mediums, percent)
-    //     hard = makeExceptChosen(hards, _hards, percent)
-    //   }while(easy.length !== numOfEasy && medium.length !== numOfMedium && hard.length !== numOfHard)
-     
+      let easy =  makeExceptChosen(easies, _easy, 30)
+      let medium =  makeExceptChosen(mediums, _mediums, 30)
+      let hard = makeExceptChosen(hards, _hards, 30)
     return makeTest(numOfTest-1, numOfEasy, numOfMedium, numOfHard, easy, medium, hard, full);
   }
 }
