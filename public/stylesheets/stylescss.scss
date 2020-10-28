@@ -1,5 +1,6 @@
 .Container {
-    border: 2px solid green;
+    border: 4px solid green;
+    border-top: 6px solid greenyellow;
     min-height: 500px;
 }
 
@@ -13,15 +14,16 @@
     }
     &__Content {
         display: flex;
-        border: 1px solid red;
         justify-content: center;
         &__Item {
-            background: black;
-            padding: 4px;
+            background: #032341;
+            padding: 4px 10px;
+            padding-top: 8px;
             color: white;
             margin: 10px;
             text-decoration: none;
             &:hover {
+                text-decoration: none;
                 background: chartreuse;
                 cursor: pointer;
             }
@@ -78,8 +80,11 @@
     }
 }
 
-// List Quiz
+.ModalContent {
+    background: ModalContent;
+}
 
+// List Quiz
 .ListQuiz {
     .SubjectInfo {
         .list {
@@ -89,25 +94,20 @@
             list-style-type: none;
         }
     }
-
     &__content ul {
         list-style-type: none;
     }
-
     &__content ul .quiz {
         margin: 20px 0;
     }
-
     .QuizItem {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
-
     .QuizItem ul {
         list-style-type: none;
     }
-
     .QuizItem ul li {
         padding: 10px 0;
     }

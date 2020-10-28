@@ -19,7 +19,7 @@ function upload(req, res) {
         extracted.then(async function(doc) {
             let data = doc.getBody().split(/\r?\n/);
             const dataFormat = splitQuestion(data, 5);
-            await db.get('questions').push(...dataFormat).write()
+            // await db.get('questions').push(...dataFormat).write()
             res.send({
                 data: dataFormat
             })

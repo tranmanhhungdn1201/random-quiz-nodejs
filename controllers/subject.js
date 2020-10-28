@@ -14,11 +14,13 @@ function getSubject(req, res) {
 }
 
 async function editUpload(req, res) {
-    let questions = await db.get('questions').filter({ idSubject: "0" }).value()
-    console.log('questions', questions);
-    res.send({
-        questions
-    })
+    // let questions = await db.get('questions').filter({ idSubject: "0" }).value()
+    // console.log('questions', questions);
+    // res.send({
+    //     questions
+    // })
+
+    res.render('editUpload', { title: "Xem lại" })
 }
 
 module.exports = {

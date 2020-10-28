@@ -11,3 +11,22 @@ body {
 a {
     color: #00B7FF;
 }
+
+.modal-content {
+    height: 99%;
+}
+
+.modal-dialog {
+    width: 98%;
+    height: 92%;
+    padding: 0;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        min-width: 98% !important;
+    }
+    .modal-body {
+        overflow-y: scroll;
+    }
+}

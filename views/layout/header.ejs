@@ -32,30 +32,96 @@
         <div class="Body">
 
             <script>
-                $('#file').on('change', () => {
-                    console.log('1111', $('#file')[0].files);
-                    var fd = new FormData();
-                    var files = $('#file')[0].files;
-                    if (files.length > 0) {
-                        fd.append('file', files[0]);
+                $(document).ready(function() {
+                    // $('#modalEditUpload').modal('show')
 
-                        $.ajax({
-                            url: '/upload',
-                            type: 'post',
-                            data: fd,
-                            contentType: false,
-                            processData: false,
-                            success: function(response) {
-                                if (response != 0) {
-                                    console.log('OKKK', response);
-                                    location.href = '/sua-doi'
-                                } else {
-                                    alert('file not uploaded');
-                                }
-                            },
-                        });
-                    } else {
-                        alert("Please select a file.");
-                    }
+                    $('#file').on('change', () => {
+                        console.log('1111', $('#file')[0].files);
+                        var fd = new FormData();
+                        var files = $('#file')[0].files;
+                        if (files.length > 0) {
+                            fd.append('file', files[0]);
+
+                            $.ajax({
+                                url: '/upload',
+                                type: 'post',
+                                data: fd,
+                                contentType: false,
+                                processData: false,
+                                success: async function(response) {
+                                    if (response != 0) {
+                                        console.log('OKKK', response);
+                                        await localStorage.removeItem("QuizzRandom")
+                                        await localStorage.setItem('QuizzRandom', JSON.stringify(response.data))
+                                            // location.href = '/sua-doi'
+                                        responseToHtmlModal(response.data)
+                                        $('#modalEditUpload').modal('show')
+
+                                    } else {
+                                        alert('file not uploaded');
+                                    }
+                                },
+                            });
+                        } else {
+                            alert("Please select a file.");
+                        }
+                    })
+
+                    $('body').on('click', '#ListSubject', function() {
+                        console.log('aaa', $(this).val());
+                        let option = $(this).val()
+                        if (option == 0) {
+                            $('#ListSubject__Input').css('display', 'block')
+                        } else {
+                            $('#ListSubject__Input').css('display', 'none')
+                        }
+                    })
+                })
+
+                function responseToHtmlModal(dataArr, idElementQuestion = 'ListQuestionHtml', idElementInfo = 'SubjectInfo') {
+                    let total = dataArr.length
+                    let numOfEasy = dataArr.filter(item => item.level == 'D').length
+                    let numOfMedium = dataArr.filter(item => item.level == 'V').length
+                    let numOfHard = dataArr.filter(item => item.level == 'K').length
+                    let htmlSubjectInfo = `
+                    <ul class="list">
+                                        <li>Tổng: ${total} câu</li>
+                                        <li>Câu dễ: ${numOfEasy} câu</li>
+                                        <li>Câu vừa: ${numOfMedium} câu</li>
+                                        <li>Câu khó: ${numOfHard} câu</li>
+                                    </ul>
+                    `
+                    $('#' + idElementInfo).html(htmlSubjectInfo)
+                    let htmlQuestion = '';
+                    dataArr.forEach((item, index) => {
+                        console.log('item', item);
+                        htmlQuestion += `
+                        <li class="list-group-item quiz">
+                                    <div class="QuizItem">
+                                        <div class="quiz__content">
+                                            <h6 class="font-weight-bold">${index+1}. ${item.content}</h6>
+                                            <ul>
+                                                <li>A. ${item.answers[0].content}</li>
+                                                <li>B. ${item.answers[1].content}</li>
+                                                <li>C. ${item.answers[2].content}</li>
+                                                <li>D. ${item.answers[3].content}</li>
+                                            </ul>
+                                        </div>
+                                        <div class="quiz__option">
+                                            <a href="#" class="btn btn-sm btn-danger" data="${item.id}"> Xóa</a>
+                                        </div>
+                                    </div>
+                                </li>
+                        
+                        `
+                    })
+                    $('#' + idElementQuestion).html(htmlQuestion)
+
+                }
+                $('body').on('click', '#BtnSaveLoadedFile', function() {
+                    console.log('save');
+                })
+                $('body').on('click', 'BtnCancelLoadedFile', function() {
+                    console.log('BtnCancelLoadedFile');
                 })
             </script>
