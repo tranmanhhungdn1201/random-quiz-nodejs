@@ -5,7 +5,9 @@
 .Menu__Logo {
   font-size: 30px;
   font-weight: bold;
-  text-align: center; }
+  text-align: center;
+  color: white;
+  padding: 10px; }
 
 .Menu__Content {
   display: flex;
