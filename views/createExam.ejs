@@ -1,4 +1,5 @@
 <% include ./layout/header %>
+<% include ./modal/previewExam %>
     <div class="container mt-5">
         <form id="formCreateExam">
             <div class="form-group row">
@@ -19,31 +20,31 @@
             <div class="form-group row">
                 <label for="" class="col-sm-3 col-form-label">Số đề</label>
                 <div class="col-sm-9">
-                    <input type="number" class="form-control" name="numOfExam" min="1" max="10">
+                    <input type="number" class="form-control" name="numOfExam" min="1" max="10" value="4">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="" class="col-sm-3 col-form-label">Số câu mỗi đề</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" name="numInExam">
+                    <input type="text" class="form-control" name="numInExam" value="20">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="" class="col-sm-3 col-form-label">Số câu dễ</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" name="numEasy">
+                    <input type="text" class="form-control" name="numEasy"  value="10">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="" class="col-sm-3 col-form-label">Số câu trung bình</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" name="numMedium">
+                    <input type="text" class="form-control" name="numMedium"  value="5">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="" class="col-sm-3 col-form-label">Số câu khó</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" name="numHard">
+                    <input type="text" class="form-control" name="numHard"  value="5">
                 </div>
             </div>
             <div class="form-group row">
@@ -84,7 +85,6 @@
                 }
             }
             $.ajax(options);
-            console.log(dataObj);
         });
 
         function createExam(data) {
@@ -96,7 +96,7 @@
                         <h5 class="card-title">Đề ${index + 1}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Đề ${index + 1}</h6>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="card-link" data-id="${index}">Xem đề</a>
+                        <a href="#" class="card-link btn-preview-exam" data-id="${index}">Xem đề</a>
                         <a href="#" class="card-link" data-id="${index}">In đề</a>
                     </div>
                 </div>
@@ -106,5 +106,114 @@
             $('#list-exam .row').empty();
             $('#list-exam .row').append(content.join(''));
         }
+
+        $('.container').on('click', '.btn-preview-exam', function(){
+            const id = $(this).attr('data-id');
+            console.log(id);
+            const data = localStorage.getItem('exams');
+            if(data && data[0].length) {
+                let dataF = JSON.parse(data)[id];
+                console.log(dataF);
+                handleToHtmlModal(dataF);
+                $('#btnPrintExam').attr('data-id', id);
+            } else {
+                $('#btnPrintExam').attr('data-id', '');
+            }
+        });
+
+        function handleToHtmlModal(dataArr, idElementQuestion = 'ListQuestionHtml', idElementInfo = 'SubjectInfo') {
+            let total = dataArr.length
+            let numOfEasy = dataArr.filter(item => item.level == 'D').length
+            let numOfMedium = dataArr.filter(item => item.level == 'V').length
+            let numOfHard = dataArr.filter(item => item.level == 'K').length
+            let htmlSubjectInfo = `
+            <ul class="list">
+                <li><b>Tổng:</b> ${total} câu</li>
+                <li><span class="Subject__Item__Info__Easy"><b>Câu dễ:</b></span> ${numOfEasy} câu</li>
+                <li><span class="Subject__Item__Info__Medium"><b>Câu vừa:</b></span> ${numOfMedium} câu</li>
+                <li><span class="Subject__Item__Info__Hard"><b>Câu khó:</b></span> ${numOfHard} câu</li>
+            </ul>
+            `
+            $('#' + idElementInfo).html(htmlSubjectInfo)
+            let htmlQuestion = '';
+            dataArr.forEach((item, index) => {
+                htmlQuestion += `
+                <li class="list-group-item quiz Quizz" id="Quizz-${item.id}" data="${JSON.stringify(item).replaceAll('"', `\\\'`)}">
+                    <div class="QuizItem">
+                        <div class="quiz__content">
+                            <h6 class="font-weight-bold">Câu ${index+1}. ${item.content}</h6>
+                            <ul>
+                                <li class="${item.answers[0].isTrue ? 'text-danger' : ''}">A. ${item.answers[0].content}</li>
+                                <li class="${item.answers[1].isTrue ? 'text-danger' : ''}">B. ${item.answers[1].content}</li>
+                                <li class="${item.answers[2].isTrue ? 'text-danger' : ''}">C. ${item.answers[2].content}</li>
+                                <li class="${item.answers[3].isTrue ? 'text-danger' : ''}">D. ${item.answers[3].content}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                `
+            })
+            $('#' + idElementQuestion).html(htmlQuestion);
+            $('#modalPreviewExam').modal('show');
+        }
+
+        $('#btnPrintExam').click(function(e) {
+            const id = $(this).attr('data-id');
+            if(!id) return;
+
+            const data = localStorage.getItem('exams');
+            if(!data || !data[0].length || !data[id].length) {
+                return;
+            }
+            const dataParse = JSON.parse(data);
+            if(!dataParse[0].length || !dataParse[id].length) {
+                return;
+            }
+            console.log('id', id);
+            console.log('dataaaaid', dataParse[id]);
+            const url = '/export-exam';
+            const options = {
+                method: 'POST',
+                url: url,
+                data: {
+                    data: JSON.stringify(dataParse[id])
+                },
+                // success: (res) => {
+                    // if(res.success && res.exams[0].length){
+                    //     localStorage.removeItem('exams');
+                    //     localStorage.setItem('exams', JSON.stringify(res.exams));
+                    //     createExam(res.exams);
+                    // } else {
+                        
+                    // }
+                    // var blob=new Blob([res.buffer.data], {type: 'application/octet-stream'});
+                    // var link=document.createElement('a');
+                    // link.href=window.URL.createObjectURL(blob);
+                    // link.download="abc.txt";
+                    // link.click();
+                    // console.log('data', res);
+                    
+                // },
+                success: function (data, status, xhr) {
+                    console.log(data, status, xhr);
+           
+                    console.log(xhr.getResponseHeader("content-type"));
+                //    let blob = new Blob([data], {type: '' + xhr.getResponseHeader("content-type")});
+                   let blob = new Blob([data.data], {type: 'application/vnd.openxmlformats-officedocument.wordprocessing'});
+                    console.log('blobbb', typeof blob, blob);
+                    let a = $('<a />'), url = URL.createObjectURL(blob);
+                    console.log('url', url);
+                    a.attr({
+                        'href': url,
+                        'download': 'abc.docx',
+                        'text': "click"
+                    }).hide().appendTo("body")[0].click();
+                },
+                error: (err) => {
+                    console.log('Error: ' + err.message);
+                }
+            }
+            $.ajax(options);
+        });
     </script>
 <% include ./layout/footer %>

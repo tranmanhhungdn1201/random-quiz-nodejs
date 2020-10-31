@@ -20,12 +20,8 @@
                 Hệ thống tạo đề thi
             </div>
             <div class="Menu__Content">
-                <div class="Menu__Content__Item Menu__Content__Item--FileUpload">
-                    <form action="/upload">
-                        <input type="file" name="file" id="file">
-                        <label for="file">Chọn file đề</label>
-                    </form>
-                </div>
+                <input style="display: none;" type="file" name="file" id="file">
+                <label for="file" class="Menu__Content__Item Menu__Content__Item--FileUpload">Chọn file đề</label>
                 <a href="/" class="Menu__Content__Item">Danh sách môn học</a>
                 <a href="/tao-de" class="Menu__Content__Item">Tạo đề thi</a>
             </div>
@@ -33,30 +29,139 @@
         <div class="Body">
 
             <script>
-                $('#file').on('change', () => {
-                    console.log('1111', $('#file')[0].files);
-                    var fd = new FormData();
-                    var files = $('#file')[0].files;
-                    if (files.length > 0) {
-                        fd.append('file', files[0]);
+                $(document).ready(function() {
+                    // $('#modalEditUpload').modal('show')
+
+                    $('#file').on('change', () => {
+                        console.log('1111', $('#file')[0].files);
+                        var fd = new FormData();
+                        var files = $('#file')[0].files;
+                        if (files.length > 0) {
+                            fd.append('file', files[0]);
+
+                            $.ajax({
+                                url: '/upload',
+                                type: 'post',
+                                data: fd,
+                                contentType: false,
+                                processData: false,
+                                success: async function(response) {
+                                    if (response != 0) {
+                                        await localStorage.removeItem("QuizzRandom")
+                                        await localStorage.setItem('QuizzRandom', JSON.stringify(response.data))
+                                            // location.href = '/sua-doi'
+                                        responseToHtmlModal(response.data)
+                                        $('#modalEditUpload').modal('show')
+
+                                    } else {
+                                        alert('file not uploaded');
+                                    }
+                                },
+                            });
+                        } else {
+                            alert("Please select a file.");
+                        }
+                    })
+
+                    $('body').on('click', '#ListSubject', function() {
+                        let option = $(this).val()
+                        if (option == 0) {
+                            $('#ListSubject__Input').css('display', 'block')
+                        } else {
+                            $('#ListSubject__Input').css('display', 'none')
+                        }
+                    })
+                })
+
+                function responseToHtmlModal(dataArr, idElementQuestion = 'ListQuestionHtml', idElementInfo = 'SubjectInfo') {
+                    let total = dataArr.length
+                    let numOfEasy = dataArr.filter(item => item.level == 'D').length
+                    let numOfMedium = dataArr.filter(item => item.level == 'V').length
+                    let numOfHard = dataArr.filter(item => item.level == 'K').length
+                    let htmlSubjectInfo = `
+                    <ul class="list">
+                                        <li><b>Tổng:</b> ${total} câu</li>
+                                        <li><span class="Subject__Item__Info__Easy"><b>Câu dễ:</b></span> ${numOfEasy} câu</li>
+                                        <li><span class="Subject__Item__Info__Medium"><b>Câu vừa:</b></span> ${numOfMedium} câu</li>
+                                        <li><span class="Subject__Item__Info__Hard"><b>Câu khó:</b></span> ${numOfHard} câu</li>
+                                    </ul>
+                    `
+                    $('#' + idElementInfo).html(htmlSubjectInfo)
+                    let htmlQuestion = '';
+                    dataArr.forEach((item, index) => {
+                                htmlQuestion += `
+                        <li class="list-group-item quiz Quizz" id="Quizz-${item.id}" data="${JSON.stringify(item).replaceAll('"', `\\\'`)}">
+                                    <div class="QuizItem">
+                                        <div class="quiz__content">
+                                            <h6 class="font-weight-bold">Câu ${index+1}. ${item.content}</h6>
+                                            <ul>
+                                                <li><b>A. ${item.answers[0].content}</b></li>
+                                                <li>B. ${item.answers[1].content}</li>
+                                                <li>C. ${item.answers[2].content}</li>
+                                                <li>D. ${item.answers[3].content}</li>
+                                            </ul>
+                                        </div>
+                                        <div class="quiz__option">
+                                            <a href="#" class="btn btn-sm btn-danger" data="${item.id}"> Xóa</a>
+                                        </div>
+                                    </div>
+                                </li>
+                        
+                        `
+                    })
+                    $('#' + idElementQuestion).html(htmlQuestion)
+
+                }
+                $('body').on('click', '#BtnSaveLoadedFile', function() {
+                    $('#subjectNameRequire').css('display', 'none')
+                    let subjectId = $('#ListSubject').val();
+                    let subjectName = "";
+                    if (subjectId == '0') {
+                        subjectName = $('#ListSubject__Input>input').val();
+                    }
+                    if((subjectId == '0' && subjectName !== "") || subjectId != '0'){
+                        let questions = []
+                        let questionsHtml = $('.Quizz')
+
+                        if (questionsHtml) {
+                            questionsHtml.each((item) => {
+                                let data = $(questionsHtml[item]).attr('data').replaceAll(`\\\'`, `"`)
+                                data = JSON.parse(data)
+                                questions.push(data)
+                            })
+                        }
+                        let formData = {
+                            subjectId,
+                            subjectName,
+                            questions
+                        }
+                        console.log('aaaa', formData);
 
                         $.ajax({
-                            url: '/upload',
-                            type: 'post',
-                            data: fd,
-                            contentType: false,
-                            processData: false,
-                            success: function(response) {
-                                if (response != 0) {
-                                    console.log('OKKK', response);
-                                    location.href = '/sua-doi'
-                                } else {
-                                    alert('file not uploaded');
-                                }
-                            },
-                        });
-                    } else {
-                        alert("Please select a file.");
+                                    url: '/update-load-file',
+                                    type: 'post',
+                                    data: JSON.stringify(formData),
+                                    contentType: "application/json",
+                                    processData: false,
+                                    success: async function(response) {
+                                        if (response != 0) {
+                                            console.log('rrrrr', response);
+
+                                        } else {
+                                            alert('file not uploaded');
+                                        }
+                                    },
+                                });
+
+
+                        console.log('save');
+                    }else{
+                        alert('Vui lòng nhập tên môn học')
+                        // $('#subjectNameRequire').css('display', 'inline-block')
                     }
+                   
+                })
+                $('body').on('click', 'BtnCancelLoadedFile', function() {
+                    console.log('BtnCancelLoadedFile');
                 })
             </script>

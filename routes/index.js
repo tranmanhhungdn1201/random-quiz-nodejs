@@ -32,7 +32,7 @@ function formatXml(xml, tab) { // tab = optional indent value, default is tab (\
 router.get('/', homeController.getHomepage);
 router.get('/mon-hoc/{slug}', subjectController.getSubject)
 router.post('/upload', upload.single("file"), fileController.upload)
-router.get('/sua-doi', subjectController.editUpload)
+router.post('/update-load-file', subjectController.updateLoadedFile)
 
 router.get('/questions', async function(req, res) {
     let questions = db.get('questions')
@@ -257,6 +257,7 @@ module.exports = router;
 
 
 router.get('/de', fileController.getView);
+router.post('/export-exam', fileController.exportExam);
 router.get('/create-exam', quizController.getCreateExam);
 router.post('/create-exam', quizController.postCreateExam);
 router.get('/:slug', quizController.list);
