@@ -1,0 +1,110 @@
+<% include ./layout/header %>
+    <div class="container mt-5">
+        <form id="formCreateExam">
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-3 col-form-label">Môn học</label>
+                <div class="col-sm-9">
+                    <select class="custom-select mr-sm-2" name="subjectId">
+                        <option value="" selected>Chọn môn học...</option>
+                        <%  subjects.forEach(function(sub) { %>
+                            <option
+                                value='<%=sub.id%>'
+                            >
+                                <%=sub.name %>
+                            </option>
+                        <% });%>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-sm-3 col-form-label">Số đề</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control" name="numOfExam" min="1" max="10">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-sm-3 col-form-label">Số câu mỗi đề</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" name="numInExam">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-sm-3 col-form-label">Số câu dễ</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" name="numEasy">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-sm-3 col-form-label">Số câu trung bình</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" name="numMedium">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-sm-3 col-form-label">Số câu khó</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" name="numHard">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-10 justify-content-center d-flex">
+                    <button type="button" class="btn btn-primary" id="btnCreateExam">Tạo đề</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <hr>
+    <div class="container ListExam" id="list-exam">
+        <div class="row">
+
+        </div>
+    </div>
+    <script>
+        $('#btnCreateExam').click((e) => {
+            e.preventDefault();
+            const dataArr = $('#formCreateExam').serializeArray();
+            const dataObj = handleSerializeArrayToObj(dataArr);
+            const url = '/create-exam';
+            const options = {
+                method: 'POST',
+                url: url,
+                data: dataObj,
+                success: (res) => {
+                    if(res.success && res.exams[0].length){
+                        localStorage.removeItem('exams');
+                        localStorage.setItem('exams', JSON.stringify(res.exams));
+                        createExam(res.exams);
+                    } else {
+                        
+                    }
+                    console.log('res', res);
+                },
+                error: (err) => {
+                    console.log('Error: ' + err.message);
+                }
+            }
+            $.ajax(options);
+            console.log(dataObj);
+        });
+
+        function createExam(data) {
+            let content = [];
+            data.map((exam, index) => {
+                let domStr = `<div class="ExamCard col-md-4 col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Đề ${index + 1}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Đề ${index + 1}</h6>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="card-link" data-id="${index}">Xem đề</a>
+                        <a href="#" class="card-link" data-id="${index}">In đề</a>
+                    </div>
+                </div>
+            </div>`
+                content = [...content, domStr];
+            });
+            $('#list-exam .row').empty();
+            $('#list-exam .row').append(content.join(''));
+        }
+    </script>
+<% include ./layout/footer %>

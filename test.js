@@ -88,5 +88,12 @@ function makeTest(numOfTest, numOfEasy, numOfMedium, numOfHard, easies, mediums,
     return makeTest(numOfTest-1, numOfEasy, numOfMedium, numOfHard, easy, medium, hard, full);
   }
 }
-let tests = makeTest(5, 10, 5, 5, easies, mediums, hards, [])
-console.log('Deee', tests);
+// let tests = makeTest(5, 10, 5, 5, easies, mediums, hards, [])
+// console.log('Deee', tests);
+let arr = [{"name":"subject","value":"5953400309730983"},{"name":"numOfExam","value":""},{"name":"numInExam","value":""},{"name":"numEasy","value":""},{"name":"numMedium","value":""},{"name":"numHard","value":""}];
+let arrF = arr.reduce((obj, item) => {
+  let name = item['name'];
+  obj[name] = item['value'];
+  return obj;
+}, {});
+console.log(arrF)

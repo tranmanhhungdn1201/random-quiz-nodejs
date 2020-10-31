@@ -75,3 +75,6 @@
 
 .ListQuiz .QuizItem ul li {
   padding: 10px 0; }
+
+.ListExam .ExamCard {
+  margin: 15px 0; }
