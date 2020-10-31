@@ -14,18 +14,18 @@
   display: flex;
   justify-content: center; }
   .Menu__Content__Item {
-    background: #032341;
-    padding: 4px 10px;
-    padding-top: 8px;
     color: white;
     margin: 10px;
-    text-decoration: none; }
-    .Menu__Content__Item:hover {
-      text-decoration: none;
-      background: chartreuse;
-      cursor: pointer; }
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px;
+    background: #032341;
+    cursor: pointer; }
     .Menu__Content__Item--FileUpload input {
       display: none; }
+    .Menu__Content__Item:hover {
+      text-decoration: none;
+      background: greenyellow; }
 
 .Body {
   min-height: 400px; }
@@ -54,6 +54,12 @@
       color: orange; }
     .Subject__Item__Info__Hard b {
       color: red; }
+
+.SubjectTile__Wrap {
+  display: flex; }
+  .SubjectTile__Wrap--Select {
+    width: 200px;
+    margin-right: 10px; }
 
 .ModalContent {
   background: ModalContent; }

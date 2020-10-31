@@ -155,14 +155,16 @@
                                 <div class="SubjectTile">
                                     <strong>Môn học:</strong>
                                     <div class="SubjectTile__Wrap">
-                                        <select class="custom-select" id="ListSubject">
+                                        <select class="custom-select SubjectTile__Wrap--Select" id="ListSubject">
                                             <option value="0">Nhập tên môn học mới</option>
                                             <option value="1">Môn 1</option>
                                             <option value="2">Môn 2</option>
                                             <option value="3">Môn 3</option>
                                           </select>
-                                        <div id="ListSubject__Input">
+                                        <div id="ListSubject__Input" class="SubjectTile__Wrap--Name">
                                             <input type="text" class="form-control" placeholder="Tên môn học">
+                                            <p class="text-danger" style="display: none;" id="subjectNameRequire">Vui lòng nhập tên môn học</p>
+
                                         </div>
                                     </div>
                                 </div>

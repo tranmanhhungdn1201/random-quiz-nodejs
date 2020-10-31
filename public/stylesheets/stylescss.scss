@@ -16,21 +16,21 @@
         display: flex;
         justify-content: center;
         &__Item {
-            background: #032341;
-            padding: 4px 10px;
-            padding-top: 8px;
             color: white;
             margin: 10px;
-            text-decoration: none;
-            &:hover {
-                text-decoration: none;
-                background: chartreuse;
-                cursor: pointer;
-            }
             &--FileUpload {
                 input {
                     display: none;
                 }
+            }
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px;
+            background: #032341;
+            cursor: pointer;
+            &:hover {
+                text-decoration: none;
+                background: greenyellow;
             }
         }
     }
@@ -77,6 +77,18 @@
                 }
             }
         }
+    }
+}
+
+.SubjectTile {
+    margin-top: 6px;
+    &__Wrap {
+        display: flex;
+        &--Select {
+            width: 200px;
+            margin-right: 10px;
+        }
+        &--Name {}
     }
 }
 

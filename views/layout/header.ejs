@@ -19,12 +19,8 @@
                 Hệ thống tạo đề thi
             </div>
             <div class="Menu__Content">
-                <div class="Menu__Content__Item Menu__Content__Item--FileUpload">
-                    <form action="/upload">
-                        <input type="file" name="file" id="file">
-                        <label for="file">Chọn file đề</label>
-                    </form>
-                </div>
+                <input style="display: none;" type="file" name="file" id="file">
+                <label for="file" class="Menu__Content__Item Menu__Content__Item--FileUpload">Chọn file đề</label>
                 <a href="/" class="Menu__Content__Item">Danh sách môn học</a>
                 <a href="/tao-de" class="Menu__Content__Item">Tạo đề thi</a>
             </div>
@@ -50,7 +46,6 @@
                                 processData: false,
                                 success: async function(response) {
                                     if (response != 0) {
-                                        console.log('OKKK', response);
                                         await localStorage.removeItem("QuizzRandom")
                                         await localStorage.setItem('QuizzRandom', JSON.stringify(response.data))
                                             // location.href = '/sua-doi'
@@ -68,7 +63,6 @@
                     })
 
                     $('body').on('click', '#ListSubject', function() {
-                        console.log('aaa', $(this).val());
                         let option = $(this).val()
                         if (option == 0) {
                             $('#ListSubject__Input').css('display', 'block')
@@ -85,23 +79,22 @@
                     let numOfHard = dataArr.filter(item => item.level == 'K').length
                     let htmlSubjectInfo = `
                     <ul class="list">
-                                        <li>Tổng: ${total} câu</li>
-                                        <li>Câu dễ: ${numOfEasy} câu</li>
-                                        <li>Câu vừa: ${numOfMedium} câu</li>
-                                        <li>Câu khó: ${numOfHard} câu</li>
+                                        <li><b>Tổng:</b> ${total} câu</li>
+                                        <li><span class="Subject__Item__Info__Easy"><b>Câu dễ:</b></span> ${numOfEasy} câu</li>
+                                        <li><span class="Subject__Item__Info__Medium"><b>Câu vừa:</b></span> ${numOfMedium} câu</li>
+                                        <li><span class="Subject__Item__Info__Hard"><b>Câu khó:</b></span> ${numOfHard} câu</li>
                                     </ul>
                     `
                     $('#' + idElementInfo).html(htmlSubjectInfo)
                     let htmlQuestion = '';
                     dataArr.forEach((item, index) => {
-                        console.log('item', item);
-                        htmlQuestion += `
-                        <li class="list-group-item quiz">
+                                htmlQuestion += `
+                        <li class="list-group-item quiz Quizz" id="Quizz-${item.id}" data="${JSON.stringify(item).replaceAll('"', `\\\'`)}">
                                     <div class="QuizItem">
                                         <div class="quiz__content">
-                                            <h6 class="font-weight-bold">${index+1}. ${item.content}</h6>
+                                            <h6 class="font-weight-bold">Câu ${index+1}. ${item.content}</h6>
                                             <ul>
-                                                <li>A. ${item.answers[0].content}</li>
+                                                <li><b>A. ${item.answers[0].content}</b></li>
                                                 <li>B. ${item.answers[1].content}</li>
                                                 <li>C. ${item.answers[2].content}</li>
                                                 <li>D. ${item.answers[3].content}</li>
@@ -119,7 +112,53 @@
 
                 }
                 $('body').on('click', '#BtnSaveLoadedFile', function() {
-                    console.log('save');
+                    $('#subjectNameRequire').css('display', 'none')
+                    let subjectId = $('#ListSubject').val();
+                    let subjectName = "";
+                    if (subjectId == '0') {
+                        subjectName = $('#ListSubject__Input>input').val();
+                    }
+                    if((subjectId == '0' && subjectName !== "") || subjectId != '0'){
+                        let questions = []
+                        let questionsHtml = $('.Quizz')
+
+                        if (questionsHtml) {
+                            questionsHtml.each((item) => {
+                                let data = $(questionsHtml[item]).attr('data').replaceAll(`\\\'`, `"`)
+                                data = JSON.parse(data)
+                                questions.push(data)
+                            })
+                        }
+                        let formData = {
+                            subjectId,
+                            subjectName,
+                            questions
+                        }
+                        console.log('aaaa', formData);
+
+                        $.ajax({
+                                    url: '/update-load-file',
+                                    type: 'post',
+                                    data: JSON.stringify(formData),
+                                    contentType: "application/json",
+                                    processData: false,
+                                    success: async function(response) {
+                                        if (response != 0) {
+                                            console.log('rrrrr', response);
+
+                                        } else {
+                                            alert('file not uploaded');
+                                        }
+                                    },
+                                });
+
+
+                        console.log('save');
+                    }else{
+                        alert('Vui lòng nhập tên môn học')
+                        // $('#subjectNameRequire').css('display', 'inline-block')
+                    }
+                   
                 })
                 $('body').on('click', 'BtnCancelLoadedFile', function() {
                     console.log('BtnCancelLoadedFile');
