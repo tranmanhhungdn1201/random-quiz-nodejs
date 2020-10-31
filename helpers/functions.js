@@ -11,6 +11,7 @@ function splitQuestion(data, num) {
 
         let questionObj = {
             idSubject: id,
+            id: uuid.v4(),
             content: regexExtract[3],
             answers: [{
                     content: questionArr[1],
