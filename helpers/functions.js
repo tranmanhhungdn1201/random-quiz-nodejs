@@ -6,34 +6,37 @@ function splitQuestion(data, num) {
     let id = "0"; //uuid.v4();
     while (data.length > num) {
         let questionArr = data.splice(0, 5);
-
+        console.log('questionArr[0]', questionArr[0]);
         let regexExtract = /(^[DKV])*\(([DKV])\)(.*)/s.exec(questionArr[0])
 
-        let questionObj = {
-            idSubject: id,
-            id: uuid.v4(),
-            content: regexExtract[3].trim(),
-            answers: [{
-                    content: questionArr[1],
-                    isTrue: true
-                },
-                {
-                    content: questionArr[2],
-                    isTrue: false
-                },
-                {
-                    content: questionArr[3],
-                    isTrue: false
-                },
-                {
-                    content: questionArr[4],
-                    isTrue: false
-                }
-            ],
-            result: questionArr[1],
-            level: regexExtract[2]
-        };
-        arr = [...arr, questionObj];
+        if (regexExtract) {
+            let questionObj = {
+                idSubject: id,
+                id: uuid.v4(),
+                content: regexExtract[3].trim(),
+                answers: [{
+                        content: questionArr[1],
+                        isTrue: true
+                    },
+                    {
+                        content: questionArr[2],
+                        isTrue: false
+                    },
+                    {
+                        content: questionArr[3],
+                        isTrue: false
+                    },
+                    {
+                        content: questionArr[4],
+                        isTrue: false
+                    }
+                ],
+                result: questionArr[1],
+                level: regexExtract[2]
+            };
+            arr = [...arr, questionObj];
+        }
+
     }
     return arr;
 }
@@ -68,9 +71,26 @@ function checkQuestionExistInDb(questions, questionsDB) {
     })
     return countDuplicateQuestion;
 }
+
+function countTypeOfQuestions(questions) {
+    let easy = 0,
+        medium = 0,
+        hard = 0;
+    questions.forEach(item => {
+        if (item.level == 'D') easy += 1;
+        if (item.level == 'V') medium += 1;
+        if (item.level == 'K') hard += 1;
+    })
+    return {
+        easy,
+        medium,
+        hard
+    }
+}
 module.exports = {
     splitQuestion,
     shuffle,
     arr2Obj,
-    checkQuestionExistInDb
+    checkQuestionExistInDb,
+    countTypeOfQuestions
 }
