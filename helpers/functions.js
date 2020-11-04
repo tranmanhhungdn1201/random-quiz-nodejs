@@ -12,7 +12,7 @@ function splitQuestion(data, num) {
         let questionObj = {
             idSubject: id,
             id: uuid.v4(),
-            content: regexExtract[3],
+            content: regexExtract[3].trim(),
             answers: [{
                     content: questionArr[1],
                     isTrue: true
@@ -37,7 +37,7 @@ function splitQuestion(data, num) {
     }
     return arr;
 }
- 
+
 function shuffle(array) {
     let j, x, i;
     for (i = array.length - 1; i > 0; i--) {
@@ -49,7 +49,28 @@ function shuffle(array) {
     return array;
 }
 
+function arr2Obj(arr) {
+    return arr.reduce((obj, item) => {
+        return {
+            ...obj,
+            [item.content]: item
+        }
+    }, {})
+}
+
+function checkQuestionExistInDb(questions, questionsDB) {
+    let questionsObj = arr2Obj(questions)
+    let countDuplicateQuestion = 0;
+    questionsDB.forEach(item => {
+        if (questionsObj[item.content]) {
+            countDuplicateQuestion++;
+        }
+    })
+    return countDuplicateQuestion;
+}
 module.exports = {
     splitQuestion,
-    shuffle
+    shuffle,
+    arr2Obj,
+    checkQuestionExistInDb
 }

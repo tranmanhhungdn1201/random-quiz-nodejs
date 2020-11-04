@@ -55,11 +55,13 @@
     .Subject__Item__Info__Hard b {
       color: red; }
 
-.SubjectTile__Wrap {
-  display: flex; }
-  .SubjectTile__Wrap--Select {
-    width: 200px;
-    margin-right: 10px; }
+.SubjectTile {
+  margin-top: 6px; }
+  .SubjectTile__Wrap {
+    display: flex; }
+    .SubjectTile__Wrap--Select {
+      width: 250px;
+      margin-right: 10px; }
 
 .ModalContent {
   background: ModalContent; }
