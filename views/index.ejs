@@ -139,51 +139,5 @@
 
 
     </div>
-    <!-- Modal -->
-    <div class="modal fade" id="modalEditUpload" tabindex="-1" role="dialog" aria-labelledby="modalEditUploadTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content ModalContent">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-             <span aria-hidden="true">&times;</span>
-             </button>
-                </div>
-                <div class="modal-body">
-                    <div class="container ListQuiz">
-                        <div class="row justify-content-between align-items-center">
-                            <div class="row Subject flex-column">
-                                <div class="SubjectTile">
-                                    <strong>Môn học:</strong>
-                                    <div class="SubjectTile__Wrap">
-                                        <select class="custom-select SubjectTile__Wrap--Select" id="ListSubject">
-                                            <option value="0">Nhập tên môn học mới</option>
-                                            <option value="1">Môn 1</option>
-                                            <option value="2">Môn 2</option>
-                                            <option value="3">Môn 3</option>
-                                          </select>
-                                        <div id="ListSubject__Input" class="SubjectTile__Wrap--Name">
-                                            <input type="text" class="form-control" placeholder="Tên môn học">
-                                            <p class="text-danger" style="display: none;" id="subjectNameRequire">Vui lòng nhập tên môn học</p>
 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="SubjectInfo" id="SubjectInfo">
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ListQuiz__content">
-                            <ul class="list-group list-group-flush" id="ListQuestionHtml">
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="BtnCancelLoadedFile">Hủy</button>
-                    <button type="button" class="btn btn-primary" id="BtnSaveLoadedFile">Lưu lại</button>
-                </div>
-            </div>
-        </div>
-    </div>
     <% include ./layout/footer %>

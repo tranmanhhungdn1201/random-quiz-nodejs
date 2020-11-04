@@ -36,7 +36,7 @@ async function updateLoadedFile(req, res) {
             }
         })
         await db.get('questions')
-            .push(questions)
+            .push(...questions)
             .write()
         console.log(subject);
     } else {

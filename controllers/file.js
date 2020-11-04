@@ -3,7 +3,7 @@ var fs = require("fs");
 var { Document, Packer, Paragraph, TextRun } = require("docx");
 var WordExtractor = require("word-extractor");
 var extractor = new WordExtractor();
-var { splitQuestion } = require('../helpers/functions')
+var { splitQuestion, checkQuestionExistInDb } = require('../helpers/functions')
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('db.json')
@@ -19,9 +19,12 @@ function upload(req, res) {
         extracted.then(async function(doc) {
             let data = doc.getBody().split(/\r?\n/);
             const dataFormat = splitQuestion(data, 5);
-            // await db.get('questions').push(...dataFormat).write()
+            const questionsDB = await db.get('questions').value()
+            let countDuplicate = checkQuestionExistInDb(dataFormat, questionsDB)
+                // await db.get('questions').push(...dataFormat).write()
             res.send({
-                data: dataFormat
+                data: dataFormat,
+                countDuplicate
             })
         }).catch(err => {
             return res.send({
