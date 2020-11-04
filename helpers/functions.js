@@ -1,4 +1,5 @@
 const uuid = require('uuid')
+const { LEVEL_EASY, LEVEL_MEDIUM, LEVEL_HARD } = require('../lib/constants');
 
 function splitQuestion(data, num) {
     let arr = [];
@@ -68,9 +69,25 @@ function checkQuestionExistInDb(questions, questionsDB) {
     })
     return countDuplicateQuestion;
 }
+
+function getNumTypeQuestion(data){
+    if(data.length === 0) return {};
+    const num = data.length;
+    const numE = data.filter(quiz => quiz.level === LEVEL_EASY).length;
+    const numM = data.filter(quiz => quiz.level === LEVEL_MEDIUM).length;
+    const numH = data.filter(quiz => quiz.level === LEVEL_HARD).length;
+    return {
+        num,
+        numE,
+        numM,
+        numH,
+    }
+}
+
 module.exports = {
     splitQuestion,
     shuffle,
     arr2Obj,
-    checkQuestionExistInDb
+    checkQuestionExistInDb,
+    getNumTypeQuestion,
 }

@@ -2,10 +2,12 @@
 <% include ./modal/previewExam %>
     <div class="container mt-5">
         <form id="formCreateExam">
+            <ul class="alert alert-danger error-create" style="display: none;" role="alert">
+            </ul>
             <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-3 col-form-label">Môn học</label>
                 <div class="col-sm-9">
-                    <select class="custom-select mr-sm-2" name="subjectId">
+                    <select class="custom-select mr-sm-2" id="select-subject" name="subjectId">
                         <option value="" selected>Chọn môn học...</option>
                         <%  subjects.forEach(function(sub) { %>
                             <option
@@ -30,19 +32,19 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="" class="col-sm-3 col-form-label">Số câu dễ</label>
+                <label for="" class="col-sm-3 col-form-label num-easy-label">Số câu dễ</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" name="numEasy"  value="10">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="" class="col-sm-3 col-form-label">Số câu trung bình</label>
+                <label for="" class="col-sm-3 col-form-label num-med-label">Số câu trung bình</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" name="numMedium"  value="5">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="" class="col-sm-3 col-form-label">Số câu khó</label>
+                <label for="" class="col-sm-3 col-form-label num-hard-label">Số câu khó</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" name="numHard"  value="5">
                 </div>
@@ -71,14 +73,17 @@
                 url: url,
                 data: dataObj,
                 success: (res) => {
+                    $('.error-create').empty();
+                    $('.error-create').css('display', 'none');
                     if(res.success && res.exams[0].length){
                         localStorage.removeItem('exams');
                         localStorage.setItem('exams', JSON.stringify(res.exams));
                         createExam(res.exams);
                     } else {
-                        
+                        const errors = res.errors.map(err => `<li>${err.message}</li>`)
+                        $('.error-create').append(errors.join(''));
+                        $('.error-create').css('display', 'block');
                     }
-                    console.log('res', res);
                 },
                 error: (err) => {
                     console.log('Error: ' + err.message);
@@ -109,11 +114,9 @@
 
         $('.container').on('click', '.btn-preview-exam', function(){
             const id = $(this).attr('data-id');
-            console.log(id);
             const data = localStorage.getItem('exams');
             if(data && data[0].length) {
                 let dataF = JSON.parse(data)[id];
-                console.log(dataF);
                 handleToHtmlModal(dataF);
                 $('#btnPrintExam').attr('data-id', id);
             } else {
@@ -121,8 +124,8 @@
             }
         });
 
-        function handleToHtmlModal(dataArr, idElementQuestion = 'ListQuestionHtml', idElementInfo = 'SubjectInfo') {
-            let total = dataArr.length
+        function handleToHtmlModal(dataArr, idElementQuestion = 'ListQuestionPreview', idElementInfo = 'SubjectInfoPreview') {
+            let total = dataArr.length;
             let numOfEasy = dataArr.filter(item => item.level == 'D').length
             let numOfMedium = dataArr.filter(item => item.level == 'V').length
             let numOfHard = dataArr.filter(item => item.level == 'K').length
@@ -153,8 +156,8 @@
                 </li>
                 `
             })
-            $('#' + idElementQuestion).html(htmlQuestion);
             $('#modalPreviewExam').modal('show');
+            $('#' + idElementQuestion).append(htmlQuestion);
         }
 
         $('#btnPrintExam').click(function(e) {
@@ -214,6 +217,43 @@
                 }
             }
             $.ajax(options);
+        });
+
+        function getInfoSubject(subjecId){
+            const url = `/subjects/get-num/${subjecId}`;
+            const options = {
+                method: 'GET',
+                url: url,
+                error: function(err){
+                    console.log('Error', err.message);
+                }
+            }
+            return $.ajax(options);
+        }
+
+        function setNumQuestion(numQuestion) {
+            // set label easy
+            let eleELabel = $('.num-easy-label');
+            eleELabel.empty();
+            eleELabel.append(` Số câu dễ <i class="text-danger"> (${numQuestion.numE} )</i>`);
+            // set label medium
+            let eleMLabel = $('.num-med-label');
+            eleMLabel.empty();
+            eleMLabel.append(` Số câu trung bình <i class="text-danger"> (${numQuestion.numM} )</i>`);
+            // set label hard
+            let eleHLabel = $('.num-hard-label');
+            eleHLabel.empty();
+            eleHLabel.append(` Số câu khó <i class="text-danger"> (${numQuestion.numH} )</i>`);
+        }
+
+        $('#select-subject').change(function(){
+            const subjectId = this.value;
+            if(!subjectId) return;
+            const numQuestion = getInfoSubject(subjectId).then(function(res) {
+                setNumQuestion(res.numQuestion);
+            }).catch(function(err) {
+                console.log('Error', err.message);
+            });
         });
     </script>
 <% include ./layout/footer %>
