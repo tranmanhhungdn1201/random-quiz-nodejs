@@ -34,17 +34,21 @@ function makeExceptChosen(arrayQuestions, chosen, percent){
 }
 
 function makeTest(numOfTest, numOfEasy, numOfMedium, numOfHard, easies, mediums, hards, full){
-    console.log('makeTest');
     let _easy = getNQuestionsInArray(easies, numOfEasy)
     let _mediums = getNQuestionsInArray(mediums, numOfMedium)
     let _hards = getNQuestionsInArray(hards, numOfHard)
     let numInTest = numOfEasy + numOfMedium + numOfHard;
+    //create exam and shuffle anwser
     let result = [
       ..._easy,
       ..._mediums,
       ..._hards,
-    ];
-    console.log('numInTest', numInTest)
+    ].map(quiz => {
+      let arr = Object.assign(quiz);
+      shuffle(arr.answers);
+      return arr;
+    });
+
     if(result.length !== numInTest){
         return full;
     }

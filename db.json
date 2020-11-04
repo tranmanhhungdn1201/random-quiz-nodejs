@@ -1634,6 +1634,150 @@
       "id": "e9affae7-ddf7-4811-a292-6953daa5098e",
       "idSubject": "093ac048-45b6-482b-9804-d2593b3137a5",
       "level": "K"
+    },
+    {
+      "idSubject": "12283145631948811",
+      "content": " Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu \"Nội dung, nội dung, nội dung\" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn \"Lorem ipsum\" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
+      "answers": [
+        {
+          "content": "Aaaaaa",
+          "isTrue": true
+        },
+        {
+          "content": "Bbbbb bbbb",
+          "isTrue": false
+        },
+        {
+          "content": "Cccc ccccc, ccccccc",
+          "isTrue": false
+        },
+        {
+          "content": "Ddddd dd d d d d d",
+          "isTrue": false
+        }
+      ],
+      "result": "Aaaaaa",
+      "level": "D"
+    },
+    {
+      "idSubject": "12283145631948811",
+      "content": " hhhCó rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng. Trang web này sử dụng hơn 200 từ la-tinh, kết hợp thuần thục nhiều cấu trúc câu để tạo ra văn bản Lorem Ipsum trông có vẻ thật sự hợp lí. Nhờ thế, văn bản Lorem Ipsum được tạo ra mà không cần một sự lặp lại nào, cũng không cần chèn thêm các từ ngữ hóm hỉnh hay thiếu trật tự.",
+      "answers": [
+        {
+          "content": "2a2a2a2a2",
+          "isTrue": true
+        },
+        {
+          "content": "2b2b2b2b",
+          "isTrue": false
+        },
+        {
+          "content": "2c22c2c2c",
+          "isTrue": false
+        },
+        {
+          "content": "2d2d2d",
+          "isTrue": false
+        }
+      ],
+      "result": "2a2a2a2a2",
+      "level": "V"
+    },
+    {
+      "idSubject": "12283145631948811",
+      "content": " Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "answers": [
+        {
+          "content": "3a3a3a3a3",
+          "isTrue": true
+        },
+        {
+          "content": "3b3b3b3b3",
+          "isTrue": false
+        },
+        {
+          "content": "rái với quan điểm chung của số đông, Lorem Ipsum không phải chỉ là một đoạn văn bản ngẫu nhiên. Người ta tìm thấy nguồn gốc của nó từ những tác phẩm văn học la-tinh cổ điển xuất hiện từ năm 45 trước Công Nguyên, nghĩa là nó đã có khoảng hơn 2000 tuổi. Một giáo sư của trường Hampden-Sydney College (bang Virginia - Mỹ) quan tâm tới một trong những từ la-tinh khó hiểu nhất, \"consectetur\", trích từ một đoạn của Lorem Ipsum, và đã nghiên cứu tất cả các ứng dụng của từ này trong văn học cổ điển, để từ đó tìm ra nguồn gốc k",
+          "isTrue": false
+        },
+        {
+          "content": "3d3d3d3d",
+          "isTrue": false
+        }
+      ],
+      "result": "3a3a3a3a3",
+      "level": "K"
+    },
+    {
+      "idSubject": "7665445803207509",
+      "content": " Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu \"Nội dung, nội dung, nội dung\" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn \"Lorem ipsum\" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
+      "answers": [
+        {
+          "content": "Aaaaaa",
+          "isTrue": true
+        },
+        {
+          "content": "Bbbbb bbbb",
+          "isTrue": false
+        },
+        {
+          "content": "Cccc ccccc, ccccccc",
+          "isTrue": false
+        },
+        {
+          "content": "Ddddd dd d d d d d",
+          "isTrue": false
+        }
+      ],
+      "result": "Aaaaaa",
+      "level": "D"
+    },
+    {
+      "idSubject": "7665445803207509",
+      "content": " hhhCó rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng. Trang web này sử dụng hơn 200 từ la-tinh, kết hợp thuần thục nhiều cấu trúc câu để tạo ra văn bản Lorem Ipsum trông có vẻ thật sự hợp lí. Nhờ thế, văn bản Lorem Ipsum được tạo ra mà không cần một sự lặp lại nào, cũng không cần chèn thêm các từ ngữ hóm hỉnh hay thiếu trật tự.",
+      "answers": [
+        {
+          "content": "2a2a2a2a2",
+          "isTrue": true
+        },
+        {
+          "content": "2b2b2b2b",
+          "isTrue": false
+        },
+        {
+          "content": "2c22c2c2c",
+          "isTrue": false
+        },
+        {
+          "content": "2d2d2d",
+          "isTrue": false
+        }
+      ],
+      "result": "2a2a2a2a2",
+      "level": "V"
+    },
+    {
+      "idSubject": "7665445803207509",
+      "content": " Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "answers": [
+        {
+          "content": "3a3a3a3a3",
+          "isTrue": true
+        },
+        {
+          "content": "3b3b3b3b3",
+          "isTrue": false
+        },
+        {
+          "content": "rái với quan điểm chung của số đông, Lorem Ipsum không phải chỉ là một đoạn văn bản ngẫu nhiên. Người ta tìm thấy nguồn gốc của nó từ những tác phẩm văn học la-tinh cổ điển xuất hiện từ năm 45 trước Công Nguyên, nghĩa là nó đã có khoảng hơn 2000 tuổi. Một giáo sư của trường Hampden-Sydney College (bang Virginia - Mỹ) quan tâm tới một trong những từ la-tinh khó hiểu nhất, \"consectetur\", trích từ một đoạn của Lorem Ipsum, và đã nghiên cứu tất cả các ứng dụng của từ này trong văn học cổ điển, để từ đó tìm ra nguồn gốc k",
+          "isTrue": false
+        },
+        {
+          "content": "3d3d3d3d",
+          "isTrue": false
+        }
+      ],
+      "result": "3a3a3a3a3",
+      "level": "K"
     }
   ]
 }

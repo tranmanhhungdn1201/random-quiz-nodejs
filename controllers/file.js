@@ -50,394 +50,83 @@ function getView(req, res) {
     })
 }
 
-function createTest(req, res) {
-
+async function exportExam(req, res) {
+    console.log('exportExam');
     // Create document
     const doc = new Document();
-
+    const data = JSON.parse(req.body.data);
     // Documents contain sections, you can have multiple sections per document, go here to learn more about sections
     // This simple example will only contain one section
+    const children = data.reduce((content, quiz, i) => {
+        return [...content,
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: `Câu ${i + 1}. `,
+                        bold: true,
+                    }),
+                    new TextRun({
+                        text: quiz.content,
+                        style: "size:13"
+                    }),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  A. ",
+                        bold: true,
+                    }),
+                    new TextRun(quiz.answers[0].content),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  B. ",
+                        bold: true,
+                    }),
+                    new TextRun(quiz.answers[1].content),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  C. ",
+                        bold: true,
+                    }),
+                    new TextRun(quiz.answers[2].content),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  D. ",
+                        bold: true,
+                    }),
+                    new TextRun(quiz.answers[3].content),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun(" "),
+                ],
+            })
+        ];
+    }, []);
     doc.addSection({
         properties: {},
-        children: [
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "Câu 1. ",
-                        bold: true,
-                    }),
-                    new TextRun({
-                        text: "Chúng ta vẫn biết rằng,(D) làm việc với một văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểutrên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
-                        style: "size:13"
-                    }),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  A. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  B. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  C. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  D. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun(" "),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "Câu 2. ",
-                        bold: true,
-                    }),
-                    new TextRun({
-                        text: "Chúng ta vẫn biết rằng,(D) làm việc với một văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểutrên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
-                        style: "size:13"
-                    }),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  A. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  B. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  C. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  D. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun(" "),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "Câu 3. ",
-                        bold: true,
-                    }),
-                    new TextRun({
-                        text: "Chúng ta vẫn biết rằng,(D) làm việc với một văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểutrên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
-                        style: "size:13"
-                    }),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  A. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  B. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  C. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  D. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun(" "),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "Câu 4. ",
-                        bold: true,
-                    }),
-                    new TextRun({
-                        text: "Chúng ta vẫn biết rằng,(D) làm việc với một văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểutrên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
-                        style: "size:13"
-                    }),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  A. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  B. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  C. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  D. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun(" "),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "Câu 5. ",
-                        bold: true,
-                    }),
-                    new TextRun({
-                        text: "Chúng ta vẫn biết rằng,(D) làm việc với một văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểutrên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
-                        style: "size:13"
-                    }),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  A. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  B. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  C. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  D. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun(" "),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "Câu 6. ",
-                        bold: true,
-                    }),
-                    new TextRun({
-                        text: "Chúng ta vẫn biết rằng,(D) làm việc với một văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểutrên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
-                        style: "size:13"
-                    }),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  A. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  B. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  C. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  D. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun(" "),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "Câu 7. ",
-                        bold: true,
-                    }),
-                    new TextRun({
-                        text: "Chúng ta vẫn biết rằng,(D) làm việc với một văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểutrên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
-                        style: "size:13"
-                    }),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  A. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  B. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  C. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-            new Paragraph({
-                children: [
-                    new TextRun({
-                        text: "  D. ",
-                        bold: true,
-                    }),
-                    new TextRun("Chúng ta vẫn biết rằng"),
-                ],
-            }),
-        ],
+        children: children
     });
-
     // Used to export the file into a .docx file
-    Packer.toBuffer(doc).then((buffer) => {
-        fs.writeFileSync("files/result.docx", buffer);
-    });
-
+    let buffer = await Packer.toBuffer(doc);
+    console.log('fileee', typeof buffer);
+    return res.send(buffer)
+    // res.download(file);
 }
 
 module.exports = {
     getView,
-    createTest,
+    exportExam,
     upload
 }

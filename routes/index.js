@@ -257,6 +257,7 @@ module.exports = router;
 
 
 router.get('/de', fileController.getView);
+router.post('/export-exam', fileController.exportExam);
 router.get('/create-exam', quizController.getCreateExam);
 router.post('/create-exam', quizController.postCreateExam);
 router.get('/:slug', quizController.list);
