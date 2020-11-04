@@ -45,9 +45,6 @@
                                             <div class="SubjectTile__Wrap">
                                                 <select class="custom-select SubjectTile__Wrap--Select" id="ListSubject">
                                             <option value="0">Nhập tên môn học mới</option>
-                                            <option value="1">Môn 1</option>
-                                            <option value="2">Môn 2</option>
-                                            <option value="3">Môn 3</option>
                                           </select>
                                                 <div id="ListSubject__Input" class="SubjectTile__Wrap--Name">
                                                     <input type="text" class="form-control" placeholder="Tên môn học">
@@ -95,7 +92,7 @@
                                         await localStorage.removeItem("QuizzRandom")
                                         await localStorage.setItem('QuizzRandom', JSON.stringify(response.data))
                                             // location.href = '/sua-doi'
-                                        responseToHtmlModal(response.data, response.countDuplicate)
+                                        responseToHtmlModal(response.data, response.countDuplicate, response.subjects)
                                         $('#modalEditUpload').modal('show')
 
                                     } else {
@@ -118,7 +115,7 @@
                     })
                 })
 
-                function responseToHtmlModal(dataArr, countDuplicate, idElementQuestion = 'ListQuestionHtml', idElementInfo = 'SubjectInfo') {
+                function responseToHtmlModal(dataArr, countDuplicate, subjects, idElementQuestion = 'ListQuestionHtml', idElementInfo = 'SubjectInfo') {
                     let total = dataArr.length
                     let numOfEasy = dataArr.filter(item => item.level == 'D').length
                     let numOfMedium = dataArr.filter(item => item.level == 'V').length
@@ -155,6 +152,11 @@
                         
                         `
                     })
+                    let subjectHtml = "";
+                    subjects.forEach(item=>{
+                        subjectHtml += `<option value="${item.id}">${item.name}</option>`
+                    })
+                    $('#ListSubject').append(subjectHtml)
                     $('#' + idElementQuestion).html(htmlQuestion)
 
                 }
@@ -192,6 +194,10 @@
                                     success: async function(response) {
                                         if (response != 0) {
                                             console.log('rrrrr', response);
+                                            if(response.status == 'OK'){
+                                                alert("Đã nhập file đề thành công")
+                                                $('#modalEditUpload').modal('hide')
+                                            }
 
                                         } else {
                                             alert('file not uploaded');

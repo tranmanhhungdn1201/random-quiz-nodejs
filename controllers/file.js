@@ -9,10 +9,11 @@ const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('db.json')
 const db = low(adapter)
 
-function upload(req, res) {
+async function upload(req, res) {
     console.log('fileee', req.file);
     let file = req.file;
     let filename = file.filename
+    let subjects = await db.get('subjects').value();
     if (filename) {
         let questions = [];
         var extracted = extractor.extract("files/de11.doc");
@@ -24,11 +25,14 @@ function upload(req, res) {
                 // await db.get('questions').push(...dataFormat).write()
             res.send({
                 data: dataFormat,
-                countDuplicate
+                countDuplicate,
+                subjects
             })
         }).catch(err => {
+            console.log('eeee', err);
             return res.send({
-                msg: "Xử lý thất bại"
+                msg: "Xử lý thất bại",
+                err
             })
         });
     } else {

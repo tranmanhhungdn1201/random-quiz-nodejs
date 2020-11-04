@@ -1,161 +1,174 @@
 {
   "subjects": [
     {
-      "id": "5953400309730983",
+      "id": "09b9f92c-8933-4e15-88b5-18a49a106ad0",
       "name": "Bản đồ địa hình",
-      "slug": "ban-do-dia-hinh",
-      "desciption": "Bản đồ địa hình tham mưu"
+      "slug": "Ban-djo-djia-hinh"
     },
     {
-      "id": "6529432483309798",
+      "id": "3fe4e213-3003-4325-8ea3-4e780084e13c",
       "name": "Tâm lý học",
-      "slug": "tam-ly-hoc",
-      "desciption": "Tâm lý học quân sự"
+      "slug": "Tam-ly-hoc"
+    },
+    {
+      "id": "bfb36019-7ede-4e9a-ad96-fbb81a6b30b7",
+      "name": "Điều lệnh đội ngũ",
+      "slug": "DJieu-lenh-djoi-ngu"
+    },
+    {
+      "id": "526498be-eb0a-4326-8dae-8115ca7c8bd6",
+      "name": "Tham mưu tác chiến",
+      "slug": "Tham-muu-tac-chien"
+    },
+    {
+      "id": "093ac048-45b6-482b-9804-d2593b3137a5",
+      "name": "Giáo dục học",
+      "slug": "Giao-duc-hoc"
     }
   ],
   "questions": [
     {
-      "idSubject": "5953400309730983",
-      "content": " Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu \"Nội dung, nội dung, nội dung\" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn \"Lorem ipsum\" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
       "answers": [
         {
-          "content": "Aaaaaa",
+          "content": "Đáp án A",
           "isTrue": true
         },
         {
-          "content": "Bbbbb bbbb",
+          "content": "Đáp án B",
           "isTrue": false
         },
         {
-          "content": "Cccc ccccc, ccccccc",
+          "content": "Đáp án C",
           "isTrue": false
         },
         {
-          "content": "Ddddd dd d d d d d",
+          "content": "Đáp án D",
           "isTrue": false
         }
       ],
-      "result": "Aaaaaa",
+      "content": "Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu \"Nội dung, nội dung, nội dung\" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn \"Lorem ipsum\" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
+      "id": "665a8df2-004d-4eb1-8b28-690533dcc96c",
+      "idSubject": "09b9f92c-8933-4e15-88b5-18a49a106ad0",
       "level": "D"
     },
     {
-      "idSubject": "5953400309730983",
-      "content": " hhhCó rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng. Trang web này sử dụng hơn 200 từ la-tinh, kết hợp thuần thục nhiều cấu trúc câu để tạo ra văn bản Lorem Ipsum trông có vẻ thật sự hợp lí. Nhờ thế, văn bản Lorem Ipsum được tạo ra mà không cần một sự lặp lại nào, cũng không cần chèn thêm các từ ngữ hóm hỉnh hay thiếu trật tự.",
       "answers": [
         {
-          "content": "2a2a2a2a2",
+          "content": "Đáp án A",
           "isTrue": true
         },
         {
-          "content": "2b2b2b2b",
+          "content": "Đáp án B",
           "isTrue": false
         },
         {
-          "content": "2c22c2c2c",
+          "content": "Đáp án C",
           "isTrue": false
         },
         {
-          "content": "2d2d2d",
+          "content": "Đáp án D",
           "isTrue": false
         }
       ],
-      "result": "2a2a2a2a2",
+      "content": "Có rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng. Trang web này sử dụng hơn 200 từ la-tinh, kết hợp thuần thục nhiều cấu trúc câu để tạo ra văn bản Lorem Ipsum trông có vẻ thật sự hợp lí. Nhờ thế, văn bản Lorem Ipsum được tạo ra mà không cần một sự lặp lại nào, cũng không cần chèn thêm các từ ngữ hóm hỉnh hay thiếu trật tự.",
+      "id": "428145ca-f3eb-4895-a1d6-1625c1ebe563",
+      "idSubject": "09b9f92c-8933-4e15-88b5-18a49a106ad0",
       "level": "V"
     },
     {
-      "idSubject": "5953400309730983",
-      "content": " Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
       "answers": [
         {
-          "content": "3a3a3a3a3",
+          "content": "Đáp án A",
           "isTrue": true
         },
         {
-          "content": "3b3b3b3b3",
+          "content": "Đáp án B",
           "isTrue": false
         },
         {
-          "content": "rái với quan điểm chung của số đông, Lorem Ipsum không phải chỉ là một đoạn văn bản ngẫu nhiên. Người ta tìm thấy nguồn gốc của nó từ những tác phẩm văn học la-tinh cổ điển xuất hiện từ năm 45 trước Công Nguyên, nghĩa là nó đã có khoảng hơn 2000 tuổi. Một giáo sư của trường Hampden-Sydney College (bang Virginia - Mỹ) quan tâm tới một trong những từ la-tinh khó hiểu nhất, \"consectetur\", trích từ một đoạn của Lorem Ipsum, và đã nghiên cứu tất cả các ứng dụng của từ này trong văn học cổ điển, để từ đó tìm ra nguồn gốc k",
+          "content": "Đáp án C",
           "isTrue": false
         },
         {
-          "content": "3d3d3d3d",
+          "content": "Đáp án D",
           "isTrue": false
         }
       ],
-      "result": "3a3a3a3a3",
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "ddac4190-b605-4f23-8172-32d198357209",
+      "idSubject": "09b9f92c-8933-4e15-88b5-18a49a106ad0",
       "level": "K"
     },
     {
-      "idSubject": "6529432483309798",
-      "content": " Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu \"Nội dung, nội dung, nội dung\" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn \"Lorem ipsum\" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
       "answers": [
         {
-          "content": "Aaaaaa",
+          "content": "Đáp án A",
           "isTrue": true
         },
         {
-          "content": "Bbbbb bbbb",
+          "content": "Đáp án B",
           "isTrue": false
         },
         {
-          "content": "Cccc ccccc, ccccccc",
+          "content": "Đáp án C",
           "isTrue": false
         },
         {
-          "content": "Ddddd dd d d d d d",
+          "content": "Đáp án D",
           "isTrue": false
         }
       ],
-      "result": "Aaaaaa",
-      "level": "D"
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "4d0f0633-5c6b-4a3d-a47f-00426fe76772",
+      "idSubject": "09b9f92c-8933-4e15-88b5-18a49a106ad0",
+      "level": "K"
     },
     {
-      "idSubject": "6529432483309798",
-      "content": " hhhCó rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng. Trang web này sử dụng hơn 200 từ la-tinh, kết hợp thuần thục nhiều cấu trúc câu để tạo ra văn bản Lorem Ipsum trông có vẻ thật sự hợp lí. Nhờ thế, văn bản Lorem Ipsum được tạo ra mà không cần một sự lặp lại nào, cũng không cần chèn thêm các từ ngữ hóm hỉnh hay thiếu trật tự.",
       "answers": [
         {
-          "content": "2a2a2a2a2",
+          "content": "Nguyễn Trãi.",
           "isTrue": true
         },
         {
-          "content": "2b2b2b2b",
+          "content": "Nguyễn Khuyến.",
           "isTrue": false
         },
         {
-          "content": "2c22c2c2c",
+          "content": "Bà Huyện Thanh Quan.",
           "isTrue": false
         },
         {
-          "content": "2d2d2d",
+          "content": "Hồ Chí Minh",
           "isTrue": false
         }
       ],
-      "result": "2a2a2a2a2",
-      "level": "V"
+      "content": "Đoạn văn trên nói tới tác giả nào?",
+      "id": "73105dde-f77f-4ea9-97d5-3eaa471bb80c",
+      "idSubject": "09b9f92c-8933-4e15-88b5-18a49a106ad0",
+      "level": "K"
     },
     {
-      "idSubject": "6529432483309798",
-      "content": " Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
       "answers": [
         {
-          "content": "3a3a3a3a3",
+          "content": "Một từ",
           "isTrue": true
         },
         {
-          "content": "3b3b3b3b3",
+          "content": "Hai từ",
           "isTrue": false
         },
         {
-          "content": "rái với quan điểm chung của số đông, Lorem Ipsum không phải chỉ là một đoạn văn bản ngẫu nhiên. Người ta tìm thấy nguồn gốc của nó từ những tác phẩm văn học la-tinh cổ điển xuất hiện từ năm 45 trước Công Nguyên, nghĩa là nó đã có khoảng hơn 2000 tuổi. Một giáo sư của trường Hampden-Sydney College (bang Virginia - Mỹ) quan tâm tới một trong những từ la-tinh khó hiểu nhất, \"consectetur\", trích từ một đoạn của Lorem Ipsum, và đã nghiên cứu tất cả các ứng dụng của từ này trong văn học cổ điển, để từ đó tìm ra nguồn gốc k",
+          "content": "Ba từ",
           "isTrue": false
         },
         {
-          "content": "3d3d3d3d",
+          "content": "Bốn từ",
           "isTrue": false
         }
       ],
-      "result": "3a3a3a3a3",
+      "content": "Câu văn \"Một con người ngay thẳng trung trực như ông không thể nào hoà nhập được.\" có mấy từ Hán Việt?",
+      "id": "b5b3732d-ee71-4ebb-a910-2e4fd4a64ab7",
+      "idSubject": "09b9f92c-8933-4e15-88b5-18a49a106ad0",
       "level": "K"
     },
     {
@@ -187,647 +200,1465 @@
       "content": " Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu \"Nội dung, nội dung, nội dung\" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn \"Lorem ipsum\" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
       "answers": [
         {
-          "content": "Aaaaaa",
+          "content": "Danh từ",
           "isTrue": true
         },
         {
-          "content": "Bbbbb bbbb",
+          "content": "Động từ",
           "isTrue": false
         },
         {
-          "content": "Cccc ccccc, ccccccc",
+          "content": "Tính từ",
           "isTrue": false
         },
         {
-          "content": "Ddddd dd d d d d d",
+          "content": "Đại từ",
           "isTrue": false
         }
       ],
-      "result": "Aaaaaa",
-      "level": "D"
-    },
-    {
-      "idSubject": "028636780474413426",
-      "content": " hhhCó rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng. Trang web này sử dụng hơn 200 từ la-tinh, kết hợp thuần thục nhiều cấu trúc câu để tạo ra văn bản Lorem Ipsum trông có vẻ thật sự hợp lí. Nhờ thế, văn bản Lorem Ipsum được tạo ra mà không cần một sự lặp lại nào, cũng không cần chèn thêm các từ ngữ hóm hỉnh hay thiếu trật tự.",
-      "answers": [
-        {
-          "content": "2a2a2a2a2",
-          "isTrue": true
-        },
-        {
-          "content": "2b2b2b2b",
-          "isTrue": false
-        },
-        {
-          "content": "2c22c2c2c",
-          "isTrue": false
-        },
-        {
-          "content": "2d2d2d",
-          "isTrue": false
-        }
-      ],
-      "result": "2a2a2a2a2",
-      "level": "V"
-    },
-    {
-      "idSubject": "028636780474413426",
-      "content": " Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
-      "answers": [
-        {
-          "content": "3a3a3a3a3",
-          "isTrue": true
-        },
-        {
-          "content": "3b3b3b3b3",
-          "isTrue": false
-        },
-        {
-          "content": "rái với quan điểm chung của số đông, Lorem Ipsum không phải chỉ là một đoạn văn bản ngẫu nhiên. Người ta tìm thấy nguồn gốc của nó từ những tác phẩm văn học la-tinh cổ điển xuất hiện từ năm 45 trước Công Nguyên, nghĩa là nó đã có khoảng hơn 2000 tuổi. Một giáo sư của trường Hampden-Sydney College (bang Virginia - Mỹ) quan tâm tới một trong những từ la-tinh khó hiểu nhất, \"consectetur\", trích từ một đoạn của Lorem Ipsum, và đã nghiên cứu tất cả các ứng dụng của từ này trong văn học cổ điển, để từ đó tìm ra nguồn gốc k",
-          "isTrue": false
-        },
-        {
-          "content": "3d3d3d3d",
-          "isTrue": false
-        }
-      ],
-      "result": "3a3a3a3a3",
+      "content": "Từ \"ông\" trong đoạn văn trên thuộc loại từ nào?",
+      "id": "b1653dce-3838-4dd0-8f3e-aebd3f639c18",
+      "idSubject": "09b9f92c-8933-4e15-88b5-18a49a106ad0",
       "level": "K"
     },
     {
-      "idSubject": "01841773139583691",
-      "content": " Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu \"Nội dung, nội dung, nội dung\" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn \"Lorem ipsum\" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
       "answers": [
         {
-          "content": "Aaaaaa",
+          "content": "Nguyễn Trãi là con của Nguyễn Phi Khanh",
           "isTrue": true
         },
         {
-          "content": "Bbbbb bbbb",
+          "content": "Ông tham gia khởi nghĩa Lam Sơn với vai trò rất lớn cạnh Lê Lợi.",
           "isTrue": false
         },
         {
-          "content": "Cccc ccccc, ccccccc",
+          "content": "Chốn quan trường đầy kẻ gièm pha, ông cáo quan về ở ẩn tại Côn Sơn",
           "isTrue": false
         },
         {
-          "content": "Ddddd dd d d d d d",
+          "content": "Ông bị giết hại một cách oan khốc và thảm thương vào năm 1442",
           "isTrue": false
         }
       ],
-      "result": "Aaaaaa",
-      "level": "D"
-    },
-    {
-      "idSubject": "01841773139583691",
-      "content": " hhhCó rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng. Trang web này sử dụng hơn 200 từ la-tinh, kết hợp thuần thục nhiều cấu trúc câu để tạo ra văn bản Lorem Ipsum trông có vẻ thật sự hợp lí. Nhờ thế, văn bản Lorem Ipsum được tạo ra mà không cần một sự lặp lại nào, cũng không cần chèn thêm các từ ngữ hóm hỉnh hay thiếu trật tự.",
-      "answers": [
-        {
-          "content": "2a2a2a2a2",
-          "isTrue": true
-        },
-        {
-          "content": "2b2b2b2b",
-          "isTrue": false
-        },
-        {
-          "content": "2c22c2c2c",
-          "isTrue": false
-        },
-        {
-          "content": "2d2d2d",
-          "isTrue": false
-        }
-      ],
-      "result": "2a2a2a2a2",
-      "level": "V"
-    },
-    {
-      "idSubject": "01841773139583691",
-      "content": " Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
-      "answers": [
-        {
-          "content": "3a3a3a3a3",
-          "isTrue": true
-        },
-        {
-          "content": "3b3b3b3b3",
-          "isTrue": false
-        },
-        {
-          "content": "rái với quan điểm chung của số đông, Lorem Ipsum không phải chỉ là một đoạn văn bản ngẫu nhiên. Người ta tìm thấy nguồn gốc của nó từ những tác phẩm văn học la-tinh cổ điển xuất hiện từ năm 45 trước Công Nguyên, nghĩa là nó đã có khoảng hơn 2000 tuổi. Một giáo sư của trường Hampden-Sydney College (bang Virginia - Mỹ) quan tâm tới một trong những từ la-tinh khó hiểu nhất, \"consectetur\", trích từ một đoạn của Lorem Ipsum, và đã nghiên cứu tất cả các ứng dụng của từ này trong văn học cổ điển, để từ đó tìm ra nguồn gốc k",
-          "isTrue": false
-        },
-        {
-          "content": "3d3d3d3d",
-          "isTrue": false
-        }
-      ],
-      "result": "3a3a3a3a3",
+      "content": "Trong các thông tin về sau, thông tin nào giúp em hiểu thêm về nội dung của văn bản \"Bài ca Côn Sơn\"?",
+      "id": "7c3c50a0-c543-41d5-80d2-4d159184e888",
+      "idSubject": "09b9f92c-8933-4e15-88b5-18a49a106ad0",
       "level": "K"
     },
     {
-      "idSubject": "1547611560432327",
-      "content": " Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu \"Nội dung, nội dung, nội dung\" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn \"Lorem ipsum\" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
       "answers": [
         {
-          "content": "Aaaaaa",
+          "content": "Cuối thế kỉ VI",
           "isTrue": true
         },
         {
-          "content": "Bbbbb bbbb",
+          "content": "Cuối thế kỉ V",
           "isTrue": false
         },
         {
-          "content": "Cccc ccccc, ccccccc",
+          "content": "Đầu thế kỉ V",
           "isTrue": false
         },
         {
-          "content": "Ddddd dd d d d d d",
+          "content": "Đầu thế kỉ IV",
           "isTrue": false
         }
       ],
-      "result": "Aaaaaa",
-      "level": "D"
-    },
-    {
-      "idSubject": "1547611560432327",
-      "content": " hhhCó rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng. Trang web này sử dụng hơn 200 từ la-tinh, kết hợp thuần thục nhiều cấu trúc câu để tạo ra văn bản Lorem Ipsum trông có vẻ thật sự hợp lí. Nhờ thế, văn bản Lorem Ipsum được tạo ra mà không cần một sự lặp lại nào, cũng không cần chèn thêm các từ ngữ hóm hỉnh hay thiếu trật tự.",
-      "answers": [
-        {
-          "content": "2a2a2a2a2",
-          "isTrue": true
-        },
-        {
-          "content": "2b2b2b2b",
-          "isTrue": false
-        },
-        {
-          "content": "2c22c2c2c",
-          "isTrue": false
-        },
-        {
-          "content": "2d2d2d",
-          "isTrue": false
-        }
-      ],
-      "result": "2a2a2a2a2",
-      "level": "V"
-    },
-    {
-      "idSubject": "1547611560432327",
-      "content": " Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
-      "answers": [
-        {
-          "content": "3a3a3a3a3",
-          "isTrue": true
-        },
-        {
-          "content": "3b3b3b3b3",
-          "isTrue": false
-        },
-        {
-          "content": "rái với quan điểm chung của số đông, Lorem Ipsum không phải chỉ là một đoạn văn bản ngẫu nhiên. Người ta tìm thấy nguồn gốc của nó từ những tác phẩm văn học la-tinh cổ điển xuất hiện từ năm 45 trước Công Nguyên, nghĩa là nó đã có khoảng hơn 2000 tuổi. Một giáo sư của trường Hampden-Sydney College (bang Virginia - Mỹ) quan tâm tới một trong những từ la-tinh khó hiểu nhất, \"consectetur\", trích từ một đoạn của Lorem Ipsum, và đã nghiên cứu tất cả các ứng dụng của từ này trong văn học cổ điển, để từ đó tìm ra nguồn gốc k",
-          "isTrue": false
-        },
-        {
-          "content": "3d3d3d3d",
-          "isTrue": false
-        }
-      ],
-      "result": "3a3a3a3a3",
+      "content": "Các quốc gia cổ đại phương Tây tồn tại đến thời gian nào thì bị bộ tộc Giéc-man tràn xuống xâm chiếm?",
+      "id": "dc2d3e96-30f8-40a5-b1a1-8b61746244bc",
+      "idSubject": "09b9f92c-8933-4e15-88b5-18a49a106ad0",
       "level": "K"
     },
     {
-      "idSubject": "4370921364821605",
-      "content": " Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu \"Nội dung, nội dung, nội dung\" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn \"Lorem ipsum\" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
       "answers": [
         {
-          "content": "Aaaaaa",
+          "content": "Nô lệ",
           "isTrue": true
         },
         {
-          "content": "Bbbbb bbbb",
+          "content": "Nông dân",
           "isTrue": false
         },
         {
-          "content": "Cccc ccccc, ccccccc",
+          "content": "Nô lệ và nông dân",
           "isTrue": false
         },
         {
-          "content": "Ddddd dd d d d d d",
+          "content": "Tướng lĩnh quân sự bị thất bại trong chiến tranh",
           "isTrue": false
         }
       ],
-      "result": "Aaaaaa",
-      "level": "D"
-    },
-    {
-      "idSubject": "4370921364821605",
-      "content": " hhhCó rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng. Trang web này sử dụng hơn 200 từ la-tinh, kết hợp thuần thục nhiều cấu trúc câu để tạo ra văn bản Lorem Ipsum trông có vẻ thật sự hợp lí. Nhờ thế, văn bản Lorem Ipsum được tạo ra mà không cần một sự lặp lại nào, cũng không cần chèn thêm các từ ngữ hóm hỉnh hay thiếu trật tự.",
-      "answers": [
-        {
-          "content": "2a2a2a2a2",
-          "isTrue": true
-        },
-        {
-          "content": "2b2b2b2b",
-          "isTrue": false
-        },
-        {
-          "content": "2c22c2c2c",
-          "isTrue": false
-        },
-        {
-          "content": "2d2d2d",
-          "isTrue": false
-        }
-      ],
-      "result": "2a2a2a2a2",
-      "level": "V"
-    },
-    {
-      "idSubject": "4370921364821605",
-      "content": " Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
-      "answers": [
-        {
-          "content": "3a3a3a3a3",
-          "isTrue": true
-        },
-        {
-          "content": "3b3b3b3b3",
-          "isTrue": false
-        },
-        {
-          "content": "rái với quan điểm chung của số đông, Lorem Ipsum không phải chỉ là một đoạn văn bản ngẫu nhiên. Người ta tìm thấy nguồn gốc của nó từ những tác phẩm văn học la-tinh cổ điển xuất hiện từ năm 45 trước Công Nguyên, nghĩa là nó đã có khoảng hơn 2000 tuổi. Một giáo sư của trường Hampden-Sydney College (bang Virginia - Mỹ) quan tâm tới một trong những từ la-tinh khó hiểu nhất, \"consectetur\", trích từ một đoạn của Lorem Ipsum, và đã nghiên cứu tất cả các ứng dụng của từ này trong văn học cổ điển, để từ đó tìm ra nguồn gốc k",
-          "isTrue": false
-        },
-        {
-          "content": "3d3d3d3d",
-          "isTrue": false
-        }
-      ],
-      "result": "3a3a3a3a3",
+      "content": "Nông nô xuất thân từ tầng lớp nào trong xã hội?",
+      "id": "5bc1d158-fe5a-4147-a4fa-b97784806466",
+      "idSubject": "09b9f92c-8933-4e15-88b5-18a49a106ad0",
       "level": "K"
     },
     {
-      "idSubject": "6052461920476833",
-      "content": " Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu \"Nội dung, nội dung, nội dung\" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn \"Lorem ipsum\" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
       "answers": [
         {
-          "content": "Aaaaaa",
+          "content": "nông nô",
           "isTrue": true
         },
         {
-          "content": "Bbbbb bbbb",
+          "content": "thợ thủ công",
           "isTrue": false
         },
         {
-          "content": "Cccc ccccc, ccccccc",
+          "content": "nông dân",
           "isTrue": false
         },
         {
-          "content": "Ddddd dd d d d d d",
+          "content": "thương nhân",
           "isTrue": false
         }
       ],
-      "result": "Aaaaaa",
-      "level": "D"
-    },
-    {
-      "idSubject": "6052461920476833",
-      "content": " hhhCó rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng. Trang web này sử dụng hơn 200 từ la-tinh, kết hợp thuần thục nhiều cấu trúc câu để tạo ra văn bản Lorem Ipsum trông có vẻ thật sự hợp lí. Nhờ thế, văn bản Lorem Ipsum được tạo ra mà không cần một sự lặp lại nào, cũng không cần chèn thêm các từ ngữ hóm hỉnh hay thiếu trật tự.",
-      "answers": [
-        {
-          "content": "2a2a2a2a2",
-          "isTrue": true
-        },
-        {
-          "content": "2b2b2b2b",
-          "isTrue": false
-        },
-        {
-          "content": "2c22c2c2c",
-          "isTrue": false
-        },
-        {
-          "content": "2d2d2d",
-          "isTrue": false
-        }
-      ],
-      "result": "2a2a2a2a2",
-      "level": "V"
-    },
-    {
-      "idSubject": "6052461920476833",
-      "content": " Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
-      "answers": [
-        {
-          "content": "3a3a3a3a3",
-          "isTrue": true
-        },
-        {
-          "content": "3b3b3b3b3",
-          "isTrue": false
-        },
-        {
-          "content": "rái với quan điểm chung của số đông, Lorem Ipsum không phải chỉ là một đoạn văn bản ngẫu nhiên. Người ta tìm thấy nguồn gốc của nó từ những tác phẩm văn học la-tinh cổ điển xuất hiện từ năm 45 trước Công Nguyên, nghĩa là nó đã có khoảng hơn 2000 tuổi. Một giáo sư của trường Hampden-Sydney College (bang Virginia - Mỹ) quan tâm tới một trong những từ la-tinh khó hiểu nhất, \"consectetur\", trích từ một đoạn của Lorem Ipsum, và đã nghiên cứu tất cả các ứng dụng của từ này trong văn học cổ điển, để từ đó tìm ra nguồn gốc k",
-          "isTrue": false
-        },
-        {
-          "content": "3d3d3d3d",
-          "isTrue": false
-        }
-      ],
-      "result": "3a3a3a3a3",
+      "content": "Trong lãnh địa phong kiến lực lượng sản xuất chính là",
+      "id": "b532b99d-4ca1-4dea-ac6a-0dc9c75f38fa",
+      "idSubject": "09b9f92c-8933-4e15-88b5-18a49a106ad0",
       "level": "K"
     },
     {
-      "idSubject": "6801109860673404",
-      "content": " Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu \"Nội dung, nội dung, nội dung\" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn \"Lorem ipsum\" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
       "answers": [
         {
-          "content": "Aaaaaa",
+          "content": "Đáp án A",
           "isTrue": true
         },
         {
-          "content": "Bbbbb bbbb",
+          "content": "Đáp án B",
           "isTrue": false
         },
         {
-          "content": "Cccc ccccc, ccccccc",
+          "content": "Đáp án C",
           "isTrue": false
         },
         {
-          "content": "Ddddd dd d d d d d",
+          "content": "Đáp án D",
           "isTrue": false
         }
       ],
-      "result": "Aaaaaa",
-      "level": "D"
-    },
-    {
-      "idSubject": "6801109860673404",
-      "content": " hhhCó rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng. Trang web này sử dụng hơn 200 từ la-tinh, kết hợp thuần thục nhiều cấu trúc câu để tạo ra văn bản Lorem Ipsum trông có vẻ thật sự hợp lí. Nhờ thế, văn bản Lorem Ipsum được tạo ra mà không cần một sự lặp lại nào, cũng không cần chèn thêm các từ ngữ hóm hỉnh hay thiếu trật tự.",
-      "answers": [
-        {
-          "content": "2a2a2a2a2",
-          "isTrue": true
-        },
-        {
-          "content": "2b2b2b2b",
-          "isTrue": false
-        },
-        {
-          "content": "2c22c2c2c",
-          "isTrue": false
-        },
-        {
-          "content": "2d2d2d",
-          "isTrue": false
-        }
-      ],
-      "result": "2a2a2a2a2",
-      "level": "V"
-    },
-    {
-      "idSubject": "6801109860673404",
-      "content": " Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
-      "answers": [
-        {
-          "content": "3a3a3a3a3",
-          "isTrue": true
-        },
-        {
-          "content": "3b3b3b3b3",
-          "isTrue": false
-        },
-        {
-          "content": "rái với quan điểm chung của số đông, Lorem Ipsum không phải chỉ là một đoạn văn bản ngẫu nhiên. Người ta tìm thấy nguồn gốc của nó từ những tác phẩm văn học la-tinh cổ điển xuất hiện từ năm 45 trước Công Nguyên, nghĩa là nó đã có khoảng hơn 2000 tuổi. Một giáo sư của trường Hampden-Sydney College (bang Virginia - Mỹ) quan tâm tới một trong những từ la-tinh khó hiểu nhất, \"consectetur\", trích từ một đoạn của Lorem Ipsum, và đã nghiên cứu tất cả các ứng dụng của từ này trong văn học cổ điển, để từ đó tìm ra nguồn gốc k",
-          "isTrue": false
-        },
-        {
-          "content": "3d3d3d3d",
-          "isTrue": false
-        }
-      ],
-      "result": "3a3a3a3a3",
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "ce7aa44d-b526-40ae-955b-7c463ee2b53a",
+      "idSubject": "09b9f92c-8933-4e15-88b5-18a49a106ad0",
       "level": "K"
     },
     {
-      "idSubject": "3212960223025334",
-      "content": " Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu \"Nội dung, nội dung, nội dung\" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn \"Lorem ipsum\" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
       "answers": [
         {
-          "content": "Aaaaaa",
+          "content": "Đáp án A",
           "isTrue": true
         },
         {
-          "content": "Bbbbb bbbb",
+          "content": "Đáp án B",
           "isTrue": false
         },
         {
-          "content": "Cccc ccccc, ccccccc",
+          "content": "Đáp án C",
           "isTrue": false
         },
         {
-          "content": "Ddddd dd d d d d d",
+          "content": "Đáp án D",
           "isTrue": false
         }
       ],
-      "result": "Aaaaaa",
-      "level": "D"
-    },
-    {
-      "idSubject": "3212960223025334",
-      "content": " hhhCó rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng. Trang web này sử dụng hơn 200 từ la-tinh, kết hợp thuần thục nhiều cấu trúc câu để tạo ra văn bản Lorem Ipsum trông có vẻ thật sự hợp lí. Nhờ thế, văn bản Lorem Ipsum được tạo ra mà không cần một sự lặp lại nào, cũng không cần chèn thêm các từ ngữ hóm hỉnh hay thiếu trật tự.",
-      "answers": [
-        {
-          "content": "2a2a2a2a2",
-          "isTrue": true
-        },
-        {
-          "content": "2b2b2b2b",
-          "isTrue": false
-        },
-        {
-          "content": "2c22c2c2c",
-          "isTrue": false
-        },
-        {
-          "content": "2d2d2d",
-          "isTrue": false
-        }
-      ],
-      "result": "2a2a2a2a2",
-      "level": "V"
-    },
-    {
-      "idSubject": "3212960223025334",
-      "content": " Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
-      "answers": [
-        {
-          "content": "3a3a3a3a3",
-          "isTrue": true
-        },
-        {
-          "content": "3b3b3b3b3",
-          "isTrue": false
-        },
-        {
-          "content": "rái với quan điểm chung của số đông, Lorem Ipsum không phải chỉ là một đoạn văn bản ngẫu nhiên. Người ta tìm thấy nguồn gốc của nó từ những tác phẩm văn học la-tinh cổ điển xuất hiện từ năm 45 trước Công Nguyên, nghĩa là nó đã có khoảng hơn 2000 tuổi. Một giáo sư của trường Hampden-Sydney College (bang Virginia - Mỹ) quan tâm tới một trong những từ la-tinh khó hiểu nhất, \"consectetur\", trích từ một đoạn của Lorem Ipsum, và đã nghiên cứu tất cả các ứng dụng của từ này trong văn học cổ điển, để từ đó tìm ra nguồn gốc k",
-          "isTrue": false
-        },
-        {
-          "content": "3d3d3d3d",
-          "isTrue": false
-        }
-      ],
-      "result": "3a3a3a3a3",
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "0a2e1f67-464f-440a-864b-228900426c98",
+      "idSubject": "09b9f92c-8933-4e15-88b5-18a49a106ad0",
       "level": "K"
     },
     {
-      "idSubject": "740742557852841",
-      "content": " Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu \"Nội dung, nội dung, nội dung\" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn \"Lorem ipsum\" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
       "answers": [
         {
-          "content": "Aaaaaa",
+          "content": "Nguyễn Trãi.",
           "isTrue": true
         },
         {
-          "content": "Bbbbb bbbb",
+          "content": "Nguyễn Khuyến.",
           "isTrue": false
         },
         {
-          "content": "Cccc ccccc, ccccccc",
+          "content": "Bà Huyện Thanh Quan.",
           "isTrue": false
         },
         {
-          "content": "Ddddd dd d d d d d",
+          "content": "Hồ Chí Minh",
           "isTrue": false
         }
       ],
-      "result": "Aaaaaa",
-      "level": "D"
-    },
-    {
-      "idSubject": "740742557852841",
-      "content": " hhhCó rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng. Trang web này sử dụng hơn 200 từ la-tinh, kết hợp thuần thục nhiều cấu trúc câu để tạo ra văn bản Lorem Ipsum trông có vẻ thật sự hợp lí. Nhờ thế, văn bản Lorem Ipsum được tạo ra mà không cần một sự lặp lại nào, cũng không cần chèn thêm các từ ngữ hóm hỉnh hay thiếu trật tự.",
-      "answers": [
-        {
-          "content": "2a2a2a2a2",
-          "isTrue": true
-        },
-        {
-          "content": "2b2b2b2b",
-          "isTrue": false
-        },
-        {
-          "content": "2c22c2c2c",
-          "isTrue": false
-        },
-        {
-          "content": "2d2d2d",
-          "isTrue": false
-        }
-      ],
-      "result": "2a2a2a2a2",
-      "level": "V"
-    },
-    {
-      "idSubject": "740742557852841",
-      "content": " Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
-      "answers": [
-        {
-          "content": "3a3a3a3a3",
-          "isTrue": true
-        },
-        {
-          "content": "3b3b3b3b3",
-          "isTrue": false
-        },
-        {
-          "content": "rái với quan điểm chung của số đông, Lorem Ipsum không phải chỉ là một đoạn văn bản ngẫu nhiên. Người ta tìm thấy nguồn gốc của nó từ những tác phẩm văn học la-tinh cổ điển xuất hiện từ năm 45 trước Công Nguyên, nghĩa là nó đã có khoảng hơn 2000 tuổi. Một giáo sư của trường Hampden-Sydney College (bang Virginia - Mỹ) quan tâm tới một trong những từ la-tinh khó hiểu nhất, \"consectetur\", trích từ một đoạn của Lorem Ipsum, và đã nghiên cứu tất cả các ứng dụng của từ này trong văn học cổ điển, để từ đó tìm ra nguồn gốc k",
-          "isTrue": false
-        },
-        {
-          "content": "3d3d3d3d",
-          "isTrue": false
-        }
-      ],
-      "result": "3a3a3a3a3",
+      "content": "Đoạn văn trên nói tới tác giả nào?",
+      "id": "b46d570b-db03-48b1-aa82-a90b6e3590c6",
+      "idSubject": "09b9f92c-8933-4e15-88b5-18a49a106ad0",
       "level": "K"
     },
     {
-      "idSubject": "5837727667541217",
-      "content": " Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu \"Nội dung, nội dung, nội dung\" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn \"Lorem ipsum\" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
       "answers": [
         {
-          "content": "Aaaaaa",
+          "content": "Một từ",
           "isTrue": true
         },
         {
-          "content": "Bbbbb bbbb",
+          "content": "Hai từ",
           "isTrue": false
         },
         {
-          "content": "Cccc ccccc, ccccccc",
+          "content": "Ba từ",
           "isTrue": false
         },
         {
-          "content": "Ddddd dd d d d d d",
+          "content": "Bốn từ",
           "isTrue": false
         }
       ],
-      "result": "Aaaaaa",
+      "content": "Câu văn \"Một con người ngay thẳng trung trực như ông không thể nào hoà nhập được.\" có mấy từ Hán Việt?",
+      "id": "2e961f56-322c-4e31-aa6e-8a1d79dd6f18",
+      "idSubject": "09b9f92c-8933-4e15-88b5-18a49a106ad0",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu \"Nội dung, nội dung, nội dung\" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn \"Lorem ipsum\" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
+      "id": "34a3d8da-d9fb-48c0-95c7-2ecddbe7b5c9",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
       "level": "D"
     },
     {
-      "idSubject": "5837727667541217",
-      "content": " hhhCó rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng. Trang web này sử dụng hơn 200 từ la-tinh, kết hợp thuần thục nhiều cấu trúc câu để tạo ra văn bản Lorem Ipsum trông có vẻ thật sự hợp lí. Nhờ thế, văn bản Lorem Ipsum được tạo ra mà không cần một sự lặp lại nào, cũng không cần chèn thêm các từ ngữ hóm hỉnh hay thiếu trật tự.",
       "answers": [
         {
-          "content": "2a2a2a2a2",
+          "content": "Đáp án A",
           "isTrue": true
         },
         {
-          "content": "2b2b2b2b",
+          "content": "Đáp án B",
           "isTrue": false
         },
         {
-          "content": "2c22c2c2c",
+          "content": "Đáp án C",
           "isTrue": false
         },
         {
-          "content": "2d2d2d",
+          "content": "Đáp án D",
           "isTrue": false
         }
       ],
-      "result": "2a2a2a2a2",
+      "content": "Có rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng. Trang web này sử dụng hơn 200 từ la-tinh, kết hợp thuần thục nhiều cấu trúc câu để tạo ra văn bản Lorem Ipsum trông có vẻ thật sự hợp lí. Nhờ thế, văn bản Lorem Ipsum được tạo ra mà không cần một sự lặp lại nào, cũng không cần chèn thêm các từ ngữ hóm hỉnh hay thiếu trật tự.",
+      "id": "6358e355-d4f7-4878-abfc-d73cdd65ad19",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
       "level": "V"
     },
     {
-      "idSubject": "5837727667541217",
-      "content": " Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
       "answers": [
         {
-          "content": "3a3a3a3a3",
+          "content": "Đáp án A",
           "isTrue": true
         },
         {
-          "content": "3b3b3b3b3",
+          "content": "Đáp án B",
           "isTrue": false
         },
         {
-          "content": "rái với quan điểm chung của số đông, Lorem Ipsum không phải chỉ là một đoạn văn bản ngẫu nhiên. Người ta tìm thấy nguồn gốc của nó từ những tác phẩm văn học la-tinh cổ điển xuất hiện từ năm 45 trước Công Nguyên, nghĩa là nó đã có khoảng hơn 2000 tuổi. Một giáo sư của trường Hampden-Sydney College (bang Virginia - Mỹ) quan tâm tới một trong những từ la-tinh khó hiểu nhất, \"consectetur\", trích từ một đoạn của Lorem Ipsum, và đã nghiên cứu tất cả các ứng dụng của từ này trong văn học cổ điển, để từ đó tìm ra nguồn gốc k",
+          "content": "Đáp án C",
           "isTrue": false
         },
         {
-          "content": "3d3d3d3d",
+          "content": "Đáp án D",
           "isTrue": false
         }
       ],
-      "result": "3a3a3a3a3",
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "df6bb5db-7b11-4ffc-8ca4-a9c8b4b02e01",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "833d3a95-f9dc-4d9b-91bf-4f8d66ed79fe",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Nguyễn Trãi.",
+          "isTrue": true
+        },
+        {
+          "content": "Nguyễn Khuyến.",
+          "isTrue": false
+        },
+        {
+          "content": "Bà Huyện Thanh Quan.",
+          "isTrue": false
+        },
+        {
+          "content": "Hồ Chí Minh",
+          "isTrue": false
+        }
+      ],
+      "content": "Đoạn văn trên nói tới tác giả nào?",
+      "id": "58ecce77-1e0a-4673-b99b-cccdd7afa953",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Một từ",
+          "isTrue": true
+        },
+        {
+          "content": "Hai từ",
+          "isTrue": false
+        },
+        {
+          "content": "Ba từ",
+          "isTrue": false
+        },
+        {
+          "content": "Bốn từ",
+          "isTrue": false
+        }
+      ],
+      "content": "Câu văn \"Một con người ngay thẳng trung trực như ông không thể nào hoà nhập được.\" có mấy từ Hán Việt?",
+      "id": "34c27101-e512-45c9-a314-ccf70de4bf9f",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Danh từ",
+          "isTrue": true
+        },
+        {
+          "content": "Động từ",
+          "isTrue": false
+        },
+        {
+          "content": "Tính từ",
+          "isTrue": false
+        },
+        {
+          "content": "Đại từ",
+          "isTrue": false
+        }
+      ],
+      "content": "Từ \"ông\" trong đoạn văn trên thuộc loại từ nào?",
+      "id": "73aad2f4-7449-4d80-9033-aec5d295b0ec",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Nguyễn Trãi là con của Nguyễn Phi Khanh",
+          "isTrue": true
+        },
+        {
+          "content": "Ông tham gia khởi nghĩa Lam Sơn với vai trò rất lớn cạnh Lê Lợi.",
+          "isTrue": false
+        },
+        {
+          "content": "Chốn quan trường đầy kẻ gièm pha, ông cáo quan về ở ẩn tại Côn Sơn",
+          "isTrue": false
+        },
+        {
+          "content": "Ông bị giết hại một cách oan khốc và thảm thương vào năm 1442",
+          "isTrue": false
+        }
+      ],
+      "content": "Trong các thông tin về sau, thông tin nào giúp em hiểu thêm về nội dung của văn bản \"Bài ca Côn Sơn\"?",
+      "id": "ebf8cbcf-5762-4edb-b20a-3f6b375c5e8a",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Cuối thế kỉ VI",
+          "isTrue": true
+        },
+        {
+          "content": "Cuối thế kỉ V",
+          "isTrue": false
+        },
+        {
+          "content": "Đầu thế kỉ V",
+          "isTrue": false
+        },
+        {
+          "content": "Đầu thế kỉ IV",
+          "isTrue": false
+        }
+      ],
+      "content": "Các quốc gia cổ đại phương Tây tồn tại đến thời gian nào thì bị bộ tộc Giéc-man tràn xuống xâm chiếm?",
+      "id": "a87420d6-e033-45b2-a8d3-fb300627c74e",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Nô lệ",
+          "isTrue": true
+        },
+        {
+          "content": "Nông dân",
+          "isTrue": false
+        },
+        {
+          "content": "Nô lệ và nông dân",
+          "isTrue": false
+        },
+        {
+          "content": "Tướng lĩnh quân sự bị thất bại trong chiến tranh",
+          "isTrue": false
+        }
+      ],
+      "content": "Nông nô xuất thân từ tầng lớp nào trong xã hội?",
+      "id": "c75f30a2-f9cd-4f4b-bca7-39366d06ee3b",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "nông nô",
+          "isTrue": true
+        },
+        {
+          "content": "thợ thủ công",
+          "isTrue": false
+        },
+        {
+          "content": "nông dân",
+          "isTrue": false
+        },
+        {
+          "content": "thương nhân",
+          "isTrue": false
+        }
+      ],
+      "content": "Trong lãnh địa phong kiến lực lượng sản xuất chính là",
+      "id": "cfecf44b-36ed-46aa-b4b9-c71d1c23640d",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "b2cfdd9b-1eee-4573-8e5b-377096e4c231",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "728df765-4b9a-4b93-9b8e-5b70cc886440",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Nguyễn Trãi.",
+          "isTrue": true
+        },
+        {
+          "content": "Nguyễn Khuyến.",
+          "isTrue": false
+        },
+        {
+          "content": "Bà Huyện Thanh Quan.",
+          "isTrue": false
+        },
+        {
+          "content": "Hồ Chí Minh",
+          "isTrue": false
+        }
+      ],
+      "content": "Đoạn văn trên nói tới tác giả nào?",
+      "id": "37e7c9b9-1c3f-4dfe-9886-93f322068fca",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Một từ",
+          "isTrue": true
+        },
+        {
+          "content": "Hai từ",
+          "isTrue": false
+        },
+        {
+          "content": "Ba từ",
+          "isTrue": false
+        },
+        {
+          "content": "Bốn từ",
+          "isTrue": false
+        }
+      ],
+      "content": "Câu văn \"Một con người ngay thẳng trung trực như ông không thể nào hoà nhập được.\" có mấy từ Hán Việt?",
+      "id": "1deb931b-1f78-4bdf-b6d7-4baecc8f64b3",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu \"Nội dung, nội dung, nội dung\" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn \"Lorem ipsum\" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
+      "id": "68ce63d6-3c3a-42ae-acbc-f90191a30f45",
+      "idSubject": "bfb36019-7ede-4e9a-ad96-fbb81a6b30b7",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Có rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng. Trang web này sử dụng hơn 200 từ la-tinh, kết hợp thuần thục nhiều cấu trúc câu để tạo ra văn bản Lorem Ipsum trông có vẻ thật sự hợp lí. Nhờ thế, văn bản Lorem Ipsum được tạo ra mà không cần một sự lặp lại nào, cũng không cần chèn thêm các từ ngữ hóm hỉnh hay thiếu trật tự.",
+      "id": "60c49363-2461-4f78-b92a-4fb27504e232",
+      "idSubject": "bfb36019-7ede-4e9a-ad96-fbb81a6b30b7",
+      "level": "V"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "4b2bd3fa-e420-4137-9df1-bc9664c166ab",
+      "idSubject": "bfb36019-7ede-4e9a-ad96-fbb81a6b30b7",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "4f505d80-e66b-4438-970a-05d274128cdc",
+      "idSubject": "bfb36019-7ede-4e9a-ad96-fbb81a6b30b7",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Nguyễn Trãi.",
+          "isTrue": true
+        },
+        {
+          "content": "Nguyễn Khuyến.",
+          "isTrue": false
+        },
+        {
+          "content": "Bà Huyện Thanh Quan.",
+          "isTrue": false
+        },
+        {
+          "content": "Hồ Chí Minh",
+          "isTrue": false
+        }
+      ],
+      "content": "Đoạn văn trên nói tới tác giả nào?",
+      "id": "3a3a418b-0e69-45f7-ad47-7d8fbefbde09",
+      "idSubject": "bfb36019-7ede-4e9a-ad96-fbb81a6b30b7",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Một từ",
+          "isTrue": true
+        },
+        {
+          "content": "Hai từ",
+          "isTrue": false
+        },
+        {
+          "content": "Ba từ",
+          "isTrue": false
+        },
+        {
+          "content": "Bốn từ",
+          "isTrue": false
+        }
+      ],
+      "content": "Câu văn \"Một con người ngay thẳng trung trực như ông không thể nào hoà nhập được.\" có mấy từ Hán Việt?",
+      "id": "78a40ecc-e272-4e12-b15a-c9df62613902",
+      "idSubject": "bfb36019-7ede-4e9a-ad96-fbb81a6b30b7",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Danh từ",
+          "isTrue": true
+        },
+        {
+          "content": "Động từ",
+          "isTrue": false
+        },
+        {
+          "content": "Tính từ",
+          "isTrue": false
+        },
+        {
+          "content": "Đại từ",
+          "isTrue": false
+        }
+      ],
+      "content": "Từ \"ông\" trong đoạn văn trên thuộc loại từ nào?",
+      "id": "32e51673-a618-4115-b40f-87c662a44550",
+      "idSubject": "bfb36019-7ede-4e9a-ad96-fbb81a6b30b7",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Nguyễn Trãi là con của Nguyễn Phi Khanh",
+          "isTrue": true
+        },
+        {
+          "content": "Ông tham gia khởi nghĩa Lam Sơn với vai trò rất lớn cạnh Lê Lợi.",
+          "isTrue": false
+        },
+        {
+          "content": "Chốn quan trường đầy kẻ gièm pha, ông cáo quan về ở ẩn tại Côn Sơn",
+          "isTrue": false
+        },
+        {
+          "content": "Ông bị giết hại một cách oan khốc và thảm thương vào năm 1442",
+          "isTrue": false
+        }
+      ],
+      "content": "Trong các thông tin về sau, thông tin nào giúp em hiểu thêm về nội dung của văn bản \"Bài ca Côn Sơn\"?",
+      "id": "9050f7af-f698-48ea-b858-40894cb53b7a",
+      "idSubject": "bfb36019-7ede-4e9a-ad96-fbb81a6b30b7",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Cuối thế kỉ VI",
+          "isTrue": true
+        },
+        {
+          "content": "Cuối thế kỉ V",
+          "isTrue": false
+        },
+        {
+          "content": "Đầu thế kỉ V",
+          "isTrue": false
+        },
+        {
+          "content": "Đầu thế kỉ IV",
+          "isTrue": false
+        }
+      ],
+      "content": "Các quốc gia cổ đại phương Tây tồn tại đến thời gian nào thì bị bộ tộc Giéc-man tràn xuống xâm chiếm?",
+      "id": "db9e3f20-f81b-4f9f-886b-01c3859fb13f",
+      "idSubject": "bfb36019-7ede-4e9a-ad96-fbb81a6b30b7",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Nô lệ",
+          "isTrue": true
+        },
+        {
+          "content": "Nông dân",
+          "isTrue": false
+        },
+        {
+          "content": "Nô lệ và nông dân",
+          "isTrue": false
+        },
+        {
+          "content": "Tướng lĩnh quân sự bị thất bại trong chiến tranh",
+          "isTrue": false
+        }
+      ],
+      "content": "Nông nô xuất thân từ tầng lớp nào trong xã hội?",
+      "id": "19b4cf2f-edca-428d-b822-41921970914b",
+      "idSubject": "bfb36019-7ede-4e9a-ad96-fbb81a6b30b7",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "nông nô",
+          "isTrue": true
+        },
+        {
+          "content": "thợ thủ công",
+          "isTrue": false
+        },
+        {
+          "content": "nông dân",
+          "isTrue": false
+        },
+        {
+          "content": "thương nhân",
+          "isTrue": false
+        }
+      ],
+      "content": "Trong lãnh địa phong kiến lực lượng sản xuất chính là",
+      "id": "a18f6023-c995-4036-a65e-3201738abc70",
+      "idSubject": "bfb36019-7ede-4e9a-ad96-fbb81a6b30b7",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "27cbfd5f-bc6c-41a0-b726-ac6c2879b946",
+      "idSubject": "bfb36019-7ede-4e9a-ad96-fbb81a6b30b7",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "313c12a5-ca9b-479e-9696-c1349dadbcf1",
+      "idSubject": "bfb36019-7ede-4e9a-ad96-fbb81a6b30b7",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Nguyễn Trãi.",
+          "isTrue": true
+        },
+        {
+          "content": "Nguyễn Khuyến.",
+          "isTrue": false
+        },
+        {
+          "content": "Bà Huyện Thanh Quan.",
+          "isTrue": false
+        },
+        {
+          "content": "Hồ Chí Minh",
+          "isTrue": false
+        }
+      ],
+      "content": "Đoạn văn trên nói tới tác giả nào?",
+      "id": "071d87ae-a5b2-4d3b-b9c2-59a4bb0c48a8",
+      "idSubject": "bfb36019-7ede-4e9a-ad96-fbb81a6b30b7",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Một từ",
+          "isTrue": true
+        },
+        {
+          "content": "Hai từ",
+          "isTrue": false
+        },
+        {
+          "content": "Ba từ",
+          "isTrue": false
+        },
+        {
+          "content": "Bốn từ",
+          "isTrue": false
+        }
+      ],
+      "content": "Câu văn \"Một con người ngay thẳng trung trực như ông không thể nào hoà nhập được.\" có mấy từ Hán Việt?",
+      "id": "e9896ebd-cfa7-4f9d-a3d9-bae0bbdd67d9",
+      "idSubject": "bfb36019-7ede-4e9a-ad96-fbb81a6b30b7",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "f5a5e940-66a1-42c0-a424-f1b570672a21",
+      "idSubject": "526498be-eb0a-4326-8dae-8115ca7c8bd6",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Nguyễn Trãi.",
+          "isTrue": true
+        },
+        {
+          "content": "Nguyễn Khuyến.",
+          "isTrue": false
+        },
+        {
+          "content": "Bà Huyện Thanh Quan.",
+          "isTrue": false
+        },
+        {
+          "content": "Hồ Chí Minh",
+          "isTrue": false
+        }
+      ],
+      "content": "Đoạn văn trên nói tới tác giả nào?",
+      "id": "e1ef6c66-570e-49eb-939a-3a97d994bded",
+      "idSubject": "526498be-eb0a-4326-8dae-8115ca7c8bd6",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Một từ",
+          "isTrue": true
+        },
+        {
+          "content": "Hai từ",
+          "isTrue": false
+        },
+        {
+          "content": "Ba từ",
+          "isTrue": false
+        },
+        {
+          "content": "Bốn từ",
+          "isTrue": false
+        }
+      ],
+      "content": "Câu văn \"Một con người ngay thẳng trung trực như ông không thể nào hoà nhập được.\" có mấy từ Hán Việt?",
+      "id": "17c9fe6b-2728-49f5-a8bd-a62b0be8f24a",
+      "idSubject": "526498be-eb0a-4326-8dae-8115ca7c8bd6",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Danh từ",
+          "isTrue": true
+        },
+        {
+          "content": "Động từ",
+          "isTrue": false
+        },
+        {
+          "content": "Tính từ",
+          "isTrue": false
+        },
+        {
+          "content": "Đại từ",
+          "isTrue": false
+        }
+      ],
+      "content": "Từ \"ông\" trong đoạn văn trên thuộc loại từ nào?",
+      "id": "2c8753b1-4429-41c1-88b1-69ead2f06e32",
+      "idSubject": "526498be-eb0a-4326-8dae-8115ca7c8bd6",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Nguyễn Trãi là con của Nguyễn Phi Khanh",
+          "isTrue": true
+        },
+        {
+          "content": "Ông tham gia khởi nghĩa Lam Sơn với vai trò rất lớn cạnh Lê Lợi.",
+          "isTrue": false
+        },
+        {
+          "content": "Chốn quan trường đầy kẻ gièm pha, ông cáo quan về ở ẩn tại Côn Sơn",
+          "isTrue": false
+        },
+        {
+          "content": "Ông bị giết hại một cách oan khốc và thảm thương vào năm 1442",
+          "isTrue": false
+        }
+      ],
+      "content": "Trong các thông tin về sau, thông tin nào giúp em hiểu thêm về nội dung của văn bản \"Bài ca Côn Sơn\"?",
+      "id": "83334680-c107-4a59-b192-c3bb3bf417a1",
+      "idSubject": "526498be-eb0a-4326-8dae-8115ca7c8bd6",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Cuối thế kỉ VI",
+          "isTrue": true
+        },
+        {
+          "content": "Cuối thế kỉ V",
+          "isTrue": false
+        },
+        {
+          "content": "Đầu thế kỉ V",
+          "isTrue": false
+        },
+        {
+          "content": "Đầu thế kỉ IV",
+          "isTrue": false
+        }
+      ],
+      "content": "Các quốc gia cổ đại phương Tây tồn tại đến thời gian nào thì bị bộ tộc Giéc-man tràn xuống xâm chiếm?",
+      "id": "118b1cfb-2d26-427f-9124-b3411030769b",
+      "idSubject": "526498be-eb0a-4326-8dae-8115ca7c8bd6",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Nô lệ",
+          "isTrue": true
+        },
+        {
+          "content": "Nông dân",
+          "isTrue": false
+        },
+        {
+          "content": "Nô lệ và nông dân",
+          "isTrue": false
+        },
+        {
+          "content": "Tướng lĩnh quân sự bị thất bại trong chiến tranh",
+          "isTrue": false
+        }
+      ],
+      "content": "Nông nô xuất thân từ tầng lớp nào trong xã hội?",
+      "id": "9cea886f-ea1d-450c-be58-d18fea1e379f",
+      "idSubject": "526498be-eb0a-4326-8dae-8115ca7c8bd6",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "nông nô",
+          "isTrue": true
+        },
+        {
+          "content": "thợ thủ công",
+          "isTrue": false
+        },
+        {
+          "content": "nông dân",
+          "isTrue": false
+        },
+        {
+          "content": "thương nhân",
+          "isTrue": false
+        }
+      ],
+      "content": "Trong lãnh địa phong kiến lực lượng sản xuất chính là",
+      "id": "86699d12-d8f8-4189-8003-6d07aeb48f0b",
+      "idSubject": "526498be-eb0a-4326-8dae-8115ca7c8bd6",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "f02f43ac-c060-432f-97b0-ffeebb042ccf",
+      "idSubject": "526498be-eb0a-4326-8dae-8115ca7c8bd6",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "3d1b93f2-d0f6-4d94-affa-bd0291004340",
+      "idSubject": "526498be-eb0a-4326-8dae-8115ca7c8bd6",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Nguyễn Trãi.",
+          "isTrue": true
+        },
+        {
+          "content": "Nguyễn Khuyến.",
+          "isTrue": false
+        },
+        {
+          "content": "Bà Huyện Thanh Quan.",
+          "isTrue": false
+        },
+        {
+          "content": "Hồ Chí Minh",
+          "isTrue": false
+        }
+      ],
+      "content": "Đoạn văn trên nói tới tác giả nào?",
+      "id": "0c25cedc-9ae4-4139-8acf-041edef66e7f",
+      "idSubject": "526498be-eb0a-4326-8dae-8115ca7c8bd6",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Một từ",
+          "isTrue": true
+        },
+        {
+          "content": "Hai từ",
+          "isTrue": false
+        },
+        {
+          "content": "Ba từ",
+          "isTrue": false
+        },
+        {
+          "content": "Bốn từ",
+          "isTrue": false
+        }
+      ],
+      "content": "Câu văn \"Một con người ngay thẳng trung trực như ông không thể nào hoà nhập được.\" có mấy từ Hán Việt?",
+      "id": "d442cc2c-ceea-4a09-b149-c5f38bc6a2ca",
+      "idSubject": "526498be-eb0a-4326-8dae-8115ca7c8bd6",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu \"Nội dung, nội dung, nội dung\" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn \"Lorem ipsum\" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
+      "id": "81d07183-5ead-40ff-b0e7-132236c3b9c0",
+      "idSubject": "093ac048-45b6-482b-9804-d2593b3137a5",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Có rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng. Trang web này sử dụng hơn 200 từ la-tinh, kết hợp thuần thục nhiều cấu trúc câu để tạo ra văn bản Lorem Ipsum trông có vẻ thật sự hợp lí. Nhờ thế, văn bản Lorem Ipsum được tạo ra mà không cần một sự lặp lại nào, cũng không cần chèn thêm các từ ngữ hóm hỉnh hay thiếu trật tự.",
+      "id": "86710c18-8fb4-42cc-af57-b95472a2cd90",
+      "idSubject": "093ac048-45b6-482b-9804-d2593b3137a5",
+      "level": "V"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "f96befee-3af5-4ca2-8178-ea599a7489be",
+      "idSubject": "093ac048-45b6-482b-9804-d2593b3137a5",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "8d07ac5f-04a5-4b7f-acdb-58a09b156e72",
+      "idSubject": "093ac048-45b6-482b-9804-d2593b3137a5",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Nô lệ",
+          "isTrue": true
+        },
+        {
+          "content": "Nông dân",
+          "isTrue": false
+        },
+        {
+          "content": "Nô lệ và nông dân",
+          "isTrue": false
+        },
+        {
+          "content": "Tướng lĩnh quân sự bị thất bại trong chiến tranh",
+          "isTrue": false
+        }
+      ],
+      "content": "Nông nô xuất thân từ tầng lớp nào trong xã hội?",
+      "id": "45204ca9-77b3-4193-b19f-1bf668fff402",
+      "idSubject": "093ac048-45b6-482b-9804-d2593b3137a5",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "nông nô",
+          "isTrue": true
+        },
+        {
+          "content": "thợ thủ công",
+          "isTrue": false
+        },
+        {
+          "content": "nông dân",
+          "isTrue": false
+        },
+        {
+          "content": "thương nhân",
+          "isTrue": false
+        }
+      ],
+      "content": "Trong lãnh địa phong kiến lực lượng sản xuất chính là",
+      "id": "ac49f7ba-1d5e-4d9b-8235-472c761421c2",
+      "idSubject": "093ac048-45b6-482b-9804-d2593b3137a5",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "00449338-be88-4d42-8c3e-93b57eb8f161",
+      "idSubject": "093ac048-45b6-482b-9804-d2593b3137a5",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "73faf3ee-1445-4f0a-95a0-4a796379d7a7",
+      "idSubject": "093ac048-45b6-482b-9804-d2593b3137a5",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Nguyễn Trãi.",
+          "isTrue": true
+        },
+        {
+          "content": "Nguyễn Khuyến.",
+          "isTrue": false
+        },
+        {
+          "content": "Bà Huyện Thanh Quan.",
+          "isTrue": false
+        },
+        {
+          "content": "Hồ Chí Minh",
+          "isTrue": false
+        }
+      ],
+      "content": "Đoạn văn trên nói tới tác giả nào?",
+      "id": "06ac19e5-515f-4683-988e-c4aab1d79864",
+      "idSubject": "093ac048-45b6-482b-9804-d2593b3137a5",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Một từ",
+          "isTrue": true
+        },
+        {
+          "content": "Hai từ",
+          "isTrue": false
+        },
+        {
+          "content": "Ba từ",
+          "isTrue": false
+        },
+        {
+          "content": "Bốn từ",
+          "isTrue": false
+        }
+      ],
+      "content": "Câu văn \"Một con người ngay thẳng trung trực như ông không thể nào hoà nhập được.\" có mấy từ Hán Việt?",
+      "id": "e9affae7-ddf7-4811-a292-6953daa5098e",
+      "idSubject": "093ac048-45b6-482b-9804-d2593b3137a5",
       "level": "K"
     },
     {

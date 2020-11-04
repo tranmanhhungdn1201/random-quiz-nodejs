@@ -17,32 +17,51 @@ function getSubject(req, res) {
 async function updateLoadedFile(req, res) {
     // conssole.log('qqqq', req.body);
     let body = req.body;
-    if (body.subjectId == 0) {
-        let subject = {
-            id: uuid.v4(),
-            name: body.subjectName,
-            slug: slugify(body.subjectName)
-        }
-        await db.get('subjects')
-            .push(subject)
-            .write()
-        let questions = body.questions.map(item => {
-            return {
-                answers: item.answers,
-                content: item.content,
-                id: item.id,
-                idSubject: subject.id,
-                level: item.level
+    try {
+        if (body.subjectId == 0) {
+            let subject = {
+                id: uuid.v4(),
+                name: body.subjectName,
+                slug: slugify(body.subjectName)
             }
+            await db.get('subjects')
+                .push(subject)
+                .write()
+            let questions = body.questions.map(item => {
+                return {
+                    answers: item.answers,
+                    content: item.content,
+                    id: item.id,
+                    idSubject: subject.id,
+                    level: item.level
+                }
+            })
+            await db.get('questions')
+                .push(...questions)
+                .write()
+            console.log(subject);
+        } else {
+            let questions = body.questions.map(item => {
+                return {
+                    answers: item.answers,
+                    content: item.content,
+                    id: item.id,
+                    idSubject: body.subjectId,
+                    level: item.level
+                }
+            })
+            await db.get('questions')
+                .push(...questions)
+                .write()
+        }
+        res.send({
+            status: 'OK'
         })
-        await db.get('questions')
-            .push(...questions)
-            .write()
-        console.log(subject);
-    } else {
-
+    } catch (error) {
+        res.send({
+            status: 'FAIL'
+        })
     }
-    res.send(req.body)
 }
 async function editUpload(req, res) {
     // let questions = await db.get('questions').filter({ idSubject: "0" }).value()

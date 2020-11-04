@@ -45,6 +45,7 @@
     flex-wrap: wrap;
     justify-content: center;
     &__Item {
+        text-decoration: none;
         width: 25%;
         height: 150px;
         margin: 10px;
@@ -52,6 +53,7 @@
         background: #001628;
         color: white;
         &:hover {
+            text-decoration: none;
             cursor: pointer;
             background: #010d18;
             border: 2px solid greenyellow;
