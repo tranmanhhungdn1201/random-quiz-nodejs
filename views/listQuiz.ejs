@@ -1,21 +1,24 @@
 <% include ./layout/header %>
+<% include ./modal/addNewQuestion %>
 <div class="container ListQuiz">
     <div class="row justify-content-between align-items-center">
         <div class="row Subject flex-column">
             <div class="SubjectTile">
                 <strong>Môn học:</strong> <%= subject.name %></strong>
+                <input type="hidden" id="subjectId" data-slug="<%=subject.slug %>" value="<%=subject.id %>">
             </div>
             <div class="SubjectInfo">
                 <ul class="list">
-                    <li>Tổng: 100 câu</li>
-                    <li>Câu dễ: 60 câu</li>
-                    <li>Câu khó: 20 câu</li>
-                    <li>Câu Trung bình: 20 câu</li>
+                    <li>Tổng: <%=numQuestion.num %> câu</li>
+                    <li>Câu dễ: <%=numQuestion.numE %> câu</li>
+                    <li>Câu trung bình: <%=numQuestion.numM %> câu</li>
+                    <li>Câu khó: <%=numQuestion.numH %> câu</li>
                 </ul>
             </div>
         </div>
         <div>
             <a href="#" class="btn btn-sm btn-dark"> Chỉnh sửa</a>
+            <a href="#" class="btn btn-sm btn-success ml-2" id="btnAddNewQuestion"> Thêm câu hỏi</a>
         </div>
     </div>
     <div class="ListQuiz__content">
@@ -72,4 +75,36 @@
             
     </div>
 </div>
+<script>
+    $('input[name="indexResult"]').on('change', function(){
+        $('input[name="indexResult"]').prop('checked', false);
+        $(this).prop('checked', true);
+    })
+
+    $('#btnAddNewQuestion').click(function(){
+        $('#FormNewQuestion').trigger('reset');
+        $('#modalAddNewQuestion').modal('show');
+    })
+
+    $('#btnSaveNewQuestion').click(function(){
+        const subjectSlug = $('#subjectId').attr('data-slug');
+        const url = `/${subjectSlug}/create`;
+        const data = $('#FormNewQuestion').serializeArray();
+        let dataObj = handleSerializeArrayToObj(data);
+        dataObj.subjectId = $('#subjectId').val();
+        dataObj.subjectSlug = subjectSlug;
+        const options = {   
+            method: 'POST',
+            url: url,
+            data: dataObj,
+            success: function(res){
+                console.log(res);
+            },
+            error: function(err){
+                console.log(err.message);
+            }
+        };
+        $.ajax(options);
+    })
+</script>
 <% include ./layout/footer %>

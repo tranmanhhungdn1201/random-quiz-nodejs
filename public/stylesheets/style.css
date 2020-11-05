@@ -4,7 +4,7 @@
 
 body {
     padding: 0px;
-    background: black;
+    background: #fafafa;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -16,17 +16,17 @@ a {
     height: 99%;
 }
 
-.modal-dialog {
+.modal-dialog.modal-large {
     width: 98%;
     height: 92%;
     padding: 0;
 }
 
 @media (min-width: 576px) {
-    .modal-dialog {
+    .modal-dialog.modal-large {
         min-width: 98% !important;
     }
     .modal-body {
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 }

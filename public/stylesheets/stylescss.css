@@ -91,5 +91,8 @@
 .ListQuiz .QuizItem ul li {
   padding: 10px 0; }
 
+#FormNewQuestion .listAnswer li {
+  margin: 10px 0; }
+
 .ListExam .ExamCard {
   margin: 15px 0; }

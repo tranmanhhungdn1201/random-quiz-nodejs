@@ -196,8 +196,8 @@
       "level": "D"
     },
     {
-      "idSubject": "028636780474413426",
-      "content": " Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu \"Nội dung, nội dung, nội dung\" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn \"Lorem ipsum\" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
+      "idSubject": "09b9f92c-8933-4e15-88b5-18a49a106ad0",
+      "content": "Từ \"ông\" trong đoạn văn trên thuộc loại từ nào?",
       "answers": [
         {
           "content": "Danh từ",
@@ -216,9 +216,7 @@
           "isTrue": false
         }
       ],
-      "content": "Từ \"ông\" trong đoạn văn trên thuộc loại từ nào?",
       "id": "b1653dce-3838-4dd0-8f3e-aebd3f639c18",
-      "idSubject": "09b9f92c-8933-4e15-88b5-18a49a106ad0",
       "level": "K"
     },
     {
@@ -1804,6 +1802,54 @@
       ],
       "result": "3a3a3a3a3",
       "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "1",
+          "isTrue": false
+        },
+        {
+          "content": "2",
+          "isTrue": false
+        },
+        {
+          "content": "3",
+          "isTrue": true
+        },
+        {
+          "content": "4",
+          "isTrue": false
+        }
+      ],
+      "content": "cau hoi moi",
+      "id": "73326cd3-69c7-47e2-abc7-4b128fc5726d",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "1",
+          "isTrue": false
+        },
+        {
+          "content": "2",
+          "isTrue": false
+        },
+        {
+          "content": "3",
+          "isTrue": true
+        },
+        {
+          "content": "4",
+          "isTrue": false
+        }
+      ],
+      "content": "cau hoi moi",
+      "id": "f9dd71b1-aaf5-4990-8b07-212f81e87ab7",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "D"
     }
   ]
 }
