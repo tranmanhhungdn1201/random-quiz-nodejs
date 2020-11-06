@@ -7,7 +7,6 @@ function splitQuestion(data, num) {
     let id = "0"; //uuid.v4();
     while (data.length > num) {
         let questionArr = data.splice(0, 5);
-        console.log('questionArr[0]', questionArr[0]);
         let regexExtract = /(^[DKV])*\(([DKV])\)(.*)/s.exec(questionArr[0])
 
         if (regexExtract) {

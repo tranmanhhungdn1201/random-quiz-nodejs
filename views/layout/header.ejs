@@ -131,12 +131,18 @@
                     `
                     $('#' + idElementInfo).html(htmlSubjectInfo)
                     let htmlQuestion = '';
+                    const LEVEL = {
+                        D: `<b style='color:green'>Dễ</b>`,
+                        V: `<b style='color:orange'>Vừa</b>`,
+                        K: `<b style='color:red'>Khó</b>`,
+                    }
                     dataArr.forEach((item, index) => {
+                        let level = LEVEL[item.level]
                                 htmlQuestion += `
                         <li class="list-group-item quiz Quizz" id="Quizz-${item.id}" data="${JSON.stringify(item).replaceAll('"', `\\\'`)}">
                                     <div class="QuizItem">
                                         <div class="quiz__content">
-                                            <h6 class="font-weight-bold">Câu ${index+1}. ${item.content}</h6>
+                                            <h6 class="font-weight-bold">Câu ${index+1}. ${item.content} ${level}</h6>
                                             <ul>
                                                 <li><b>A. ${item.answers[0].content}</b></li>
                                                 <li>B. ${item.answers[1].content}</li>
@@ -197,6 +203,7 @@
                                             if(response.status == 'OK'){
                                                 alert("Đã nhập file đề thành công")
                                                 $('#modalEditUpload').modal('hide')
+                                                location.reload();
                                             }
 
                                         } else {

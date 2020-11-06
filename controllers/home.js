@@ -19,7 +19,6 @@ async function getHomepage(req, res) {
             hard
         }
     })
-    console.log('subjectssss', subjects);
     res.render('index', { title: 'Express', subjects });
 }
 

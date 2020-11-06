@@ -8,35 +8,36 @@ const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('db.json')
 const db = low(adapter)
+var { cleanFileUploaded } = require('../helpers/clean')
 
 async function upload(req, res) {
-    console.log('fileee', req.file);
     let file = req.file;
     let filename = file.filename
     let subjects = await db.get('subjects').value();
     if (filename) {
         let questions = [];
-        var extracted = extractor.extract("files/de11.doc");
+        var extracted = extractor.extract(`files/uploads/${filename}`);
         extracted.then(async function(doc) {
             let data = doc.getBody().split(/\r?\n/);
             const dataFormat = splitQuestion(data, 5);
             const questionsDB = await db.get('questions').value()
             let countDuplicate = checkQuestionExistInDb(dataFormat, questionsDB)
                 // await db.get('questions').push(...dataFormat).write()
+
             res.send({
                 data: dataFormat,
                 countDuplicate,
                 subjects
             })
+            cleanFileUploaded();
         }).catch(err => {
-            console.log('eeee', err);
+            console.log('err', err);
             return res.send({
                 msg: "Xử lý thất bại",
                 err
             })
         });
     } else {
-        console.log('@3333');
         res.send({
             msg: "Chọn file thất bại"
         })
