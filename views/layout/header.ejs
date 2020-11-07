@@ -14,6 +14,7 @@
 <script src="/stylesheets/bootstrap.bundle.min.js"></script>
 
 <body>
+    <% include ../modal/confirmDestroy %>
     <div class="Container">
         <div class="Menu">
             <div class="Menu__Logo">
@@ -131,12 +132,24 @@
                     `
                     $('#' + idElementInfo).html(htmlSubjectInfo)
                     let htmlQuestion = '';
+                    let classLevel = {
+                        D: 'badge-success',
+                        V: 'badge-warning',
+                        K: 'badge-danger',
+                    }
+                    let nameLevel = {
+                        D: 'Dễ',
+                        V: 'Vừa',
+                        K: 'Khó',
+                    }
                     dataArr.forEach((item, index) => {
                                 htmlQuestion += `
                         <li class="list-group-item quiz Quizz" id="Quizz-${item.id}" data="${JSON.stringify(item).replaceAll('"', `\\\'`)}">
                                     <div class="QuizItem">
                                         <div class="quiz__content">
-                                            <h6 class="font-weight-bold">Câu ${index+1}. ${item.content}</h6>
+                                            <h6 class="font-weight-bold">Câu ${index+1}
+                                            <span class="badge ${classLevel[item.level] }">${nameLevel[item.level]}</span>
+                                                . ${item.content}</h6>
                                             <ul>
                                                 <li><b>A. ${item.answers[0].content}</b></li>
                                                 <li>B. ${item.answers[1].content}</li>

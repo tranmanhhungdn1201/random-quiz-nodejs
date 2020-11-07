@@ -418,39 +418,15 @@
           "isTrue": false
         },
         {
-          "content": "Đáp án D",
-          "isTrue": false
-        },
-        {
           "content": "Đáp án A",
           "isTrue": true
         },
-        {
-          "content": "Đáp án B",
-          "isTrue": false
-        }
-      ],
-      "content": "Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu \"Nội dung, nội dung, nội dung\" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn \"Lorem ipsum\" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
-      "id": "34a3d8da-d9fb-48c0-95c7-2ecddbe7b5c9",
-      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
-      "level": "D"
-    },
-    {
-      "answers": [
         {
           "content": "Đáp án D",
           "isTrue": false
         },
         {
           "content": "Đáp án B",
-          "isTrue": false
-        },
-        {
-          "content": "Đáp án A",
-          "isTrue": true
-        },
-        {
-          "content": "Đáp án C",
           "isTrue": false
         }
       ],
@@ -462,20 +438,20 @@
     {
       "answers": [
         {
-          "content": "Đáp án D",
+          "content": "Đáp án C",
           "isTrue": false
         },
         {
-          "content": "Đáp án A",
-          "isTrue": true
+          "content": "Đáp án D",
+          "isTrue": false
         },
         {
           "content": "Đáp án B",
           "isTrue": false
         },
         {
-          "content": "Đáp án C",
-          "isTrue": false
+          "content": "Đáp án A",
+          "isTrue": true
         }
       ],
       "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
@@ -486,6 +462,10 @@
     {
       "answers": [
         {
+          "content": "Đáp án D",
+          "isTrue": false
+        },
+        {
           "content": "Đáp án B",
           "isTrue": false
         },
@@ -495,10 +475,6 @@
         },
         {
           "content": "Đáp án C",
-          "isTrue": false
-        },
-        {
-          "content": "Đáp án D",
           "isTrue": false
         }
       ],
@@ -510,20 +486,20 @@
     {
       "answers": [
         {
-          "content": "Nguyễn Khuyến.",
-          "isTrue": false
+          "content": "Nguyễn Trãi.",
+          "isTrue": true
         },
         {
           "content": "Hồ Chí Minh",
           "isTrue": false
         },
         {
-          "content": "Bà Huyện Thanh Quan.",
+          "content": "Nguyễn Khuyến.",
           "isTrue": false
         },
         {
-          "content": "Nguyễn Trãi.",
-          "isTrue": true
+          "content": "Bà Huyện Thanh Quan.",
+          "isTrue": false
         }
       ],
       "content": "Đoạn văn trên nói tới tác giả nào?",
@@ -534,11 +510,11 @@
     {
       "answers": [
         {
-          "content": "Hai từ",
+          "content": "Bốn từ",
           "isTrue": false
         },
         {
-          "content": "Bốn từ",
+          "content": "Hai từ",
           "isTrue": false
         },
         {
@@ -558,11 +534,11 @@
     {
       "answers": [
         {
-          "content": "Động từ",
+          "content": "Tính từ",
           "isTrue": false
         },
         {
-          "content": "Tính từ",
+          "content": "Động từ",
           "isTrue": false
         },
         {
@@ -582,19 +558,19 @@
     {
       "answers": [
         {
-          "content": "Ông tham gia khởi nghĩa Lam Sơn với vai trò rất lớn cạnh Lê Lợi.",
-          "isTrue": false
-        },
-        {
-          "content": "Chốn quan trường đầy kẻ gièm pha, ông cáo quan về ở ẩn tại Côn Sơn",
-          "isTrue": false
-        },
-        {
           "content": "Nguyễn Trãi là con của Nguyễn Phi Khanh",
           "isTrue": true
         },
         {
+          "content": "Ông tham gia khởi nghĩa Lam Sơn với vai trò rất lớn cạnh Lê Lợi.",
+          "isTrue": false
+        },
+        {
           "content": "Ông bị giết hại một cách oan khốc và thảm thương vào năm 1442",
+          "isTrue": false
+        },
+        {
+          "content": "Chốn quan trường đầy kẻ gièm pha, ông cáo quan về ở ẩn tại Côn Sơn",
           "isTrue": false
         }
       ],
@@ -606,7 +582,7 @@
     {
       "answers": [
         {
-          "content": "Đầu thế kỉ IV",
+          "content": "Cuối thế kỉ V",
           "isTrue": false
         },
         {
@@ -614,11 +590,11 @@
           "isTrue": true
         },
         {
-          "content": "Cuối thế kỉ V",
+          "content": "Đầu thế kỉ V",
           "isTrue": false
         },
         {
-          "content": "Đầu thế kỉ V",
+          "content": "Đầu thế kỉ IV",
           "isTrue": false
         }
       ],
@@ -630,15 +606,15 @@
     {
       "answers": [
         {
-          "content": "Tướng lĩnh quân sự bị thất bại trong chiến tranh",
-          "isTrue": false
-        },
-        {
           "content": "Nô lệ",
           "isTrue": true
         },
         {
           "content": "Nông dân",
+          "isTrue": false
+        },
+        {
+          "content": "Tướng lĩnh quân sự bị thất bại trong chiến tranh",
           "isTrue": false
         },
         {
@@ -654,40 +630,40 @@
     {
       "answers": [
         {
-          "content": "thợ thủ công",
-          "isTrue": false
-        },
-        {
-          "content": "nông dân",
-          "isTrue": false
-        },
-        {
-          "content": "nông nô",
+          "content": "thương nhâna",
           "isTrue": true
         },
         {
-          "content": "thương nhân",
+          "content": "nông nôb",
+          "isTrue": false
+        },
+        {
+          "content": "nông dânc",
+          "isTrue": false
+        },
+        {
+          "content": "thợ thủ côngb",
           "isTrue": false
         }
       ],
-      "content": "Trong lãnh địa phong kiến lực lượng sản xuất chính là",
+      "content": "Trong lãnh địa phong kiến lực lượng sản xuất chính làaaaaaabbba",
       "id": "cfecf44b-36ed-46aa-b4b9-c71d1c23640d",
       "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
-      "level": "K"
+      "level": "D"
     },
     {
       "answers": [
         {
-          "content": "Đáp án A",
-          "isTrue": true
+          "content": "Đáp án D",
+          "isTrue": false
         },
         {
           "content": "Đáp án C",
           "isTrue": false
         },
         {
-          "content": "Đáp án D",
-          "isTrue": false
+          "content": "Đáp án A",
+          "isTrue": true
         },
         {
           "content": "Đáp án B",
@@ -702,10 +678,6 @@
     {
       "answers": [
         {
-          "content": "Đáp án D",
-          "isTrue": false
-        },
-        {
           "content": "Đáp án A",
           "isTrue": true
         },
@@ -715,6 +687,10 @@
         },
         {
           "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
           "isTrue": false
         }
       ],
@@ -734,11 +710,11 @@
           "isTrue": false
         },
         {
-          "content": "Hồ Chí Minh",
+          "content": "Bà Huyện Thanh Quan.",
           "isTrue": false
         },
         {
-          "content": "Bà Huyện Thanh Quan.",
+          "content": "Hồ Chí Minh",
           "isTrue": false
         }
       ],
@@ -750,20 +726,20 @@
     {
       "answers": [
         {
-          "content": "Ba từ",
+          "content": "Hai từ",
           "isTrue": false
-        },
-        {
-          "content": "Một từ",
-          "isTrue": true
         },
         {
           "content": "Bốn từ",
           "isTrue": false
         },
         {
-          "content": "Hai từ",
+          "content": "Ba từ",
           "isTrue": false
+        },
+        {
+          "content": "Một từ",
+          "isTrue": true
         }
       ],
       "content": "Câu văn \"Một con người ngay thẳng trung trực như ông không thể nào hoà nhập được.\" có mấy từ Hán Việt?",
@@ -1806,15 +1782,15 @@
     {
       "answers": [
         {
-          "content": "1",
-          "isTrue": false
-        },
-        {
           "content": "3",
           "isTrue": true
         },
         {
           "content": "2",
+          "isTrue": false
+        },
+        {
+          "content": "1",
           "isTrue": false
         },
         {
@@ -1838,11 +1814,11 @@
           "isTrue": true
         },
         {
-          "content": "4",
+          "content": "1",
           "isTrue": false
         },
         {
-          "content": "1",
+          "content": "4",
           "isTrue": false
         }
       ],
@@ -1858,15 +1834,15 @@
           "isTrue": false
         },
         {
+          "content": "d",
+          "isTrue": false
+        },
+        {
           "content": "b",
           "isTrue": true
         },
         {
           "content": "c",
-          "isTrue": false
-        },
-        {
-          "content": "d",
           "isTrue": false
         }
       ],
