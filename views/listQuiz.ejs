@@ -77,7 +77,7 @@
     <div class="d-flex align-items-center flex-column">
         <nav aria-label="...">
             <ul class="pagination">
-              <li class="<% if(page === 1) {%> disabled<%}%> page-item">
+              <li class="page-item disabled">
                 <a class="page-link" href="#" tabindex="-1" data-index="-1">Quay lại</a>
               </li>
               <% for(let i = 1; i < Math.ceil(totalPage/limit) + 1; i++) {
@@ -89,7 +89,7 @@
               <%}else{%>
                 <li class="page-item"><a class="page-link" data-index="<%=i %>" href="#"><%=i %></a></li>
               <%}}%>
-              <li class="<% if(Math.ceil(totalPage/limit) === page) {%> disabled<%}%> page-item">
+              <li class="page-item">
                 <a class="page-link" href="#" data-index="+1">Tiếp theo</a>
               </li>
             </ul>
@@ -137,10 +137,11 @@
         const limitIndex = document.location.search.indexOf('&limit=');
         const limit = document.location.search.slice(limitIndex + 7);
 
-        const pageCurrent = document.location.search.slice(6, limitIndex);
+        let pageCurrentIndex = document.location.search.indexOf('?page=');
+        const pageCurrent = document.location.search.slice(limitIndex + 6, limitIndex);
         let page = $(this).attr('data-index');
-        page = page  === '-1' ? +pageCurrent - 1 : page;
-        page = page  === '+1' ? +pageCurrent + 1 : page;
+        page = page  === '-1' ? pageCurrent - 1 : page;
+        page = page  === '+1' ? pageCurrent + 1 : page;
         const search = `?page=${page}&limit=${limit}`;
         document.location.href = '/subjects/Tam-ly-hoc' + search;
     })
