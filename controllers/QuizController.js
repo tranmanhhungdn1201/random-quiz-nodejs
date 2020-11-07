@@ -10,7 +10,7 @@ const question = [{"id":0,"content":0,"level":"k"},{"id":1,"content":1,"level":"
 
 async function list(req, res){
     let {page, limit} = req.query;
-    if(Number.isNaN(+page) && Number.isNaN(+limit)) {
+    if(page && limit && Number.isNaN(+page) && Number.isNaN(+limit)) {
         res.send('Error! 404');
     }
     page = !page ? 1 : +page;
