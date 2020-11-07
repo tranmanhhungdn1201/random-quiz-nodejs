@@ -262,4 +262,6 @@ router.get('/create-exam', quizController.getCreateExam);
 router.post('/create-exam', quizController.postCreateExam);
 router.get('/subjects/get-num/:subjectId', quizController.getNumQuestionInSubject);
 router.post('/subjects/:slug/create', quizController.createNewQuestion);
+router.post('/subjects/:slug/update', quizController.updateQuestion);
+router.post('/subjects/:slug/destroy', quizController.destroyQuestion);
 router.get('/subjects/:slug', quizController.list);

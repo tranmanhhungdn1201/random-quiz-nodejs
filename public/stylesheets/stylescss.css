@@ -74,6 +74,9 @@
   padding-top: 20px;
   list-style-type: none; }
 
+.ListQuiz .SubjectInfo .list li a:hover {
+  text-decoration: none; }
+
 .ListQuiz__content ul {
   list-style-type: none; }
 
@@ -91,7 +94,7 @@
 .ListQuiz .QuizItem ul li {
   padding: 10px 0; }
 
-#FormNewQuestion .listAnswer li {
+.FormQuestion .listAnswer li {
   margin: 10px 0; }
 
 .ListExam .ExamCard {
