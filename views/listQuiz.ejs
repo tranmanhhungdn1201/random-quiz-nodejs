@@ -78,6 +78,8 @@
         <nav aria-label="...">
             <ul class="pagination">
               <li class="page-item disabled">
+              <li class="<% if(page === 1) {%> disabled<%}%> page-item">
+              <li class="page-item disabled">
                 <a class="page-link" href="#" tabindex="-1" data-index="-1">Quay lại</a>
               </li>
               <% for(let i = 1; i < Math.ceil(totalPage/limit) + 1; i++) {
@@ -89,6 +91,8 @@
               <%}else{%>
                 <li class="page-item"><a class="page-link" data-index="<%=i %>" href="#"><%=i %></a></li>
               <%}}%>
+              <li class="page-item">
+              <li class="<% if(Math.ceil(totalPage/limit) === page) {%> disabled<%}%> page-item">
               <li class="page-item">
                 <a class="page-link" href="#" data-index="+1">Tiếp theo</a>
               </li>
