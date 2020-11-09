@@ -107,6 +107,10 @@
             padding-top: 20px;
             list-style-type: none;
         }
+
+        .list li a:hover {
+            text-decoration: none;
+        }
     }
     &__content ul {
         list-style-type: none;

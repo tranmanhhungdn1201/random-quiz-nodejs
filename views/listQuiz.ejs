@@ -10,10 +10,18 @@
             </div>
             <div class="SubjectInfo">
                 <ul class="list">
-                    <li>Tổng: <%=numQuestion.num %> câu</li>
-                    <li class="text-success">Câu dễ: <%=numQuestion.numE %> câu</li>
-                    <li class="text-warning">Câu trung bình: <%=numQuestion.numM %> câu</li>
-                    <li class="text-danger">Câu khó: <%=numQuestion.numH %> câu</li>
+                    <li data-level='A'>
+                        <a href="#">Tổng: <%=numQuestion.num %> câu</a>
+                    </li>
+                    <li data-level='D'>
+                        <a href="#" class="text-success">Câu dễ: <%=numQuestion.numE %> câu</a>
+                    </li>
+                    <li data-level='V'>
+                        <a href="#" class="text-warning">Câu trung bình: <%=numQuestion.numM %> câu</a>
+                    </li>
+                    <li data-level='K'>
+                        <a href="#" class="text-danger">Câu khó: <%=numQuestion.numH %> câu</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -93,7 +101,7 @@
               <li class="<% if(page === 1) {%> disabled <%}%> page-item">
                 <a class="page-link" href="#" tabindex="-1" data-index="-1">Quay lại</a>
               </li>
-              <% for(let i = 1; i < Math.ceil(totalPage/limit) + 1; i++) {
+              <% for(let i = 1; i < Math.ceil(totalQuestion/limit) + 1; i++) {
                     if(i === page) {
               %>
                 <li class="page-item active">
@@ -102,7 +110,7 @@
               <%}else{%>
                 <li class="page-item"><a class="page-link" data-index="<%=i %>" href="#"><%=i %></a></li>
               <%}}%>
-              <li class="<% if(Math.ceil(totalPage/limit) === page) {%> disabled<%}%> page-item">
+              <li class="<% if(Math.ceil(totalQuestion/limit) === page) {%> disabled<%}%> page-item">
                 <a class="page-link" href="#" data-index="+1">Tiếp theo</a>
               </li>
             </ul>
@@ -160,7 +168,7 @@
         page = page  === '-1' ? +pageCurrent - 1 : page;
         page = page  === '+1' ? +pageCurrent + 1 : page;
         const search = `?page=${page}&limit=${limit}`;
-        document.location.href = '/subjects/Tam-ly-hoc' + search;
+        document.location.href = document.location.pathname + search;
     })
 
     $('.btnEditQuestion').on('click', function(){
@@ -236,5 +244,36 @@
             destroyQuestion(idQuestion);
         });
     })
+
+    $('.SubjectInfo .list li').on('click', function(){
+        const level = $(this).attr('data-level');
+        let search = `level=${level}`;
+        let href = location.href;
+        if(href.includes('level=')){
+            href = href.replace(/level=[DVKA]/g, search)
+        }else if(href.includes('?')){
+            href = href + '&' + search
+        }else{
+            href = href + '?' + search
+        }
+        location.replace(href)
+        
+        // if(document.location.search) {
+        //     let indexLevel = document.location.search.indexOf('level');
+        //     if(indexLevel !== -1) {
+        //         let oldLevelFilter = document.location.search.slice(indexLevel + 6, indexLevel + 7);
+        //         search = document.location.search.replace(oldLevelFilter, search);
+        //         console.log('aaaa', oldLevelFilter);
+        //         console.log('bbbb', search);
+        //     } else {
+        //         search = '&' + search;
+        //         console.log('cccc', search);
+
+        //     }
+        // } else {
+        //     search = '?' + search;
+        // }
+        // document.location.href = document.location.pathname + search;
+    });
 </script>
 <% include ./layout/footer %>

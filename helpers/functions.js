@@ -101,11 +101,23 @@ function countTypeOfQuestions(questions) {
         hard
     }
 }
+
+// xoa dau trong tieng viet
+function removeAccents(str) {
+    return str.normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, '')
+              .replace(/đ/g, 'd').replace(/Đ/g, 'D')
+              .split('')
+              .map(letter => letter.toLowerCase())
+              .join('');
+}
+
 module.exports = {
     splitQuestion,
     shuffle,
     arr2Obj,
     checkQuestionExistInDb,
     getNumTypeQuestion,
-    countTypeOfQuestions
+    countTypeOfQuestions,
+    removeAccents
 }
