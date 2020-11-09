@@ -117,18 +117,20 @@
             const data = localStorage.getItem('exams');
             if(data && data[0].length) {
                 let dataF = JSON.parse(data)[id];
-                handleToHtmlModal(dataF);
+                handleToHtmlModal(dataF, id);
                 $('#btnPrintExam').attr('data-id', id);
             } else {
                 $('#btnPrintExam').attr('data-id', '');
             }
         });
 
-        function handleToHtmlModal(dataArr, idElementQuestion = 'ListQuestionPreview', idElementInfo = 'SubjectInfoPreview') {
+        function handleToHtmlModal(dataArr, index, idElementQuestion = 'ListQuestionPreview', idElementInfo = 'SubjectInfoPreview') {
             let total = dataArr.length;
             let numOfEasy = dataArr.filter(item => item.level == 'D').length
             let numOfMedium = dataArr.filter(item => item.level == 'V').length
             let numOfHard = dataArr.filter(item => item.level == 'K').length
+            let title = `Đề ${+index + 1}`;
+            $('#modalPreviewExam .modal-title').text(title);
             let htmlSubjectInfo = `
             <ul class="list">
                 <li><b>Tổng:</b> ${total} câu</li>
@@ -139,12 +141,24 @@
             `
             $('#' + idElementInfo).html(htmlSubjectInfo)
             let htmlQuestion = '';
+            let classLevel = {
+                D: 'badge-success',
+                V: 'badge-warning',
+                K: 'badge-danger',
+            }
+            let nameLevel = {
+                D: 'Dễ',
+                V: 'Vừa',
+                K: 'Khó',
+            }
             dataArr.forEach((item, index) => {
                 htmlQuestion += `
                 <li class="list-group-item quiz Quizz" id="Quizz-${item.id}" data="${JSON.stringify(item).replaceAll('"', `\\\'`)}">
                     <div class="QuizItem">
                         <div class="quiz__content">
-                            <h6 class="font-weight-bold">Câu ${index+1}. ${item.content}</h6>
+                            <h6 class="font-weight-bold">Câu ${index+1}
+                                <span class="badge ${classLevel[item.level] }">${nameLevel[item.level]}</span>
+                                . ${item.content}</h6>
                             <ul>
                                 <li class="${item.answers[0].isTrue ? 'text-danger' : ''}">A. ${item.answers[0].content}</li>
                                 <li class="${item.answers[1].isTrue ? 'text-danger' : ''}">B. ${item.answers[1].content}</li>
