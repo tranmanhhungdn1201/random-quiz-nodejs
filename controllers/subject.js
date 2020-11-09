@@ -4,19 +4,18 @@ const adapter = new FileSync('db.json')
 const db = low(adapter)
 const uuid = require('uuid')
 const slugify = require('slugify')
+var { checkQuestionExistInDb } = require('../helpers/functions')
 
 function getSubject(req, res) {
-    // let subjects = db.get('subjects')
-    //     .value()
-    // res.send(subjects)
-
     res.send({
         mon: req.params.slug
     })
 }
 async function updateLoadedFile(req, res) {
-    // conssole.log('qqqq', req.body);
     let body = req.body;
+    let questions = body.questions;
+    let questionsInDB = await db.get('questions').value();
+    let [countDuplicate, arrayQuestionDuplicate] = checkQuestionExistInDb(questions, questionsInDB)
     try {
         if (body.subjectId == 0) {
             let subject = {
@@ -39,8 +38,12 @@ async function updateLoadedFile(req, res) {
             await db.get('questions')
                 .push(...questions)
                 .write()
-            console.log(subject);
         } else {
+            await arrayQuestionDuplicate.forEach(async item=>{
+                if(item.idSubject == body.subjectId){
+                    await db.get('questions').remove({id: item.idQuestion}).write()
+                }
+            })
             let questions = body.questions.map(item => {
                 return {
                     answers: item.answers,

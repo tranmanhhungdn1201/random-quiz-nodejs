@@ -64,12 +64,17 @@ function arr2Obj(arr) {
 function checkQuestionExistInDb(questions, questionsDB) {
     let questionsObj = arr2Obj(questions)
     let countDuplicateQuestion = 0;
+    let arrayQuestionDuplicate = []
     questionsDB.forEach(item => {
         if (questionsObj[item.content]) {
             countDuplicateQuestion++;
+            arrayQuestionDuplicate.push({
+                idQuestion: item.id,
+                idSubject: item.idSubject
+            })
         }
     })
-    return countDuplicateQuestion;
+    return [countDuplicateQuestion, arrayQuestionDuplicate];
 }
 
 function getNumTypeQuestion(data){

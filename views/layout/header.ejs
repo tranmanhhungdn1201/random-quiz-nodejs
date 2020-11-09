@@ -143,7 +143,7 @@
                         K: 'Khó',
                     }
                     dataArr.forEach((item, index) => {
-                        let level = LEVEL[item.level]
+                        let level = nameLevel[item.level]
                                 htmlQuestion += `
                         <li class="list-group-item quiz Quizz" id="Quizz-${item.id}" data="${JSON.stringify(item).replaceAll('"', `\\\'`)}">
                                     <div class="QuizItem">

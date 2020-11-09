@@ -21,13 +21,13 @@ async function upload(req, res) {
             let data = doc.getBody().split(/\r?\n/);
             const dataFormat = splitQuestion(data, 5);
             const questionsDB = await db.get('questions').value()
-            let countDuplicate = checkQuestionExistInDb(dataFormat, questionsDB)
-                // await db.get('questions').push(...dataFormat).write()
+            let [countDuplicate, arrayQuestionDuplicate] = checkQuestionExistInDb(dataFormat, questionsDB)
 
             res.send({
                 data: dataFormat,
                 countDuplicate,
-                subjects
+                subjects,
+                arrayQuestionDuplicate
             })
             cleanFileUploaded();
         }).catch(err => {
