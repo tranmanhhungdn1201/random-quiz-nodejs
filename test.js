@@ -90,10 +90,42 @@ function makeTest(numOfTest, numOfEasy, numOfMedium, numOfHard, easies, mediums,
 }
 // let tests = makeTest(5, 10, 5, 5, easies, mediums, hards, [])
 // console.log('Deee', tests);
-let arr = [{"name":"subject","value":"5953400309730983"},{"name":"numOfExam","value":""},{"name":"numInExam","value":""},{"name":"numEasy","value":""},{"name":"numMedium","value":""},{"name":"numHard","value":""}];
-let arrF = arr.reduce((obj, item) => {
-  let name = item['name'];
-  obj[name] = item['value'];
-  return obj;
-}, {});
-console.log(arrF)
+// let arr = [{"name":"subject","value":"5953400309730983"},{"name":"numOfExam","value":""},{"name":"numInExam","value":""},{"name":"numEasy","value":""},{"name":"numMedium","value":""},{"name":"numHard","value":""}];
+// let arrF = arr.reduce((obj, item) => {
+//   let name = item['name'];
+//   obj[name] = item['value'];
+//   return obj;
+// }, {});
+// console.log(arrF)
+
+function makeQuestion(numOfTest, numOfQuestionInTest, arr){
+    let step = Math.floor(arr.length/numOfTest);
+    let test = [];
+    let start = 0
+    for(let i = 0; i < numOfTest; i++){
+        if(i !== 0) start += step
+        test.push(arr.filter((item, index) => {
+            if((start + numOfQuestionInTest) > arr.length){
+                return (index >= start && index<arr.length) || index < ((start + numOfQuestionInTest - arr.length))
+            }else{
+                return index >= start && index < (start+numOfQuestionInTest)
+            }
+        }))
+    }
+    return test;
+}
+
+function makeExams(numOfTest, numE, numM, numH, easies, mediums, hards){
+  let exams = [];
+  let es = make(numOfTest, numE, easies);
+  let md = make(numOfTest, numM, mediums);
+  let hd = make(numOfTest, numH, hards);
+  if(es.length !== md.length || es.length !== hd.length || md.length !== hd.length)
+    return []
+  for(let i = 0; i < numOfTest; i++){
+    exams = [...exams, [...es[i], ...md[i], ...hd[i]]];
+  }
+  return exams;
+}
+
+makeExam(4, 20, 10, 10, easies, mediums, hards);

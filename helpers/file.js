@@ -63,6 +63,36 @@ function makeTest(numOfTest, numOfEasy, numOfMedium, numOfHard, easies, mediums,
     }
 }
 
+function makeQuestion(numOfTest, numOfQuestionInTest, arr){
+  let step = Math.floor(arr.length/numOfTest);
+  let test = [];
+  let start = 0
+  for(let i = 0; i < numOfTest; i++){
+      if(i !== 0) start += step
+      test.push(arr.filter((item, index) => {
+          if((start + numOfQuestionInTest) > arr.length){
+              return (index >= start && index<arr.length) || index < ((start + numOfQuestionInTest - arr.length))
+          }else{
+              return index >= start && index < (start+numOfQuestionInTest)
+          }
+      }))
+  }
+  return test;
+}
+
+function makeExams(numOfTest, numE, numM, numH, easies, mediums, hards){
+  let exams = [];
+  let es = makeQuestion(numOfTest, numE, easies);
+  let md = makeQuestion(numOfTest, numM, mediums);
+  let hd = makeQuestion(numOfTest, numH, hards);
+  if(es.length !== md.length || es.length !== hd.length || md.length !== hd.length)
+    return []
+  for(let i = 0; i < numOfTest; i++){
+    exams = [...exams, shuffle([...es[i], ...md[i], ...hd[i]])];
+  }
+  return exams;
+}
+
 function shuffle(array) {
     let j, x, i;
     for (i = array.length - 1; i > 0; i--) {
@@ -76,5 +106,6 @@ function shuffle(array) {
 
 module.exports = {
     makeTest,
+    makeExams,
     shuffle
 }

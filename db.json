@@ -24,6 +24,11 @@
       "id": "093ac048-45b6-482b-9804-d2593b3137a5",
       "name": "Giáo dục học",
       "slug": "Giao-duc-hoc"
+    },
+    {
+      "id": "a2400611-cba9-4ed7-bb30-dbae579b455d",
+      "name": "ABCD",
+      "slug": "ABCD"
     }
   ],
   "questions": [
@@ -414,222 +419,6 @@
     {
       "answers": [
         {
-          "content": "Đáp án C",
-          "isTrue": false
-        },
-        {
-          "content": "Đáp án A",
-          "isTrue": true
-        },
-        {
-          "content": "Đáp án D",
-          "isTrue": false
-        },
-        {
-          "content": "Đáp án B",
-          "isTrue": false
-        }
-      ],
-      "content": "Có rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng. Trang web này sử dụng hơn 200 từ la-tinh, kết hợp thuần thục nhiều cấu trúc câu để tạo ra văn bản Lorem Ipsum trông có vẻ thật sự hợp lí. Nhờ thế, văn bản Lorem Ipsum được tạo ra mà không cần một sự lặp lại nào, cũng không cần chèn thêm các từ ngữ hóm hỉnh hay thiếu trật tự.",
-      "id": "6358e355-d4f7-4878-abfc-d73cdd65ad19",
-      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
-      "level": "V"
-    },
-    {
-      "answers": [
-        {
-          "content": "Đáp án C",
-          "isTrue": false
-        },
-        {
-          "content": "Đáp án D",
-          "isTrue": false
-        },
-        {
-          "content": "Đáp án B",
-          "isTrue": false
-        },
-        {
-          "content": "Đáp án A",
-          "isTrue": true
-        }
-      ],
-      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
-      "id": "df6bb5db-7b11-4ffc-8ca4-a9c8b4b02e01",
-      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
-      "level": "K"
-    },
-    {
-      "answers": [
-        {
-          "content": "Đáp án D",
-          "isTrue": false
-        },
-        {
-          "content": "Đáp án B",
-          "isTrue": false
-        },
-        {
-          "content": "Đáp án A",
-          "isTrue": true
-        },
-        {
-          "content": "Đáp án C",
-          "isTrue": false
-        }
-      ],
-      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
-      "id": "833d3a95-f9dc-4d9b-91bf-4f8d66ed79fe",
-      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
-      "level": "K"
-    },
-    {
-      "answers": [
-        {
-          "content": "Nguyễn Trãi.",
-          "isTrue": true
-        },
-        {
-          "content": "Hồ Chí Minh",
-          "isTrue": false
-        },
-        {
-          "content": "Nguyễn Khuyến.",
-          "isTrue": false
-        },
-        {
-          "content": "Bà Huyện Thanh Quan.",
-          "isTrue": false
-        }
-      ],
-      "content": "Đoạn văn trên nói tới tác giả nào?",
-      "id": "58ecce77-1e0a-4673-b99b-cccdd7afa953",
-      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
-      "level": "K"
-    },
-    {
-      "answers": [
-        {
-          "content": "Bốn từ",
-          "isTrue": false
-        },
-        {
-          "content": "Hai từ",
-          "isTrue": false
-        },
-        {
-          "content": "Một từ",
-          "isTrue": true
-        },
-        {
-          "content": "Ba từ",
-          "isTrue": false
-        }
-      ],
-      "content": "Câu văn \"Một con người ngay thẳng trung trực như ông không thể nào hoà nhập được.\" có mấy từ Hán Việt?",
-      "id": "34c27101-e512-45c9-a314-ccf70de4bf9f",
-      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
-      "level": "K"
-    },
-    {
-      "answers": [
-        {
-          "content": "Tính từ",
-          "isTrue": false
-        },
-        {
-          "content": "Động từ",
-          "isTrue": false
-        },
-        {
-          "content": "Danh từ",
-          "isTrue": true
-        },
-        {
-          "content": "Đại từ",
-          "isTrue": false
-        }
-      ],
-      "content": "Từ \"ông\" trong đoạn văn trên thuộc loại từ nào?",
-      "id": "73aad2f4-7449-4d80-9033-aec5d295b0ec",
-      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
-      "level": "K"
-    },
-    {
-      "answers": [
-        {
-          "content": "Nguyễn Trãi là con của Nguyễn Phi Khanh",
-          "isTrue": true
-        },
-        {
-          "content": "Ông tham gia khởi nghĩa Lam Sơn với vai trò rất lớn cạnh Lê Lợi.",
-          "isTrue": false
-        },
-        {
-          "content": "Ông bị giết hại một cách oan khốc và thảm thương vào năm 1442",
-          "isTrue": false
-        },
-        {
-          "content": "Chốn quan trường đầy kẻ gièm pha, ông cáo quan về ở ẩn tại Côn Sơn",
-          "isTrue": false
-        }
-      ],
-      "content": "Trong các thông tin về sau, thông tin nào giúp em hiểu thêm về nội dung của văn bản \"Bài ca Côn Sơn\"?",
-      "id": "ebf8cbcf-5762-4edb-b20a-3f6b375c5e8a",
-      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
-      "level": "K"
-    },
-    {
-      "answers": [
-        {
-          "content": "Cuối thế kỉ V",
-          "isTrue": false
-        },
-        {
-          "content": "Cuối thế kỉ VI",
-          "isTrue": true
-        },
-        {
-          "content": "Đầu thế kỉ V",
-          "isTrue": false
-        },
-        {
-          "content": "Đầu thế kỉ IV",
-          "isTrue": false
-        }
-      ],
-      "content": "Các quốc gia cổ đại phương Tây tồn tại đến thời gian nào thì bị bộ tộc Giéc-man tràn xuống xâm chiếm?",
-      "id": "a87420d6-e033-45b2-a8d3-fb300627c74e",
-      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
-      "level": "K"
-    },
-    {
-      "answers": [
-        {
-          "content": "Nô lệ",
-          "isTrue": true
-        },
-        {
-          "content": "Nông dân",
-          "isTrue": false
-        },
-        {
-          "content": "Tướng lĩnh quân sự bị thất bại trong chiến tranh",
-          "isTrue": false
-        },
-        {
-          "content": "Nô lệ và nông dân",
-          "isTrue": false
-        }
-      ],
-      "content": "Nông nô xuất thân từ tầng lớp nào trong xã hội?",
-      "id": "c75f30a2-f9cd-4f4b-bca7-39366d06ee3b",
-      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
-      "level": "K"
-    },
-    {
-      "answers": [
-        {
           "content": "thương nhâna",
           "isTrue": true
         },
@@ -650,102 +439,6 @@
       "id": "cfecf44b-36ed-46aa-b4b9-c71d1c23640d",
       "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
       "level": "D"
-    },
-    {
-      "answers": [
-        {
-          "content": "Đáp án D",
-          "isTrue": false
-        },
-        {
-          "content": "Đáp án C",
-          "isTrue": false
-        },
-        {
-          "content": "Đáp án A",
-          "isTrue": true
-        },
-        {
-          "content": "Đáp án B",
-          "isTrue": false
-        }
-      ],
-      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
-      "id": "b2cfdd9b-1eee-4573-8e5b-377096e4c231",
-      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
-      "level": "K"
-    },
-    {
-      "answers": [
-        {
-          "content": "Đáp án A",
-          "isTrue": true
-        },
-        {
-          "content": "Đáp án C",
-          "isTrue": false
-        },
-        {
-          "content": "Đáp án B",
-          "isTrue": false
-        },
-        {
-          "content": "Đáp án D",
-          "isTrue": false
-        }
-      ],
-      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
-      "id": "728df765-4b9a-4b93-9b8e-5b70cc886440",
-      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
-      "level": "K"
-    },
-    {
-      "answers": [
-        {
-          "content": "Nguyễn Trãi.",
-          "isTrue": true
-        },
-        {
-          "content": "Nguyễn Khuyến.",
-          "isTrue": false
-        },
-        {
-          "content": "Bà Huyện Thanh Quan.",
-          "isTrue": false
-        },
-        {
-          "content": "Hồ Chí Minh",
-          "isTrue": false
-        }
-      ],
-      "content": "Đoạn văn trên nói tới tác giả nào?",
-      "id": "37e7c9b9-1c3f-4dfe-9886-93f322068fca",
-      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
-      "level": "K"
-    },
-    {
-      "answers": [
-        {
-          "content": "Hai từ",
-          "isTrue": false
-        },
-        {
-          "content": "Bốn từ",
-          "isTrue": false
-        },
-        {
-          "content": "Ba từ",
-          "isTrue": false
-        },
-        {
-          "content": "Một từ",
-          "isTrue": true
-        }
-      ],
-      "content": "Câu văn \"Một con người ngay thẳng trung trực như ông không thể nào hoà nhập được.\" có mấy từ Hán Việt?",
-      "id": "1deb931b-1f78-4bdf-b6d7-4baecc8f64b3",
-      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
-      "level": "K"
     },
     {
       "answers": [
@@ -1850,6 +1543,726 @@
       "id": "7517c002-4efd-4f0b-b8a7-e70ae747b619",
       "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
       "level": "V"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu \"Nội dung, nội dung, nội dung\" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn \"Lorem ipsum\" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
+      "id": "ed9a90db-d684-419b-b66d-8bb2b1e80a8d",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Có rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng. Trang web này sử dụng hơn 200 từ la-tinh, kết hợp thuần thục nhiều cấu trúc câu để tạo ra văn bản Lorem Ipsum trông có vẻ thật sự hợp lí. Nhờ thế, văn bản Lorem Ipsum được tạo ra mà không cần một sự lặp lại nào, cũng không cần chèn thêm các từ ngữ hóm hỉnh hay thiếu trật tự.",
+      "id": "758e479b-41ad-4e54-a5ee-06701d4d214b",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "V"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "42f27306-45ad-4916-b687-c25565e4ea6f",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "b3f6bb3f-6ff0-40c5-83e8-c71bf47ccc8c",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Nguyễn Trãi.",
+          "isTrue": true
+        },
+        {
+          "content": "Nguyễn Khuyến.",
+          "isTrue": false
+        },
+        {
+          "content": "Bà Huyện Thanh Quan.",
+          "isTrue": false
+        },
+        {
+          "content": "Hồ Chí Minh",
+          "isTrue": false
+        }
+      ],
+      "content": "Đoạn văn trên nói tới tác giả nào?",
+      "id": "d5371c1d-d657-48c2-a9ef-e2c3b62092b3",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Một từ",
+          "isTrue": true
+        },
+        {
+          "content": "Hai từ",
+          "isTrue": false
+        },
+        {
+          "content": "Ba từ",
+          "isTrue": false
+        },
+        {
+          "content": "Bốn từ",
+          "isTrue": false
+        }
+      ],
+      "content": "Câu văn \"Một con người ngay thẳng trung trực như ông không thể nào hoà nhập được.\" có mấy từ Hán Việt?",
+      "id": "028664e4-18a0-4d5e-8484-15d59c0242b6",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Danh từ",
+          "isTrue": true
+        },
+        {
+          "content": "Động từ",
+          "isTrue": false
+        },
+        {
+          "content": "Tính từ",
+          "isTrue": false
+        },
+        {
+          "content": "Đại từ",
+          "isTrue": false
+        }
+      ],
+      "content": "Từ \"ông\" trong đoạn văn trên thuộc loại từ nào?",
+      "id": "deed768e-844f-4f60-a2b1-6135fbf63277",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Nguyễn Trãi là con của Nguyễn Phi Khanh",
+          "isTrue": true
+        },
+        {
+          "content": "Ông tham gia khởi nghĩa Lam Sơn với vai trò rất lớn cạnh Lê Lợi.",
+          "isTrue": false
+        },
+        {
+          "content": "Chốn quan trường đầy kẻ gièm pha, ông cáo quan về ở ẩn tại Côn Sơn",
+          "isTrue": false
+        },
+        {
+          "content": "Ông bị giết hại một cách oan khốc và thảm thương vào năm 1442",
+          "isTrue": false
+        }
+      ],
+      "content": "Trong các thông tin về sau, thông tin nào giúp em hiểu thêm về nội dung của văn bản \"Bài ca Côn Sơn\"?",
+      "id": "8544ebe3-837d-4bcf-a6f0-69ff9cdf0438",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Cuối thế kỉ VI",
+          "isTrue": true
+        },
+        {
+          "content": "Cuối thế kỉ V",
+          "isTrue": false
+        },
+        {
+          "content": "Đầu thế kỉ V",
+          "isTrue": false
+        },
+        {
+          "content": "Đầu thế kỉ IV",
+          "isTrue": false
+        }
+      ],
+      "content": "Các quốc gia cổ đại phương Tây tồn tại đến thời gian nào thì bị bộ tộc Giéc-man tràn xuống xâm chiếm?",
+      "id": "ce837df4-c80f-4286-a4fb-a722c02d7328",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Nô lệ",
+          "isTrue": true
+        },
+        {
+          "content": "Nông dân",
+          "isTrue": false
+        },
+        {
+          "content": "Nô lệ và nông dân",
+          "isTrue": false
+        },
+        {
+          "content": "Tướng lĩnh quân sự bị thất bại trong chiến tranh",
+          "isTrue": false
+        }
+      ],
+      "content": "Nông nô xuất thân từ tầng lớp nào trong xã hội?",
+      "id": "17f280f8-e8b2-4972-967b-b3d40a07c497",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "nông nô",
+          "isTrue": true
+        },
+        {
+          "content": "thợ thủ công",
+          "isTrue": false
+        },
+        {
+          "content": "nông dân",
+          "isTrue": false
+        },
+        {
+          "content": "thương nhân",
+          "isTrue": false
+        }
+      ],
+      "content": "Trong lãnh địa phong kiến lực lượng sản xuất chính là",
+      "id": "f9c17997-9bd9-4f78-b5ef-679f1ae3e420",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "4ec221cc-1268-4f34-b806-8235a668c92c",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "4af7434c-b27d-4f72-93e3-9096f7a88c0f",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Nguyễn Trãi.",
+          "isTrue": true
+        },
+        {
+          "content": "Nguyễn Khuyến.",
+          "isTrue": false
+        },
+        {
+          "content": "Bà Huyện Thanh Quan.",
+          "isTrue": false
+        },
+        {
+          "content": "Hồ Chí Minh",
+          "isTrue": false
+        }
+      ],
+      "content": "Đoạn văn trên nói tới tác giả nào?",
+      "id": "562bb832-d140-4e0d-a802-95dea728a066",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Một từ",
+          "isTrue": true
+        },
+        {
+          "content": "Hai từ",
+          "isTrue": false
+        },
+        {
+          "content": "Ba từ",
+          "isTrue": false
+        },
+        {
+          "content": "Bốn từ",
+          "isTrue": false
+        }
+      ],
+      "content": "Câu văn \"Một con người ngay thẳng trung trực như ông không thể nào hoà nhập được.\" có mấy từ Hán Việt?",
+      "id": "5879ca5a-d21e-4112-bd19-1e2111bb8b30",
+      "idSubject": "3fe4e213-3003-4325-8ea3-4e780084e13c",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        }
+      ],
+      "content": "Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu \"Nội dung, nội dung, nội dung\" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn \"Lorem ipsum\" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
+      "id": "b45bd79c-3724-4d69-9bd7-832164c3af83",
+      "idSubject": "a2400611-cba9-4ed7-bb30-dbae579b455d",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        }
+      ],
+      "content": "Có rất nhiều biến thể của Lorem Ipsum mà bạn có thể tìm thấy, nhưng đa số được biến đổi bằng cách thêm các yếu tố hài hước, các từ ngẫu nhiên có khi không có vẻ gì là có ý nghĩa. Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com trở thành công cụ sản xuất Lorem Ipsum đáng giá nhất trên mạng. Trang web này sử dụng hơn 200 từ la-tinh, kết hợp thuần thục nhiều cấu trúc câu để tạo ra văn bản Lorem Ipsum trông có vẻ thật sự hợp lí. Nhờ thế, văn bản Lorem Ipsum được tạo ra mà không cần một sự lặp lại nào, cũng không cần chèn thêm các từ ngữ hóm hỉnh hay thiếu trật tự.",
+      "id": "bd9c35ea-6ecc-45aa-be8e-7b085d8c3d8b",
+      "idSubject": "a2400611-cba9-4ed7-bb30-dbae579b455d",
+      "level": "V"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        }
+      ],
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "0472aa76-2c46-495a-aa6c-7882d0b72846",
+      "idSubject": "a2400611-cba9-4ed7-bb30-dbae579b455d",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "54d139b3-e507-4692-96b8-e0c0ac102ca9",
+      "idSubject": "a2400611-cba9-4ed7-bb30-dbae579b455d",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Nguyễn Khuyến.",
+          "isTrue": false
+        },
+        {
+          "content": "Bà Huyện Thanh Quan.",
+          "isTrue": false
+        },
+        {
+          "content": "Hồ Chí Minh",
+          "isTrue": false
+        },
+        {
+          "content": "Nguyễn Trãi.",
+          "isTrue": true
+        }
+      ],
+      "content": "Đoạn văn trên nói tới tác giả nào?",
+      "id": "1f71d747-7d1a-44b5-b060-1edbc7034371",
+      "idSubject": "a2400611-cba9-4ed7-bb30-dbae579b455d",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Bốn từ",
+          "isTrue": false
+        },
+        {
+          "content": "Ba từ",
+          "isTrue": false
+        },
+        {
+          "content": "Hai từ",
+          "isTrue": false
+        },
+        {
+          "content": "Một từ",
+          "isTrue": true
+        }
+      ],
+      "content": "Câu văn \"Một con người ngay thẳng trung trực như ông không thể nào hoà nhập được.\" có mấy từ Hán Việt?",
+      "id": "62c3cc0c-3e34-445f-b332-b3c8eedc992c",
+      "idSubject": "a2400611-cba9-4ed7-bb30-dbae579b455d",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đại từ",
+          "isTrue": false
+        },
+        {
+          "content": "Danh từ",
+          "isTrue": true
+        },
+        {
+          "content": "Động từ",
+          "isTrue": false
+        },
+        {
+          "content": "Tính từ",
+          "isTrue": false
+        }
+      ],
+      "content": "Từ \"ông\" trong đoạn văn trên thuộc loại từ nào?",
+      "id": "9f6466db-636b-4340-a8b6-c71e05064810",
+      "idSubject": "a2400611-cba9-4ed7-bb30-dbae579b455d",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Chốn quan trường đầy kẻ gièm pha, ông cáo quan về ở ẩn tại Côn Sơn",
+          "isTrue": false
+        },
+        {
+          "content": "Ông bị giết hại một cách oan khốc và thảm thương vào năm 1442",
+          "isTrue": false
+        },
+        {
+          "content": "Ông tham gia khởi nghĩa Lam Sơn với vai trò rất lớn cạnh Lê Lợi.",
+          "isTrue": false
+        },
+        {
+          "content": "Nguyễn Trãi là con của Nguyễn Phi Khanh",
+          "isTrue": true
+        }
+      ],
+      "content": "Trong các thông tin về sau, thông tin nào giúp em hiểu thêm về nội dung của văn bản \"Bài ca Côn Sơn\"?",
+      "id": "38e30dee-d57d-4489-b634-b761da0dbd56",
+      "idSubject": "a2400611-cba9-4ed7-bb30-dbae579b455d",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đầu thế kỉ V",
+          "isTrue": false
+        },
+        {
+          "content": "Đầu thế kỉ IV",
+          "isTrue": false
+        },
+        {
+          "content": "Cuối thế kỉ V",
+          "isTrue": false
+        },
+        {
+          "content": "Cuối thế kỉ VI",
+          "isTrue": true
+        }
+      ],
+      "content": "Các quốc gia cổ đại phương Tây tồn tại đến thời gian nào thì bị bộ tộc Giéc-man tràn xuống xâm chiếm?",
+      "id": "3e087c35-4fa2-4e30-8963-215c25eaaba4",
+      "idSubject": "a2400611-cba9-4ed7-bb30-dbae579b455d",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Nông dân",
+          "isTrue": false
+        },
+        {
+          "content": "Tướng lĩnh quân sự bị thất bại trong chiến tranh",
+          "isTrue": false
+        },
+        {
+          "content": "Nô lệ và nông dân",
+          "isTrue": false
+        },
+        {
+          "content": "Nô lệ",
+          "isTrue": true
+        }
+      ],
+      "content": "Nông nô xuất thân từ tầng lớp nào trong xã hội?",
+      "id": "953fd8e3-70c9-44d0-9185-ca238f4f88fb",
+      "idSubject": "a2400611-cba9-4ed7-bb30-dbae579b455d",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "nông nô",
+          "isTrue": true
+        },
+        {
+          "content": "thợ thủ công",
+          "isTrue": false
+        },
+        {
+          "content": "nông dân",
+          "isTrue": false
+        },
+        {
+          "content": "thương nhân",
+          "isTrue": false
+        }
+      ],
+      "content": "Trong lãnh địa phong kiến lực lượng sản xuất chính là",
+      "id": "da13795c-f4c0-442d-98c6-0daff7816796",
+      "idSubject": "a2400611-cba9-4ed7-bb30-dbae579b455d",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "41906aef-6319-4363-8194-f4478da976b5",
+      "idSubject": "a2400611-cba9-4ed7-bb30-dbae579b455d",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đáp án A",
+          "isTrue": true
+        },
+        {
+          "content": "Đáp án B",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án C",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án D",
+          "isTrue": false
+        }
+      ],
+      "content": "Nếu bạn định sử dụng một đoạn Lorem Ipsum, bạn nên kiểm tra kĩ để chắn chắn là không có gì nhạy cảm được giấu ở giữa đoạn văn bản. Tất cả các công cụ sản xuất văn bản mẫu Lorem Ipsum đều được làm theo cách lặp đi lặp lại các đoạn chữ cho tới đủ thì thôi, khiến cho lipsum.com",
+      "id": "9e3c8712-f315-439f-b959-4432dd6170d2",
+      "idSubject": "a2400611-cba9-4ed7-bb30-dbae579b455d",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Nguyễn Trãi.",
+          "isTrue": true
+        },
+        {
+          "content": "Nguyễn Khuyến.",
+          "isTrue": false
+        },
+        {
+          "content": "Bà Huyện Thanh Quan.",
+          "isTrue": false
+        },
+        {
+          "content": "Hồ Chí Minh",
+          "isTrue": false
+        }
+      ],
+      "content": "Đoạn văn trên nói tới tác giả nào?",
+      "id": "f5b7f249-eccc-4689-91cc-fc787ca6504b",
+      "idSubject": "a2400611-cba9-4ed7-bb30-dbae579b455d",
+      "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "Một từ",
+          "isTrue": true
+        },
+        {
+          "content": "Hai từ",
+          "isTrue": false
+        },
+        {
+          "content": "Ba từ",
+          "isTrue": false
+        },
+        {
+          "content": "Bốn từ",
+          "isTrue": false
+        }
+      ],
+      "content": "Câu văn \"Một con người ngay thẳng trung trực như ông không thể nào hoà nhập được.\" có mấy từ Hán Việt?",
+      "id": "2375ca7e-bff8-4366-a6b7-526ed97756a3",
+      "idSubject": "a2400611-cba9-4ed7-bb30-dbae579b455d",
+      "level": "K"
     }
   ]
 }

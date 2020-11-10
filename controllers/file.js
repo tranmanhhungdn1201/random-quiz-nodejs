@@ -8,7 +8,8 @@ const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('db.json')
 const db = low(adapter)
-var { cleanFileUploaded } = require('../helpers/clean')
+var { cleanFileUploaded } = require('../helpers/clean');
+const { type } = require('process');
 
 async function upload(req, res) {
     let file = req.file;
@@ -120,9 +121,16 @@ async function exportExam(req, res) {
         children: children
     });
     // Used to export the file into a .docx file
-    let buffer = await Packer.toBuffer(doc);
-    console.log('fileee', typeof buffer);
-    return res.send(buffer)
+    // Packer.toBuffer(doc).then((buffer) => {
+    //     // fs.writeFileSync("files/result.docx", buffer);
+    //     console.log(typeof buffer);
+    //    return res.json({buffer})
+    // });
+    Packer.toBase64String(doc).then((string) => {
+        return res.json({string})
+    });
+    // console.log('fileee', typeof buffer);
+    // return res.json(buffer)
     // res.download(file);
 }
 
