@@ -129,7 +129,6 @@ function createFileAnswer(data, index){
                     }),
                     new TextRun({
                         text: quiz.answers[3].content,
-                        bold: quiz.answers[3].isTrue ? true : false,
                         color: quiz.answers[3].isTrue ? "FF0000" : "000000"
                     }),
                 ],
