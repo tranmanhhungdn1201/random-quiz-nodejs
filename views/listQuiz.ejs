@@ -30,6 +30,11 @@
             <a href="#" class="btn btn-sm btn-success ml-2" id="btnAddNewQuestion"> Thêm câu hỏi</a>
         </div>
     </div>
+    <div class="row mt-2">
+        <div class="form-group d-flex align-items-center w-100">
+            <input type="text" class="form-control" placeholder="Tìm kiếm" id="searchBox">
+        </div>
+    </div>
     <div class="ListQuiz__content">
         <ul class="list-group list-group-flush">
             <% if(questions.length > 0) { %>
@@ -118,6 +123,27 @@
     </div>
 </div>
 <script>
+    $(document).ready(function(){
+        let search = document.location.search;
+        let indexLevel = search.indexOf('level=');
+        if(indexLevel !== -1) {
+            let level = search.slice(indexLevel + 6, indexLevel + 7);
+            let listLv = $('.SubjectInfo .list li');
+            for(let ele of listLv){
+                if($(ele).attr('data-level') === level){
+                    $(ele).css('background-color', '#faaeaea3');
+                } else {
+                    $(ele).css('background-color', '');
+                }
+            }
+
+        }
+        let indexFilter = search.indexOf('search=');
+        if(indexFilter !== -1){
+            $('#searchBox').val(decodeURIComponent(search.slice(indexFilter + 7)));
+        }
+    })
+
     $('input[name="indexResult"]').on('change', function(){
         $('input[name="indexResult"]').prop('checked', false);
         $(this).prop('checked', true);
@@ -268,12 +294,28 @@
         //     } else {
         //         search = '&' + search;
         //         console.log('cccc', search);
-
         //     }
         // } else {
         //     search = '?' + search;
         // }
         // document.location.href = document.location.pathname + search;
     });
+
+    $('#searchBox').on('change', function(){
+        let search = this.value;
+        if(document.location.search) {
+            let indexLevel = document.location.search.indexOf('level');
+            if(indexLevel !== -1) {
+                let oldLevelFilter = document.location.search.slice(indexLevel + 6, indexLevel + 7);
+                search = '?level=' + oldLevelFilter + '&search=' + search
+            } else {
+                search = '&search=' + search;
+            }
+        } else {
+            search = '?search=' + search;
+        }
+        console.log(document.location.pathname + search);
+        document.location.href = document.location.pathname + search;
+    })
 </script>
 <% include ./layout/footer %>

@@ -15,3 +15,22 @@ function handleSerializeArrayToObj(arr) {
         return obj;
     }, {});
 }
+
+function validateFile(file){
+    const extensionA = ['doc', 'docx'];
+    if(!file) return {
+        success: false,
+        message: 'Chưa chọn file.'
+    };
+    const indexDot = file.name.lastIndexOf('.');
+    const extFile = file.name.slice(indexDot + 1);
+    if(!extensionA.some(ext => ext === extFile)){
+        return {
+            success: false,
+            message: 'Không đúng định dạng file.'
+        }
+    }
+    return {
+        success: true,
+    }
+}

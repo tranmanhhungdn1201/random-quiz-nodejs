@@ -79,28 +79,33 @@
                     $('#file').on('change', () => {
                         var fd = new FormData();
                         var files = $('#file')[0].files;
+                        const check = validateFile(files[0]);
+                        if(!check.success){
+                            alert(check.message);
+                            return;
+                        }
                         if (files.length > 0) {
                             fd.append('file', files[0]);
 
-                            $.ajax({
-                                url: '/upload',
-                                type: 'post',
-                                data: fd,
-                                contentType: false,
-                                processData: false,
-                                success: async function(response) {
-                                    if (response != 0) {
-                                        await localStorage.removeItem("QuizzRandom")
-                                        await localStorage.setItem('QuizzRandom', JSON.stringify(response.data))
-                                            // location.href = '/sua-doi'
-                                        responseToHtmlModal(response.data, response.countDuplicate, response.subjects)
-                                        $('#modalEditUpload').modal('show')
+                            // $.ajax({
+                            //     url: '/upload',
+                            //     type: 'post',
+                            //     data: fd,
+                            //     contentType: false,
+                            //     processData: false,
+                            //     success: async function(response) {
+                            //         if (response != 0) {
+                            //             await localStorage.removeItem("QuizzRandom")
+                            //             await localStorage.setItem('QuizzRandom', JSON.stringify(response.data))
+                            //                 // location.href = '/sua-doi'
+                            //             responseToHtmlModal(response.data, response.countDuplicate, response.subjects)
+                            //             $('#modalEditUpload').modal('show')
 
-                                    } else {
-                                        alert('file not uploaded');
-                                    }
-                                },
-                            });
+                            //         } else {
+                            //             alert('file not uploaded');
+                            //         }
+                            //     },
+                            // });
                         } else {
                             alert("Please select a file.");
                         }
