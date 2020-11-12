@@ -1,6 +1,8 @@
 var docx4js = require('docx4js');
 var fs = require("fs");
-var { Document, Packer, Paragraph, TextRun, AlignmentType, HeadingLevel, Table, TableCell, TableRow} = require("docx");
+var { Document, Packer, Paragraph, TextRun, AlignmentType, HeadingLevel, Table, TableCell, TableRow, WidthType, BorderStyle} = require("docx");
+let a = require('docx')
+// console.log('aaa', a);
 var WordExtractor = require("word-extractor");
 var extractor = new WordExtractor();
 var { splitQuestion, checkQuestionExistInDb } = require('../helpers/functions')
@@ -63,8 +65,178 @@ async function exportExam(req, res) {
         stringA
     })
 }
+function findResult(answers){
+    let Answer = {
+        0: 'A',
+        1: 'B',
+        2: 'C',
+        3: 'D'
+    }
+    let index = answers.findIndex(item=>item.isTrue);
+    return Answer[index]
+    
+}
+function createTableHeader(data){
+    let table = [
+        new TableRow({
+            children: [
+                new TableCell({
+                    borders: {
+                        top: {
+                            style: BorderStyle.DOUBLE,
+                            size: 3,
+                            color: "black",
+                        },
+                        bottom: {
+                            style: BorderStyle.DOUBLE,
+                            size: 3,
+                            color: "black",
+                        },
+                        left: {
+                            style: BorderStyle.DOUBLE,
+                            size: 3,
+                            color: "black",
+                        },
+                        right: {
+                            style: BorderStyle.DOUBLE,
+                            size: 3,
+                            color: "black",
+                        },
+                    },
+                    width: {
+                        type: WidthType.PERCENTAGE,
+                        size: 50
+                    },
+                    alignment: AlignmentType.CENTER,
+                    children: [
+                        new Paragraph('\n'),
+                        new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            children: [
+                                new TextRun({
+                                    text: 'TRƯỜNG QUÂN SỰ QUÂN KHU 5\n',
+                                    size: 26
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            children: [
+                                new TextRun({
+                                    text: 'KHOA BINH CHỦNG THỰC HÀNH\n',
+                                    size: 26
+                                })
+                            ]
+                        }),
+                        new Paragraph('\n')
+                    ]
+                }),
+                new TableCell({
+                    borders: {
+                        top: {
+                            style: BorderStyle.DOUBLE,
+                            size: 3,
+                            color: "black",
+                        },
+                        bottom: {
+                            style: BorderStyle.DOUBLE,
+                            size: 3,
+                            color: "black",
+                        },
+                        left: {
+                            style: BorderStyle.DOUBLE,
+                            size: 3,
+                            color: "black",
+                        },
+                        right: {
+                            style: BorderStyle.DOUBLE,
+                            size: 3,
+                            color: "black",
+                        },
+                    },
+                    width: {
+                        type: WidthType.PERCENTAGE,
+                        size: 50
+                    },
+                    alignment: AlignmentType.CENTER,
+                    children: [
+                        new Paragraph('\n'),
+                        new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            children: [
+                                new TextRun({
+                                    text: 'Thi kết thúc môn: Bản đồ địa hình\n',
+                                    size: 26
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            children: [
+                                new TextRun({
+                                    text: 'Thời gian: 30 phút\n',
+                                    size: 26
+                                })
+                            ]
+                        }),
+                        new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            children: [
+                                new TextRun({
+                                    text: 'Lớp: SQDB từ SV TNDH2\n',
+                                    size: 26
+                                })
+                            ]
+                        }),
+                        new Paragraph('\n')
+                    ]
+                })
+            ],
+        })
+    ]
+    return table
+}
+
+function createTableAnswer(dataArr){
+    let cells = []
+    let rows = []
+    dataArr.forEach((item, index)=>{
+        cells.push(
+            new TableCell({
+                children: [
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: `  ${index+1}${findResult(item.answers)}\t`,
+                                bold: true,
+                                size: 26
+                            })
+                        ]
+                    }),
+                ], 
+            })
+        )
+        if((index === (dataArr.length-1)) && (cells.length !== 10)){
+            rows.push(new TableRow({
+                children: cells
+            }))
+            cells = []
+        }
+        if((index+1) % 10 === 0){
+            rows.push(new TableRow({
+                children: cells
+            }))
+            cells = []
+        }
+    })
+    return rows
+}
 
 function createFileAnswer(data, index){
+    const table = new Table({
+        rows: createTableAnswer(data)
+    });
+
     // Create document
     const doc = new Document();
     // Documents contain sections, you can have multiple sections per document, go here to learn more about sections
@@ -76,34 +248,38 @@ function createFileAnswer(data, index){
                     new TextRun({
                         text: `Câu ${i + 1}. `,
                         bold: true,
+                        size: 26
                     }),
                     new TextRun({
                         text: quiz.content,
-                        style: {
-                            size: 13
-                        }
+                        size: 26
                     }),
                 ],
+                alignment: AlignmentType.JUSTIFIED,
             }),
             new Paragraph({
                 children: [
                     new TextRun({
                         text: "  A. ",
                         bold: true,
+                        size: 26
                     }),
                     new TextRun({
                         text: quiz.answers[0].content,
-                        color: quiz.answers[0].isTrue ? "FF0000" : "000000"
+                        color: quiz.answers[0].isTrue ? "FF0000" : "000000",
+                        size: 26
                     }),
                 ],
             }),
             new Paragraph({
                 children: [
                     new TextRun({
+                        size: 26,
                         text: "  B. ",
                         bold: true,
                     }),
                     new TextRun({
+                        size: 26,
                         text: quiz.answers[1].content,
                         color: quiz.answers[1].isTrue ? "FF0000" : "000000"
                     }),
@@ -112,10 +288,12 @@ function createFileAnswer(data, index){
             new Paragraph({
                 children: [
                     new TextRun({
+                        size: 26,
                         text: "  C. ",
                         bold: true,
                     }),
                     new TextRun({
+                        size: 26,
                         text: quiz.answers[2].content,
                         color: quiz.answers[2].isTrue ? "FF0000" : "000000"
                     }),
@@ -124,10 +302,12 @@ function createFileAnswer(data, index){
             new Paragraph({
                 children: [
                     new TextRun({
+                        size: 26,
                         text: "  D. ",
                         bold: true,
                     }),
                     new TextRun({
+                        size: 26,
                         text: quiz.answers[3].content,
                         color: quiz.answers[3].isTrue ? "FF0000" : "000000"
                     }),
@@ -146,18 +326,28 @@ function createFileAnswer(data, index){
                 new TextRun({
                     text: `Đề ${+index + 1}`,
                     bold: true,
+                    size: 26
                 }),
             ],
             alignment: AlignmentType.CENTER,
             spacing: {
                 after: 200,
             },
-        })  
+        }) ,
+        table ,
+        new Paragraph({
+            children: [
+                new TextRun({
+                    text: '\n'
+                })
+            ]
+        })
     ]);
     doc.addSection({
         properties: {},
         children: children
     });
+
     // Used to export the file into a .docx file
     return Packer.toBase64String(doc).then((string) => {
         return string;
@@ -176,22 +366,26 @@ function createFileExam(data, index){
                     new TextRun({
                         text: `Câu ${i + 1}. `,
                         bold: true,
+                        size: 26
                     }),
                     new TextRun({
                         text: quiz.content,
-                        style: {
-                            size: 13
-                        }
+                        size: 26
                     }),
                 ],
+                alignment: AlignmentType.JUSTIFIED
             }),
             new Paragraph({
                 children: [
                     new TextRun({
                         text: "  A. ",
                         bold: true,
+                        size: 26
                     }),
-                    new TextRun(quiz.answers[0].content),
+                    new TextRun({
+                        text: quiz.answers[0].content,
+                        size: 26
+                    }),
                 ],
             }),
             new Paragraph({
@@ -199,8 +393,12 @@ function createFileExam(data, index){
                     new TextRun({
                         text: "  B. ",
                         bold: true,
+                        size: 26
                     }),
-                    new TextRun(quiz.answers[1].content),
+                    new TextRun({
+                        text: quiz.answers[1].content,
+                        size: 26
+                    }),
                 ],
             }),
             new Paragraph({
@@ -208,8 +406,12 @@ function createFileExam(data, index){
                     new TextRun({
                         text: "  C. ",
                         bold: true,
+                        size: 26
                     }),
-                    new TextRun(quiz.answers[2].content),
+                    new TextRun({
+                        text: quiz.answers[2].content,
+                        size: 26
+                    }),
                 ],
             }),
             new Paragraph({
@@ -217,8 +419,12 @@ function createFileExam(data, index){
                     new TextRun({
                         text: "  D. ",
                         bold: true,
+                        size: 26
                     }),
-                    new TextRun(quiz.answers[3].content),
+                    new TextRun({
+                        text: quiz.answers[3].content,
+                        size: 26
+                    }),
                 ],
             }),
             new Paragraph({
@@ -228,12 +434,16 @@ function createFileExam(data, index){
             })
         ];
     }, [
+        new Table({
+            rows: createTableHeader()
+        }),
+        new Paragraph('\n'),
         new Paragraph({
-            style: "size:20",
             children: [
                 new TextRun({
-                    text: `Đề ${+index + 1}`,
+                    text: `ĐỀ 0${+index + 1}`,
                     bold: true,
+                    size: 30
                 }),
             ],
             alignment: AlignmentType.CENTER,
@@ -252,8 +462,427 @@ function createFileExam(data, index){
     });
 }
 
+function createPage(req, res){
+
+    // Create document
+    const doc = new Document();
+
+    
+    const table = new Table({
+        rows: [
+            new TableRow({
+                children: [
+                    new TableCell({
+                        children: [new Paragraph("Hello")],
+                    }),
+                    new TableCell({
+                        children: [],
+                    }),
+                ],
+            }),
+            new TableRow({
+                children: [
+                    new TableCell({
+                        children: [],
+                    }),
+                    new TableCell({
+                        children: [new Paragraph("World")],
+                    }),
+                ],
+            }),
+        ],
+    });
+
+    doc.addSection({
+        children: [table],
+    });
+    // Documents contain sections, you can have multiple sections per document, go here to learn more about sections
+    // This simple example will only contain one section
+    doc.addSection({
+        properties: {},
+        children: [
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "Câu 1. ",
+                        bold: true,
+                    }),
+                    new TextRun({
+                        text: "Chúng ta vẫn biết rằng,(D) làm việc với một văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểutrên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
+                        style: "size:13"
+                    }),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  A. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  B. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  C. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  D. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun(" "),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "Câu 2. ",
+                        bold: true,
+                    }),
+                    new TextRun({
+                        text: "Chúng ta vẫn biết rằng,(D) làm việc với một văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểutrên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
+                        style: "size:13"
+                    }),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  A. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  B. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  C. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  D. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun(" "),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "Câu 3. ",
+                        bold: true,
+                    }),
+                    new TextRun({
+                        text: "Chúng ta vẫn biết rằng,(D) làm việc với một văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểutrên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
+                        style: "size:13"
+                    }),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  A. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  B. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  C. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  D. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun(" "),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "Câu 4. ",
+                        bold: true,
+                    }),
+                    new TextRun({
+                        text: "Chúng ta vẫn biết rằng,(D) làm việc với một văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểutrên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
+                        style: "size:13"
+                    }),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  A. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  B. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  C. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  D. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun(" "),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "Câu 5. ",
+                        bold: true,
+                    }),
+                    new TextRun({
+                        text: "Chúng ta vẫn biết rằng,(D) làm việc với một văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểutrên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
+                        style: "size:13"
+                    }),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  A. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  B. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  C. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  D. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun(" "),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "Câu 6. ",
+                        bold: true,
+                    }),
+                    new TextRun({
+                        text: "Chúng ta vẫn biết rằng,(D) làm việc với một văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểutrên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
+                        style: "size:13"
+                    }),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  A. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  B. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  C. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  D. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun(" "),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "Câu 7. ",
+                        bold: true,
+                    }),
+                    new TextRun({
+                        text: "Chúng ta vẫn biết rằng,(D) làm việc với một văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểutrên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
+                        style: "size:13"
+                    }),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  A. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  B. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  C. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  D. ",
+                        bold: true,
+                    }),
+                    new TextRun("Chúng ta vẫn biết rằng"),
+                ],
+            }),
+        ],
+    });
+
+    // Used to export the file into a .docx file
+    Packer.toBuffer(doc).then((buffer) => {
+        fs.writeFileSync("files/result.docx", buffer);
+    });
+
+    const file = `files/result.docx`;
+    res.download(file); // Set disposition and send it.
+
+}
+
 module.exports = {
     getView,
     exportExam,
-    upload
+    upload,
+    createPage
 }
