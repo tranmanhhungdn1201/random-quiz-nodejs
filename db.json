@@ -1907,31 +1907,31 @@
     {
       "answers": [
         {
-          "content": "Đáp án B",
-          "isTrue": false
+          "content": "Đáp án A",
+          "isTrue": true
         },
         {
           "content": "Đáp án D",
+          "isTrue": false
+        },
+        {
+          "content": "Đáp án B",
           "isTrue": false
         },
         {
           "content": "Đáp án C",
           "isTrue": false
-        },
-        {
-          "content": "Đáp án A",
-          "isTrue": true
         }
       ],
       "content": "Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản. Lorem Ipsum có ưu điểm hơn so với đoạn văn bản chỉ gồm nội dung kiểu \"Nội dung, nội dung, nội dung\" là nó khiến văn bản giống thật hơn, bình thường hơn. Nhiều phần mềm thiết kế giao diện web và dàn trang ngày nay đã sử dụng Lorem Ipsum làm đoạn văn bản giả, và nếu bạn thử tìm các đoạn \"Lorem ipsum\" trên mạng thì sẽ khám phá ra nhiều trang web hiện vẫn đang trong quá trình xây dựng. Có nhiều phiên bản khác nhau đã xuất hiện, đôi khi do vô tình, nhiều khi do cố ý (xen thêm vào những câu hài hước hay thông tục).",
       "id": "b45bd79c-3724-4d69-9bd7-832164c3af83",
       "idSubject": "a2400611-cba9-4ed7-bb30-dbae579b455d",
-      "level": "K"
+      "level": "D"
     },
     {
       "answers": [
         {
-          "content": "Đáp án B",
+          "content": "Đáp án D",
           "isTrue": false
         },
         {
@@ -1939,7 +1939,7 @@
           "isTrue": true
         },
         {
-          "content": "Đáp án D",
+          "content": "Đáp án B",
           "isTrue": false
         },
         {
@@ -1979,6 +1979,10 @@
     {
       "answers": [
         {
+          "content": "Đáp án D",
+          "isTrue": false
+        },
+        {
           "content": "Đáp án A",
           "isTrue": true
         },
@@ -1988,10 +1992,6 @@
         },
         {
           "content": "Đáp án B",
-          "isTrue": false
-        },
-        {
-          "content": "Đáp án D",
           "isTrue": false
         }
       ],
@@ -2003,8 +2003,8 @@
     {
       "answers": [
         {
-          "content": "Nguyễn Khuyến.",
-          "isTrue": false
+          "content": "Nguyễn Trãi.",
+          "isTrue": true
         },
         {
           "content": "Bà Huyện Thanh Quan.",
@@ -2015,8 +2015,8 @@
           "isTrue": false
         },
         {
-          "content": "Nguyễn Trãi.",
-          "isTrue": true
+          "content": "Nguyễn Khuyến.",
+          "isTrue": false
         }
       ],
       "content": "Đoạn văn trên nói tới tác giả nào?",
@@ -2027,20 +2027,20 @@
     {
       "answers": [
         {
-          "content": "Bốn từ",
-          "isTrue": false
-        },
-        {
           "content": "Ba từ",
-          "isTrue": false
-        },
-        {
-          "content": "Hai từ",
           "isTrue": false
         },
         {
           "content": "Một từ",
           "isTrue": true
+        },
+        {
+          "content": "Bốn từ",
+          "isTrue": false
+        },
+        {
+          "content": "Hai từ",
+          "isTrue": false
         }
       ],
       "content": "Câu văn \"Một con người ngay thẳng trung trực như ông không thể nào hoà nhập được.\" có mấy từ Hán Việt?",
@@ -2051,20 +2051,20 @@
     {
       "answers": [
         {
-          "content": "Đại từ",
+          "content": "Tính từ",
           "isTrue": false
-        },
-        {
-          "content": "Danh từ",
-          "isTrue": true
         },
         {
           "content": "Động từ",
           "isTrue": false
         },
         {
-          "content": "Tính từ",
+          "content": "Đại từ",
           "isTrue": false
+        },
+        {
+          "content": "Danh từ",
+          "isTrue": true
         }
       ],
       "content": "Từ \"ông\" trong đoạn văn trên thuộc loại từ nào?",
@@ -2075,20 +2075,20 @@
     {
       "answers": [
         {
-          "content": "Chốn quan trường đầy kẻ gièm pha, ông cáo quan về ở ẩn tại Côn Sơn",
-          "isTrue": false
-        },
-        {
           "content": "Ông bị giết hại một cách oan khốc và thảm thương vào năm 1442",
           "isTrue": false
         },
         {
-          "content": "Ông tham gia khởi nghĩa Lam Sơn với vai trò rất lớn cạnh Lê Lợi.",
+          "content": "Chốn quan trường đầy kẻ gièm pha, ông cáo quan về ở ẩn tại Côn Sơn",
           "isTrue": false
         },
         {
           "content": "Nguyễn Trãi là con của Nguyễn Phi Khanh",
           "isTrue": true
+        },
+        {
+          "content": "Ông tham gia khởi nghĩa Lam Sơn với vai trò rất lớn cạnh Lê Lợi.",
+          "isTrue": false
         }
       ],
       "content": "Trong các thông tin về sau, thông tin nào giúp em hiểu thêm về nội dung của văn bản \"Bài ca Côn Sơn\"?",
@@ -2099,20 +2099,20 @@
     {
       "answers": [
         {
-          "content": "Đầu thế kỉ V",
-          "isTrue": false
-        },
-        {
-          "content": "Đầu thế kỉ IV",
-          "isTrue": false
-        },
-        {
           "content": "Cuối thế kỉ V",
           "isTrue": false
         },
         {
           "content": "Cuối thế kỉ VI",
           "isTrue": true
+        },
+        {
+          "content": "Đầu thế kỉ V",
+          "isTrue": false
+        },
+        {
+          "content": "Đầu thế kỉ IV",
+          "isTrue": false
         }
       ],
       "content": "Các quốc gia cổ đại phương Tây tồn tại đến thời gian nào thì bị bộ tộc Giéc-man tràn xuống xâm chiếm?",
@@ -2127,16 +2127,16 @@
           "isTrue": false
         },
         {
+          "content": "Nô lệ",
+          "isTrue": true
+        },
+        {
           "content": "Tướng lĩnh quân sự bị thất bại trong chiến tranh",
           "isTrue": false
         },
         {
           "content": "Nô lệ và nông dân",
           "isTrue": false
-        },
-        {
-          "content": "Nô lệ",
-          "isTrue": true
         }
       ],
       "content": "Nông nô xuất thân từ tầng lớp nào trong xã hội?",

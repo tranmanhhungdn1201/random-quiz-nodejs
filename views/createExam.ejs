@@ -12,6 +12,7 @@
                         <%  subjects.forEach(function(sub) { %>
                             <option
                                 value='<%=sub.id%>'
+                                data-slug='<%=sub.slug%>'
                             >
                                 <%=sub.name %>
                             </option>
@@ -51,8 +52,8 @@
             </div>
             <div class="form-group row">
                 <div class="col-sm-10 justify-content-center d-flex">
-                    <button type="button" class="btn btn-primary btnCreateExam" data-type="1" title="Tạo đề giống nhau 30%">Tạo đề</button>
-                    <button type="button" class="btn btn-primary ml-2 btnCreateExam" data-type="2" title="Tạo đề">Tạo đề </button>
+                    <button type="button" class="btn btn-primary btnCreateExam" data-type="1" title="Tạo đề giống nhau 30%">Tạo đề chuẩn</button>
+                    <button type="button" class="btn btn-success ml-2 btnCreateExam" data-type="2" title="Tạo đề">Tạo đề bình thường </button>
                 </div>
             </div>
         </form>
@@ -78,7 +79,7 @@
                 success: (res) => {
                     $('.error-create').empty();
                     $('.error-create').css('display', 'none');
-                    if(res.success && res.exams[0].length){
+                    if(res.success && res.exams.length > 0 && res.exams[0].length){
                         localStorage.removeItem('exams');
                         localStorage.setItem('exams', JSON.stringify(res.exams));
                         createExam(res.exams);
@@ -105,7 +106,7 @@
                         <h6 class="card-subtitle mb-2 text-muted">Đề ${index + 1}</h6>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" class="card-link btn-preview-exam" data-id="${index}">Xem đề</a>
-                        <a href="#" class="card-link" data-id="${index}">In đề</a>
+                        <a href="#" class="card-link btn-print-exam" data-id="${index}">In đề</a>
                     </div>
                 </div>
             </div>`
@@ -179,6 +180,10 @@
 
         $('#btnPrintExam').click(function(e) {
             const id = $(this).attr('data-id');
+            printExam(id);
+        });
+        
+        function printExam(id) {
             if(!id) return;
 
             const data = localStorage.getItem('exams');
@@ -195,20 +200,37 @@
                 url: url,
                 responseType: 'buffer',
                 data: {
+                    index: id,
                     data: JSON.stringify(dataParse[id])
                 },
                 success: function (response) {
+                    const subSlug = $('#select-subject option:selected').attr('data-slug');
+                    const numExam = +id + 1;
+                    console.log('numExam', numExam);
+                    const fileName = `${subSlug}-de-${numExam}`;
                     const blob = converBase64toBlob(response.string, 'application/msword'); 
                     const blobURL = URL.createObjectURL(blob);
-                    window.open(blobURL);
+                    const a = document.createElement('a');
+                    a.href = blobURL;
+                    a.download = fileName;
+                    a.click();
+                    setTimeout(() => {
+                        window.URL.revokeObjectURL(blobURL);
+                        document.body.removeChild(a);
+                    }, 0)
                 },
                 error: (err) => {
                     console.log('Error: ' + err.message);
                 }
             }
             $.ajax(options);
-        });
-        
+        }
+
+        $('.container').on('click', '.btn-print-exam', function(){
+            const id = $(this).attr('data-id');
+            printExam(id);
+        })
+
         function converBase64toBlob(content, contentType) {
             contentType = contentType || '';
             var sliceSize = 512;
