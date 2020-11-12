@@ -1,6 +1,6 @@
 var docx4js = require('docx4js');
 var fs = require("fs");
-var { Document, Packer, Paragraph, TextRun } = require("docx");
+var { Document, Packer, Paragraph, TextRun, AlignmentType, HeadingLevel, Table, TableCell, TableRow} = require("docx");
 var WordExtractor = require("word-extractor");
 var extractor = new WordExtractor();
 var { splitQuestion, checkQuestionExistInDb } = require('../helpers/functions')
@@ -53,14 +53,24 @@ function getView(req, res) {
 }
 
 async function exportExam(req, res) {
-    console.log('exportExam');
+    const index = req.body.index;
+    const data = JSON.parse(req.body.data);
+    const string = await createFileExam(data, index);
+    const stringA = await createFileAnswer(data, index);
+
+    return res.json({
+        string,
+        stringA
+    })
+}
+
+function createFileAnswer(data, index){
     // Create document
     const doc = new Document();
-    const data = JSON.parse(req.body.data);
     // Documents contain sections, you can have multiple sections per document, go here to learn more about sections
     // This simple example will only contain one section
     const children = data.reduce((content, quiz, i) => {
-        return [...content,
+        return [...content,       
             new Paragraph({
                 children: [
                     new TextRun({
@@ -69,7 +79,110 @@ async function exportExam(req, res) {
                     }),
                     new TextRun({
                         text: quiz.content,
-                        style: "size:13"
+                        style: {
+                            size: 13
+                        }
+                    }),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  A. ",
+                        bold: true,
+                    }),
+                    new TextRun({
+                        text: quiz.answers[0].content,
+                        color: quiz.answers[0].isTrue ? "FF0000" : "000000"
+                    }),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  B. ",
+                        bold: true,
+                    }),
+                    new TextRun({
+                        text: quiz.answers[1].content,
+                        color: quiz.answers[1].isTrue ? "FF0000" : "000000"
+                    }),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  C. ",
+                        bold: true,
+                    }),
+                    new TextRun({
+                        text: quiz.answers[2].content,
+                        color: quiz.answers[2].isTrue ? "FF0000" : "000000"
+                    }),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: "  D. ",
+                        bold: true,
+                    }),
+                    new TextRun({
+                        text: quiz.answers[3].content,
+                        bold: quiz.answers[3].isTrue ? true : false,
+                        color: quiz.answers[3].isTrue ? "FF0000" : "000000"
+                    }),
+                ],
+            }),
+            new Paragraph({
+                children: [
+                    new TextRun(" "),
+                ],
+            })
+        ];
+    }, [
+        new Paragraph({
+            style: "size:20",
+            children: [
+                new TextRun({
+                    text: `Đề ${+index + 1}`,
+                    bold: true,
+                }),
+            ],
+            alignment: AlignmentType.CENTER,
+            spacing: {
+                after: 200,
+            },
+        })  
+    ]);
+    doc.addSection({
+        properties: {},
+        children: children
+    });
+    // Used to export the file into a .docx file
+    return Packer.toBase64String(doc).then((string) => {
+        return string;
+    });
+}
+
+function createFileExam(data, index){
+    // Create document
+    const doc = new Document();
+    // Documents contain sections, you can have multiple sections per document, go here to learn more about sections
+    // This simple example will only contain one section
+    const children = data.reduce((content, quiz, i) => {
+        return [...content,       
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: `Câu ${i + 1}. `,
+                        bold: true,
+                    }),
+                    new TextRun({
+                        text: quiz.content,
+                        style: {
+                            size: 13
+                        }
                     }),
                 ],
             }),
@@ -115,23 +228,29 @@ async function exportExam(req, res) {
                 ],
             })
         ];
-    }, []);
+    }, [
+        new Paragraph({
+            style: "size:20",
+            children: [
+                new TextRun({
+                    text: `Đề ${+index + 1}`,
+                    bold: true,
+                }),
+            ],
+            alignment: AlignmentType.CENTER,
+            spacing: {
+                after: 200,
+            },
+        })  
+    ]);
     doc.addSection({
         properties: {},
         children: children
     });
     // Used to export the file into a .docx file
-    // Packer.toBuffer(doc).then((buffer) => {
-    //     // fs.writeFileSync("files/result.docx", buffer);
-    //     console.log(typeof buffer);
-    //    return res.json({buffer})
-    // });
-    Packer.toBase64String(doc).then((string) => {
-        return res.json({string})
+    return Packer.toBase64String(doc).then((string) => {
+        return string;
     });
-    // console.log('fileee', typeof buffer);
-    // return res.json(buffer)
-    // res.download(file);
 }
 
 module.exports = {
