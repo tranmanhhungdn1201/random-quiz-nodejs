@@ -43,11 +43,12 @@ async function updateLoadedFile(req, res) {
                 .push(...questions)
                 .write()
         } else {
-            await arrayQuestionDuplicate.forEach(async item => {
-                if (item.idSubject == body.subjectId) {
-                    await db.get('questions').remove({ id: item.idQuestion }).write()
-                }
-            })
+            // await arrayQuestionDuplicate.forEach(async item => {
+            //     if (item.idSubject == body.subjectId) {
+            //         await db.get('questions').remove({ id: item.idQuestion }).write()
+            //     }
+            // })
+            await db.get('questions').remove({ idSubject: body.subjectId }).write()
             await db.get('subjects').find({ id: body.subjectId }).assign({
                 teacherName: body.teacherName,
                 createdAt: date,

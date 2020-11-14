@@ -191,54 +191,71 @@
                     if (subjectId == '0') {
                         subjectName = $('#ListSubject__Input>input').val();
                     }
-                    if((subjectId == '0' && subjectName !== "") || subjectId != '0'){
+
+                    let processApi = (teacherName) => {
+                       
+                            let questions = []
+                            let questionsHtml = $('.Quizz')
+
+                            if (questionsHtml) {
+                                questionsHtml.each((item) => {
+                                    let data = $(questionsHtml[item]).attr('data').replaceAll(`\\\'`, `"`)
+                                    data = JSON.parse(data)
+                                    questions.push(data)
+                                })
+                            }
+                            let formData = {
+                                subjectId,
+                                subjectName,
+                                questions,
+                                teacherName
+                            }
+                            console.log('aaaa', formData);
+
+                            $.ajax({
+                                        url: '/update-load-file',
+                                        type: 'post',
+                                        data: JSON.stringify(formData),
+                                        contentType: "application/json",
+                                        processData: false,
+                                        success: async function(response) {
+                                            if (response != 0) {
+                                                console.log('rrrrr', response);
+                                                if(response.status == 'OK'){
+                                                    alert("Đã nhập file đề thành công")
+                                                    $('#modalEditUpload').modal('hide')
+                                                    location.reload();
+                                                }
+
+                                            } else {
+                                                alert('file not uploaded');
+                                            }
+                                        },
+                                    });
+
+
+                            console.log('save'); 
+                       
+                    }
+                    if((subjectId == '0' && subjectName !== "")){
                         let teacherName = $('#Teacher__Input>input').val();
                         if(teacherName !== ""){
-                            let questions = []
-                        let questionsHtml = $('.Quizz')
-
-                        if (questionsHtml) {
-                            questionsHtml.each((item) => {
-                                let data = $(questionsHtml[item]).attr('data').replaceAll(`\\\'`, `"`)
-                                data = JSON.parse(data)
-                                questions.push(data)
-                            })
-                        }
-                        let formData = {
-                            subjectId,
-                            subjectName,
-                            questions,
-                            teacherName
-                        }
-                        console.log('aaaa', formData);
-
-                        $.ajax({
-                                    url: '/update-load-file',
-                                    type: 'post',
-                                    data: JSON.stringify(formData),
-                                    contentType: "application/json",
-                                    processData: false,
-                                    success: async function(response) {
-                                        if (response != 0) {
-                                            console.log('rrrrr', response);
-                                            if(response.status == 'OK'){
-                                                alert("Đã nhập file đề thành công")
-                                                $('#modalEditUpload').modal('hide')
-                                                location.reload();
-                                            }
-
-                                        } else {
-                                            alert('file not uploaded');
-                                        }
-                                    },
-                                });
-
-
-                        console.log('save');
+                            processApi(teacherName);
                         }else{
                             alert('Vui lòng nhập tên giáo viên')
                         }
-                    
+                    }else if(subjectId != '0'){
+                        let teacherName = $('#Teacher__Input>input').val();
+                        if(teacherName !== ""){
+                            let isReplace = confirm("Xóa bộ câu hỏi cũ và ghi đè?")
+                            if(isReplace){
+                                processApi(teacherName);
+                            }else{
+                                
+                            }
+                        }else{
+                            alert('Vui lòng nhập tên giáo viên')
+                        }
                     }else{
                         alert('Vui lòng nhập tên môn học')
                         // $('#subjectNameRequire').css('display', 'inline-block')
