@@ -19,4 +19,6 @@ router.post('/subjects/:slug/create', quizController.createNewQuestion);
 router.post('/subjects/:slug/update', quizController.updateQuestion);
 router.post('/subjects/:slug/destroy', quizController.destroyQuestion);
 router.get('/subjects/:slug', quizController.list);
+router.get('/page', fileController.createPage);
+
 module.exports = router;

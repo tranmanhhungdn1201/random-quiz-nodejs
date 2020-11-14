@@ -4,7 +4,7 @@ const adapter = new FileSync('db.json')
 const db = low(adapter)
 const uuid = require('uuid')
 const slugify = require('slugify')
-var { checkQuestionExistInDb } = require('../helpers/functions')
+var { checkQuestionExistInDb, dateToString } = require('../helpers/functions')
 
 function getSubject(req, res) {
     res.send({
@@ -15,13 +15,17 @@ async function updateLoadedFile(req, res) {
     let body = req.body;
     let questions = body.questions;
     let questionsInDB = await db.get('questions').value();
+    let date = new Date()
     let [countDuplicate, arrayQuestionDuplicate] = checkQuestionExistInDb(questions, questionsInDB)
     try {
         if (body.subjectId == 0) {
             let subject = {
                 id: uuid.v4(),
                 name: body.subjectName,
-                slug: slugify(body.subjectName)
+                slug: slugify(body.subjectName),
+                teacherName: body.teacherName,
+                createdAt: date,
+                createdAtString: dateToString(date)
             }
             await db.get('subjects')
                 .push(subject)
@@ -39,11 +43,16 @@ async function updateLoadedFile(req, res) {
                 .push(...questions)
                 .write()
         } else {
-            await arrayQuestionDuplicate.forEach(async item=>{
-                if(item.idSubject == body.subjectId){
-                    await db.get('questions').remove({id: item.idQuestion}).write()
+            await arrayQuestionDuplicate.forEach(async item => {
+                if (item.idSubject == body.subjectId) {
+                    await db.get('questions').remove({ id: item.idQuestion }).write()
                 }
             })
+            await db.get('subjects').find({ id: body.subjectId }).assign({
+                teacherName: body.teacherName,
+                createdAt: date,
+                createdAtString: dateToString(date)
+            }).write();
             let questions = body.questions.map(item => {
                 return {
                     answers: item.answers,
