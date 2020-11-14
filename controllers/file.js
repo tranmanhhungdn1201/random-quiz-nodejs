@@ -1,8 +1,7 @@
 var docx4js = require('docx4js');
 var fs = require("fs");
-var { Document, Packer, Paragraph, TextRun, AlignmentType, HeadingLevel, Table, TableCell, TableRow, WidthType, BorderStyle } = require("docx");
+var { Document, Packer, Paragraph, TextRun, AlignmentType, HeadingLevel, Table, TableCell, TableRow, WidthType, BorderStyle} = require("docx");
 let a = require('docx')
-    // console.log('aaa', a);
 var WordExtractor = require("word-extractor");
 var extractor = new WordExtractor();
 var { splitQuestion, checkQuestionExistInDb } = require('../helpers/functions')
@@ -56,8 +55,9 @@ function getView(req, res) {
 
 async function exportExam(req, res) {
     const index = req.body.index;
+    const subject = db.get('subjects').find({id: req.body.subjectId}).value();
     const data = JSON.parse(req.body.data);
-    const string = await createFileExam(data, index);
+    const string = await createFileExam(data, index, subject);
     const stringA = await createFileAnswer(data, index);
 
     return res.json({
@@ -66,19 +66,18 @@ async function exportExam(req, res) {
     })
 }
 
-function findResult(answers) {
+function findResult(answers){
     let Answer = {
         0: 'A',
         1: 'B',
         2: 'C',
         3: 'D'
     }
-    let index = answers.findIndex(item => item.isTrue);
+    let index = answers.findIndex(item=>item.isTrue);
     return Answer[index]
-
 }
 
-function createTableHeader(data) {
+function createTableHeader(subject){
     let table = [
         new TableRow({
             children: [
@@ -117,7 +116,7 @@ function createTableHeader(data) {
                             children: [
                                 new TextRun({
                                     text: 'TRƯỜNG QUÂN SỰ QUÂN KHU 5\n',
-                                    size: 26
+                                    size: 28
                                 })
                             ]
                         }),
@@ -125,8 +124,8 @@ function createTableHeader(data) {
                             alignment: AlignmentType.CENTER,
                             children: [
                                 new TextRun({
-                                    text: 'KHOA BINH CHỦNG THỰC HÀNH\n',
-                                    size: 26
+                                    text: 'KHOA ......\n',
+                                    size: 28
                                 })
                             ]
                         }),
@@ -167,8 +166,8 @@ function createTableHeader(data) {
                             alignment: AlignmentType.CENTER,
                             children: [
                                 new TextRun({
-                                    text: 'Thi kết thúc môn: Bản đồ địa hình\n',
-                                    size: 26
+                                    text: `Thi kết thúc môn: ${subject.name}\n`,
+                                    size: 28
                                 })
                             ]
                         }),
@@ -176,8 +175,8 @@ function createTableHeader(data) {
                             alignment: AlignmentType.CENTER,
                             children: [
                                 new TextRun({
-                                    text: 'Thời gian: 30 phút\n',
-                                    size: 26
+                                    text: 'Thời gian:.....\n',
+                                    size: 28
                                 })
                             ]
                         }),
@@ -185,8 +184,8 @@ function createTableHeader(data) {
                             alignment: AlignmentType.CENTER,
                             children: [
                                 new TextRun({
-                                    text: 'Lớp: SQDB từ SV TNDH2\n',
-                                    size: 26
+                                    text: 'Lớp:........\n',
+                                    size: 28
                                 })
                             ]
                         }),
@@ -199,10 +198,10 @@ function createTableHeader(data) {
     return table
 }
 
-function createTableAnswer(dataArr) {
+function createTableAnswer(dataArr){
     let cells = []
     let rows = []
-    dataArr.forEach((item, index) => {
+    dataArr.forEach((item, index)=>{
         cells.push(
             new TableCell({
                 children: [
@@ -211,20 +210,20 @@ function createTableAnswer(dataArr) {
                             new TextRun({
                                 text: `  ${index+1}${findResult(item.answers)}\t`,
                                 bold: true,
-                                size: 26
+                                size: 28
                             })
                         ]
                     }),
-                ],
+                ], 
             })
         )
-        if ((index === (dataArr.length - 1)) && (cells.length !== 10)) {
+        if((index === (dataArr.length-1)) && (cells.length !== 10)){
             rows.push(new TableRow({
                 children: cells
             }))
             cells = []
         }
-        if ((index + 1) % 10 === 0) {
+        if((index+1) % 10 === 0){
             rows.push(new TableRow({
                 children: cells
             }))
@@ -234,7 +233,7 @@ function createTableAnswer(dataArr) {
     return rows
 }
 
-function createFileAnswer(data, index) {
+function createFileAnswer(data, index){
     const table = new Table({
         rows: createTableAnswer(data)
     });
@@ -250,11 +249,11 @@ function createFileAnswer(data, index) {
                     new TextRun({
                         text: `Câu ${i + 1}. `,
                         bold: true,
-                        size: 26
+                        size: 28
                     }),
                     new TextRun({
                         text: quiz.content,
-                        size: 26
+                        size: 28
                     }),
                 ],
                 alignment: AlignmentType.JUSTIFIED,
@@ -264,24 +263,24 @@ function createFileAnswer(data, index) {
                     new TextRun({
                         text: "  A. ",
                         bold: true,
-                        size: 26
+                        size: 28
                     }),
                     new TextRun({
                         text: quiz.answers[0].content,
                         color: quiz.answers[0].isTrue ? "FF0000" : "000000",
-                        size: 26
+                        size: 28
                     }),
                 ],
             }),
             new Paragraph({
                 children: [
                     new TextRun({
-                        size: 26,
+                        size: 28,
                         text: "  B. ",
                         bold: true,
                     }),
                     new TextRun({
-                        size: 26,
+                        size: 28,
                         text: quiz.answers[1].content,
                         color: quiz.answers[1].isTrue ? "FF0000" : "000000"
                     }),
@@ -290,12 +289,12 @@ function createFileAnswer(data, index) {
             new Paragraph({
                 children: [
                     new TextRun({
-                        size: 26,
+                        size: 28,
                         text: "  C. ",
                         bold: true,
                     }),
                     new TextRun({
-                        size: 26,
+                        size: 28,
                         text: quiz.answers[2].content,
                         color: quiz.answers[2].isTrue ? "FF0000" : "000000"
                     }),
@@ -304,12 +303,12 @@ function createFileAnswer(data, index) {
             new Paragraph({
                 children: [
                     new TextRun({
-                        size: 26,
+                        size: 28,
                         text: "  D. ",
                         bold: true,
                     }),
                     new TextRun({
-                        size: 26,
+                        size: 28,
                         text: quiz.answers[3].content,
                         color: quiz.answers[3].isTrue ? "FF0000" : "000000"
                     }),
@@ -328,15 +327,15 @@ function createFileAnswer(data, index) {
                 new TextRun({
                     text: `Đề ${+index + 1}`,
                     bold: true,
-                    size: 26
+                    size: 28
                 }),
             ],
             alignment: AlignmentType.CENTER,
             spacing: {
                 after: 200,
             },
-        }),
-        table,
+        }) ,
+        table ,
         new Paragraph({
             children: [
                 new TextRun({
@@ -347,7 +346,30 @@ function createFileAnswer(data, index) {
     ]);
     doc.addSection({
         properties: {},
-        children: children
+        children: [
+            new Paragraph({
+                style: "size:20",
+                children: [
+                    new TextRun({
+                        text: `Đề ${+index + 1}`,
+                        bold: true,
+                        size: 28
+                    }),
+                ],
+                alignment: AlignmentType.CENTER,
+                spacing: {
+                    after: 200,
+                },
+            }) ,
+            table ,
+            new Paragraph({
+                children: [
+                    new TextRun({
+                        text: '\n'
+                    })
+                ]
+            })
+        ]
     });
 
     // Used to export the file into a .docx file
@@ -356,7 +378,7 @@ function createFileAnswer(data, index) {
     });
 }
 
-function createFileExam(data, index) {
+function createFileExam(data, index, subject = '.......'){
     // Create document
     const doc = new Document();
     // Documents contain sections, you can have multiple sections per document, go here to learn more about sections
@@ -368,11 +390,11 @@ function createFileExam(data, index) {
                     new TextRun({
                         text: `Câu ${i + 1}. `,
                         bold: true,
-                        size: 26
+                        size: 28
                     }),
                     new TextRun({
                         text: quiz.content,
-                        size: 26
+                        size: 28
                     }),
                 ],
                 alignment: AlignmentType.JUSTIFIED
@@ -382,11 +404,11 @@ function createFileExam(data, index) {
                     new TextRun({
                         text: "  A. ",
                         bold: true,
-                        size: 26
+                        size: 28
                     }),
                     new TextRun({
                         text: quiz.answers[0].content,
-                        size: 26
+                        size: 28
                     }),
                 ],
             }),
@@ -395,11 +417,11 @@ function createFileExam(data, index) {
                     new TextRun({
                         text: "  B. ",
                         bold: true,
-                        size: 26
+                        size: 28
                     }),
                     new TextRun({
                         text: quiz.answers[1].content,
-                        size: 26
+                        size: 28
                     }),
                 ],
             }),
@@ -408,11 +430,11 @@ function createFileExam(data, index) {
                     new TextRun({
                         text: "  C. ",
                         bold: true,
-                        size: 26
+                        size: 28
                     }),
                     new TextRun({
                         text: quiz.answers[2].content,
-                        size: 26
+                        size: 28
                     }),
                 ],
             }),
@@ -421,11 +443,11 @@ function createFileExam(data, index) {
                     new TextRun({
                         text: "  D. ",
                         bold: true,
-                        size: 26
+                        size: 28
                     }),
                     new TextRun({
                         text: quiz.answers[3].content,
-                        size: 26
+                        size: 28
                     }),
                 ],
             }),
@@ -437,7 +459,7 @@ function createFileExam(data, index) {
         ];
     }, [
         new Table({
-            rows: createTableHeader()
+            rows: createTableHeader(subject)
         }),
         new Paragraph('\n'),
         new Paragraph({
@@ -464,12 +486,12 @@ function createFileExam(data, index) {
     });
 }
 
-function createPage(req, res) {
+function createPage(req, res){
 
     // Create document
     const doc = new Document();
 
-
+    
     const table = new Table({
         rows: [
             new TableRow({

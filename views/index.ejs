@@ -1,8 +1,10 @@
 <% include ./layout/header %>
-
+    <div class="Menu__Logo mt-2">
+        Danh sách môn học
+    </div>
     <div class="Subject">
         <% subjects.forEach(item=>{ %>
-            <a class="Subject__Item" href="/subjects/<%=item.slug%>">
+            <a class="Subject__Item" href="/subjects/<%=item.slug%>/?level=A">
                 <div class="Subject__Item__Name">
                     <%=item.name%>
                 </div>
@@ -25,5 +27,4 @@
             </a>
             <% }) %>
     </div>
-
-    <% include ./layout/footer %>
+<% include ./layout/footer %>

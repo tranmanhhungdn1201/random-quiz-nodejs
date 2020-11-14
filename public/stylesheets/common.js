@@ -34,3 +34,37 @@ function validateFile(file){
         success: true,
     }
 }
+
+function printFile(data, fileName){
+    const blob = converBase64toBlob(data, 'application/msword'); 
+    const blobURL = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = blobURL;
+    a.download = fileName;
+    a.click();
+    setTimeout(() => {
+        window.URL.revokeObjectURL(blobURL);
+        document.body.removeChild(a);
+    }, 0)
+}
+
+function converBase64toBlob(content, contentType) {
+    contentType = contentType || '';
+    var sliceSize = 512;
+    var byteCharacters = window.atob(content); //method which converts base64 to binary
+    var byteArrays = [
+    ];
+    for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+        var slice = byteCharacters.slice(offset, offset + sliceSize);
+        var byteNumbers = new Array(slice.length);
+        for (var i = 0; i < slice.length; i++) {
+        byteNumbers[i] = slice.charCodeAt(i);
+        }
+        var byteArray = new Uint8Array(byteNumbers);
+        byteArrays.push(byteArray);
+    }
+    var blob = new Blob(byteArrays, {
+        type: contentType
+    }); //statement which creates the blob
+    return blob;
+}

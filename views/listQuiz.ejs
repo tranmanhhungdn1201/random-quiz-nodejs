@@ -1,11 +1,12 @@
 <% include ./layout/header %>
+<% include ./modal/confirmExport %>
 <% include ./modal/addNewQuestion %>
 <% include ./modal/editQuestion %>
-<div class="container ListQuiz">
+<div class="container ListQuiz mt-3">
     <div class="row justify-content-between align-items-center">
         <div class="row Subject flex-column">
             <div class="SubjectTile">
-                <strong>Môn học:</strong> <%= subject.name %></strong>
+                <span><%= subject.name %></span>
                 <input type="hidden" id="subjectId" data-slug="<%=subject.slug %>" value="<%=subject.id %>">
             </div>
             <div class="SubjectInfo">
@@ -27,7 +28,8 @@
         </div>
         <div>
             <a href="#" class="btn btn-sm btn-dark"> Chỉnh sửa</a>
-            <a href="#" class="btn btn-sm btn-success ml-2" id="btnAddNewQuestion"> Thêm câu hỏi</a>
+            <a href="#" class="btn btn-sm btn-info ml-1" id="btnExportFile"> Xuất file</a>
+            <a href="#" class="btn btn-sm btn-success ml-1" id="btnAddNewQuestion"> Thêm câu hỏi</a>
         </div>
     </div>
     <div class="row mt-2">
@@ -317,5 +319,41 @@
         console.log(document.location.pathname + search);
         document.location.href = document.location.pathname + search;
     })
+
+    $('#btnExportFile').click(function(){
+        $('#modalConfirmExport').modal('show');
+        $('.btnExportFileSubject').off().on('click', function(){
+            const type = $(this).attr('data-type');
+            exportFileSubject(type).then(function(res){
+                const subSlug = $('#subjectId').attr('data-slug');
+                const fileName = `ngan-hang-${subSlug}`;
+                const dataFile = res.string;
+                if(dataFile) printFile(dataFile, fileName);
+                alert('Xuất file thành công.');
+                $('#modalConfirmExport').modal('hide');
+            });
+        })
+        
+    })
+
+    function exportFileSubject(type){
+        const url = '/subjects/export';
+        const subjectId = $('#subjectId').val();
+        const options = {
+            url: url,
+            method: 'POST',
+            data: {
+                subjectId,
+                type: type
+            },
+            success: function(res){
+                console.log(res);
+            },
+            error: function(er){
+                console.log('Error', er.message);
+            }
+        }
+        return $.ajax(options);
+    }
 </script>
 <% include ./layout/footer %>

@@ -12,30 +12,53 @@
 <script src="/stylesheets/common.js"></script>
 <script src="/stylesheets/jquery-3.5.1.min.js"></script>
 <script src="/stylesheets/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <body>
     <% include ../modal/confirmDestroy %>
-        <div class="Container">
-            <div class="Menu">
-                <div class="Menu__Logo">
-                    Hệ thống tạo đề thi
-                </div>
-                <div class="Menu__Content">
-                    <input style="display: none;" type="file" name="file" id="file">
-                    <label for="file" class="Menu__Content__Item Menu__Content__Item--FileUpload">Chọn file đề</label>
-                    <a href="/" class="Menu__Content__Item">Danh sách môn học</a>
-                    <a href="/create-exam" class="Menu__Content__Item">Tạo đề thi</a>
-                </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">HỆ THỐNG TẠO ĐỀ THI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" rel="nofollow" href="/">Trang chủ <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Môn học</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/create-exam">Tạo đề</a>
+            </li>
+            <li class="nav-item">
+                <input style="display: none;" type="file" name="file" id="file">
+                <label class="nav-link" href="#" for="file">Nhập file</label>
+            </li>
+        </ul>
+    </div>
+    </nav>
+    <div class="Container">
+        <div class="Menu">
+            <!-- <div class="Menu__Logo">
+                Hệ thống tạo đề thi
+            </div> -->
+            <div class="Menu__Content">
+                <input style="display: none;" type="file" name="file" id="file">
+                
+                <!-- <a href="/" class="Menu__Content__Item">Danh sách môn học</a> -->
+                <!-- <a href="/create-exam" class="Menu__Content__Item">Tạo đề thi</a> -->
             </div>
-            <div class="Body">
+            <!-- <div class="Body"> -->
                 <!-- Modal -->
                 <div class="modal fade" id="modalEditUpload" tabindex="-1" role="dialog" aria-labelledby="modalEditUploadTitle" aria-hidden="true">
                     <div class="modal-dialog modal-large modal-dialog-centered" role="document">
                         <div class="modal-content ModalContent">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-             <span aria-hidden="true">&times;</span>
-             </button>
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
                             <div class="modal-body">
                                 <div class="container ListQuiz">
@@ -79,7 +102,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            <!-- </div> -->
             <script>
                 $(document).ready(function() {
                     // $('#modalEditUpload').modal('show')
@@ -227,54 +250,71 @@
                     if (subjectId == '0') {
                         subjectName = $('#ListSubject__Input>input').val();
                     }
-                    if((subjectId == '0' && subjectName !== "") || subjectId != '0'){
+
+                    let processApi = (teacherName) => {
+                       
+                            let questions = []
+                            let questionsHtml = $('.Quizz')
+
+                            if (questionsHtml) {
+                                questionsHtml.each((item) => {
+                                    let data = $(questionsHtml[item]).attr('data').replaceAll(`\\\'`, `"`)
+                                    data = JSON.parse(data)
+                                    questions.push(data)
+                                })
+                            }
+                            let formData = {
+                                subjectId,
+                                subjectName,
+                                questions,
+                                teacherName
+                            }
+                            console.log('aaaa', formData);
+
+                            $.ajax({
+                                        url: '/update-load-file',
+                                        type: 'post',
+                                        data: JSON.stringify(formData),
+                                        contentType: "application/json",
+                                        processData: false,
+                                        success: async function(response) {
+                                            if (response != 0) {
+                                                console.log('rrrrr', response);
+                                                if(response.status == 'OK'){
+                                                    alert("Đã nhập file đề thành công")
+                                                    $('#modalEditUpload').modal('hide')
+                                                    location.reload();
+                                                }
+
+                                            } else {
+                                                alert('file not uploaded');
+                                            }
+                                        },
+                                    });
+
+
+                            console.log('save'); 
+                       
+                    }
+                    if((subjectId == '0' && subjectName !== "")){
                         let teacherName = $('#Teacher__Input>input').val();
                         if(teacherName !== ""){
-                            let questions = []
-                        let questionsHtml = $('.Quizz')
-
-                        if (questionsHtml) {
-                            questionsHtml.each((item) => {
-                                let data = $(questionsHtml[item]).attr('data').replaceAll(`\\\'`, `"`)
-                                data = JSON.parse(data)
-                                questions.push(data)
-                            })
-                        }
-                        let formData = {
-                            subjectId,
-                            subjectName,
-                            questions,
-                            teacherName
-                        }
-                        console.log('aaaa', formData);
-
-                        $.ajax({
-                                    url: '/update-load-file',
-                                    type: 'post',
-                                    data: JSON.stringify(formData),
-                                    contentType: "application/json",
-                                    processData: false,
-                                    success: async function(response) {
-                                        if (response != 0) {
-                                            console.log('rrrrr', response);
-                                            if(response.status == 'OK'){
-                                                alert("Đã nhập file đề thành công")
-                                                $('#modalEditUpload').modal('hide')
-                                                location.reload();
-                                            }
-
-                                        } else {
-                                            alert('file not uploaded');
-                                        }
-                                    },
-                                });
-
-
-                        console.log('save');
+                            processApi(teacherName);
                         }else{
                             alert('Vui lòng nhập tên giáo viên')
                         }
-                    
+                    }else if(subjectId != '0'){
+                        let teacherName = $('#Teacher__Input>input').val();
+                        if(teacherName !== ""){
+                            let isReplace = confirm("Xóa bộ câu hỏi cũ và ghi đè?")
+                            if(isReplace){
+                                processApi(teacherName);
+                            }else{
+                                
+                            }
+                        }else{
+                            alert('Vui lòng nhập tên giáo viên')
+                        }
                     }else{
                         alert('Vui lòng nhập tên môn học')
                         // $('#subjectNameRequire').css('display', 'inline-block')

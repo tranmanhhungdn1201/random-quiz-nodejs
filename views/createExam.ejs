@@ -1,6 +1,9 @@
 <% include ./layout/header %>
 <% include ./modal/previewExam %>
-    <div class="container mt-5">
+    <div class="container mt-2">
+        <div class="Menu__Logo">
+            Tạo đề thi
+        </div>
         <form id="formCreateExam">
             <ul class="alert alert-danger error-create" style="display: none;" role="alert">
             </ul>
@@ -196,7 +199,7 @@
         
         function printExam(id) {
             if(!id) return;
-
+            const subjectId = $('#select-subject option:selected').val();
             const data = localStorage.getItem('exams');
             if(!data || !data[0].length || !data[id].length) {
                 return;
@@ -211,6 +214,7 @@
                 url: url,
                 responseType: 'buffer',
                 data: {
+                    subjectId,
                     index: id,
                     data: JSON.stringify(dataParse[id])
                 },
@@ -222,16 +226,6 @@
                     const dataFileExam = response.string;
                     const dataFileAnswer = response.stringA;
 
-                    // const blob = converBase64toBlob(dataFileExam, 'application/msword'); 
-                    // const blobURL = URL.createObjectURL(blob);
-                    // const a = document.createElement('a');
-                    // a.href = blobURL;
-                    // a.download = fileNameExam;
-                    // a.click();
-                    // setTimeout(() => {
-                    //     window.URL.revokeObjectURL(blobURL);
-                    //     a.remove();
-                    // }, 0)
                     if(dataFileExam) printFile(dataFileExam, fileNameExam);
                     if(dataFileAnswer) printFile(dataFileAnswer, fileNameAnswer);
                 },
@@ -241,45 +235,11 @@
             }
             $.ajax(options);
         }
-        
-        function printFile(data, fileName){
-            const blob = converBase64toBlob(data, 'application/msword'); 
-            const blobURL = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = blobURL;
-            a.download = fileName;
-            a.click();
-            setTimeout(() => {
-                window.URL.revokeObjectURL(blobURL);
-                document.body.removeChild(a);
-            }, 0)
-        }
 
         $('.container').on('click', '.btn-print-exam', function(){
             const id = $(this).attr('data-id');
             printExam(id);
         })
-
-        function converBase64toBlob(content, contentType) {
-            contentType = contentType || '';
-            var sliceSize = 512;
-            var byteCharacters = window.atob(content); //method which converts base64 to binary
-            var byteArrays = [
-            ];
-            for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
-                var slice = byteCharacters.slice(offset, offset + sliceSize);
-                var byteNumbers = new Array(slice.length);
-                for (var i = 0; i < slice.length; i++) {
-                byteNumbers[i] = slice.charCodeAt(i);
-                }
-                var byteArray = new Uint8Array(byteNumbers);
-                byteArrays.push(byteArray);
-            }
-            var blob = new Blob(byteArrays, {
-                type: contentType
-            }); //statement which creates the blob
-            return blob;
-        }
 
         function getInfoSubject(subjecId){
             const url = `/subjects/get-num/${subjecId}`;
