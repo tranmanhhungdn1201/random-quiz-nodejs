@@ -15,113 +15,123 @@
 
 <body>
     <% include ../modal/confirmDestroy %>
-    <div class="Container">
-        <div class="Menu">
-            <div class="Menu__Logo">
-                Hệ thống tạo đề thi
+        <div class="Container">
+            <div class="Menu">
+                <div class="Menu__Logo">
+                    Hệ thống tạo đề thi
+                </div>
+                <div class="Menu__Content">
+                    <input style="display: none;" type="file" name="file" id="file">
+                    <label for="file" class="Menu__Content__Item Menu__Content__Item--FileUpload">Chọn file đề</label>
+                    <a href="/" class="Menu__Content__Item">Danh sách môn học</a>
+                    <a href="/create-exam" class="Menu__Content__Item">Tạo đề thi</a>
+                </div>
             </div>
-            <div class="Menu__Content">
-                <input style="display: none;" type="file" name="file" id="file">
-                <label for="file" class="Menu__Content__Item Menu__Content__Item--FileUpload">Chọn file đề</label>
-                <a href="/" class="Menu__Content__Item">Danh sách môn học</a>
-                <a href="/create-exam" class="Menu__Content__Item">Tạo đề thi</a>
-            </div>
-        </div>
-        <div class="Body">
-            <!-- Modal -->
-            <div class="modal fade" id="modalEditUpload" tabindex="-1" role="dialog" aria-labelledby="modalEditUploadTitle" aria-hidden="true">
-                <div class="modal-dialog modal-large modal-dialog-centered" role="document">
-                    <div class="modal-content ModalContent">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div class="Body">
+                <!-- Modal -->
+                <div class="modal fade" id="modalEditUpload" tabindex="-1" role="dialog" aria-labelledby="modalEditUploadTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-large modal-dialog-centered" role="document">
+                        <div class="modal-content ModalContent">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
              <span aria-hidden="true">&times;</span>
              </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="container ListQuiz">
-                                <div class="row justify-content-between align-items-center">
-                                    <div class="row Subject flex-column">
-                                        <div class="SubjectTile">
-                                            <strong>Môn học:</strong>
-                                            <div class="SubjectTile__Wrap">
-                                                <select class="custom-select SubjectTile__Wrap--Select" id="ListSubject">
+                            </div>
+                            <div class="modal-body">
+                                <div class="container ListQuiz">
+                                    <div class="row justify-content-between align-items-center">
+                                        <div class="row Subject flex-column">
+                                            <div class="SubjectTile">
+                                                <strong>Môn học:</strong>
+                                                <div class="SubjectTile__Wrap">
+                                                    <select class="custom-select SubjectTile__Wrap--Select" id="ListSubject">
                                             <option value="0">Nhập tên môn học mới</option>
                                           </select>
-                                                <div id="ListSubject__Input" class="SubjectTile__Wrap--Name">
-                                                    <input type="text" class="form-control" placeholder="Tên môn học">
-                                                    <p class="text-danger" style="display: none;" id="subjectNameRequire">Vui lòng nhập tên môn học</p>
+                                                    <div id="ListSubject__Input" class="SubjectTile__Wrap--Name">
+                                                        <input type="text" class="form-control" placeholder="Tên môn học">
+                                                        <p class="text-danger" style="display: none;" id="subjectNameRequire">Vui lòng nhập tên môn học</p>
 
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="SubjectInfo" id="SubjectInfo">
+                                            <div class="SubjectTile">
+                                                <span>Tên giáo viên nhập đề</span>
+                                                <div id="Teacher__Input" class="SubjectTile__Wrap--Name">
+                                                    <input type="text" class="form-control" placeholder="Tên giáo viên">
+                                                    <p class="text-danger" style="display: none;" id="teacherNameRequire">Vui lòng nhập tên giáo viên</p>
+                                                </div>
+                                            </div>
+                                            <div class="SubjectInfo" id="SubjectInfo">
 
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="ListQuiz__content">
-                                    <ul class="list-group list-group-flush" id="ListQuestionHtml">
-                                    </ul>
+                                    <div class="ListQuiz__content">
+                                        <ul class="list-group list-group-flush" id="ListQuestionHtml">
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="BtnCancelLoadedFile">Hủy</button>
-                            <button type="button" class="btn btn-primary" id="BtnSaveLoadedFile">Lưu lại</button>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="BtnCancelLoadedFile">Hủy</button>
+                                <button type="button" class="btn btn-primary" id="BtnSaveLoadedFile">Lưu lại</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <script>
-                $(document).ready(function() {
-                    // $('#modalEditUpload').modal('show')
+                <script>
+                    $(document).ready(function() {
+                        // $('#modalEditUpload').modal('show')
 
-                    $('#file').on('change', () => {
-                        var fd = new FormData();
-                        var files = $('#file')[0].files;
-                        if (files.length > 0) {
-                            fd.append('file', files[0]);
+                        $('#file').on('change', () => {
+                            var fd = new FormData();
+                            var files = $('#file')[0].files;
+                            if (files.length > 0) {
+                                fd.append('file', files[0]);
 
-                            $.ajax({
-                                url: '/upload',
-                                type: 'post',
-                                data: fd,
-                                contentType: false,
-                                processData: false,
-                                success: async function(response) {
-                                    if (response != 0) {
-                                        await localStorage.removeItem("QuizzRandom")
-                                        await localStorage.setItem('QuizzRandom', JSON.stringify(response.data))
-                                            // location.href = '/sua-doi'
-                                        responseToHtmlModal(response.data, response.countDuplicate, response.subjects)
-                                        $('#modalEditUpload').modal('show')
+                                $.ajax({
+                                    url: '/upload',
+                                    type: 'post',
+                                    data: fd,
+                                    contentType: false,
+                                    processData: false,
+                                    success: async function(response) {
+                                        if (response != 0) {
+                                            await localStorage.removeItem("QuizzRandom")
+                                            await localStorage.setItem('QuizzRandom', JSON.stringify(response.data))
+                                                // location.href = '/sua-doi'
+                                            responseToHtmlModal(response.data, response.countDuplicate, response.subjects)
+                                            $('#modalEditUpload').modal('show')
+                                            $("#file").val(null);
 
-                                    } else {
-                                        alert('file not uploaded');
-                                    }
-                                },
-                            });
-                        } else {
-                            alert("Please select a file.");
-                        }
+                                        } else {
+                                            alert('file not uploaded');
+                                            $("#file").val(null);
+
+                                        }
+                                    },
+                                });
+                            } else {
+                                alert("Please select a file.");
+                            }
+                        })
+
+                        $('body').on('click', '#ListSubject', function() {
+                            let option = $(this).val()
+                            if (option == 0) {
+                                $('#ListSubject__Input').css('display', 'block')
+                            } else {
+                                $('#ListSubject__Input').css('display', 'none')
+                            }
+                        })
                     })
 
-                    $('body').on('click', '#ListSubject', function() {
-                        let option = $(this).val()
-                        if (option == 0) {
-                            $('#ListSubject__Input').css('display', 'block')
-                        } else {
-                            $('#ListSubject__Input').css('display', 'none')
-                        }
-                    })
-                })
-
-                function responseToHtmlModal(dataArr, countDuplicate, subjects, idElementQuestion = 'ListQuestionHtml', idElementInfo = 'SubjectInfo') {
-                    let total = dataArr.length
-                    let numOfEasy = dataArr.filter(item => item.level == 'D').length
-                    let numOfMedium = dataArr.filter(item => item.level == 'V').length
-                    let numOfHard = dataArr.filter(item => item.level == 'K').length
-                    let htmlSubjectInfo = `
+                    function responseToHtmlModal(dataArr, countDuplicate, subjects, idElementQuestion = 'ListQuestionHtml', idElementInfo = 'SubjectInfo') {
+                        let total = dataArr.length
+                        let numOfEasy = dataArr.filter(item => item.level == 'D').length
+                        let numOfMedium = dataArr.filter(item => item.level == 'V').length
+                        let numOfHard = dataArr.filter(item => item.level == 'K').length
+                        let htmlSubjectInfo = `
                     <ul class="list">
                                         <li><b>Tổng:</b> ${total} câu</li>
                                         <li><b>Có:</b> ${countDuplicate} câu đã tồn tại trong hệ thống</li>
@@ -130,21 +140,21 @@
                                         <li><span class="Subject__Item__Info__Hard"><b>Câu khó:</b></span> ${numOfHard} câu</li>
                                     </ul>
                     `
-                    $('#' + idElementInfo).html(htmlSubjectInfo)
-                    let htmlQuestion = '';
-                    let classLevel = {
-                        D: 'badge-success',
-                        V: 'badge-warning',
-                        K: 'badge-danger',
-                    }
-                    let nameLevel = {
-                        D: 'Dễ',
-                        V: 'Vừa',
-                        K: 'Khó',
-                    }
-                    dataArr.forEach((item, index) => {
-                        let level = nameLevel[item.level]
-                                htmlQuestion += `
+                        $('#' + idElementInfo).html(htmlSubjectInfo)
+                        let htmlQuestion = '';
+                        let classLevel = {
+                            D: 'badge-success',
+                            V: 'badge-warning',
+                            K: 'badge-danger',
+                        }
+                        let nameLevel = {
+                            D: 'Dễ',
+                            V: 'Vừa',
+                            K: 'Khó',
+                        }
+                        dataArr.forEach((item, index) => {
+                                    let level = nameLevel[item.level]
+                                    htmlQuestion += `
                         <li class="list-group-item quiz Quizz" id="Quizz-${item.id}" data="${JSON.stringify(item).replaceAll('"', `\\\'`)}">
                                     <div class="QuizItem">
                                         <div class="quiz__content">
@@ -182,7 +192,9 @@
                         subjectName = $('#ListSubject__Input>input').val();
                     }
                     if((subjectId == '0' && subjectName !== "") || subjectId != '0'){
-                        let questions = []
+                        let teacherName = $('#Teacher__Input>input').val();
+                        if(teacherName !== ""){
+                            let questions = []
                         let questionsHtml = $('.Quizz')
 
                         if (questionsHtml) {
@@ -195,7 +207,8 @@
                         let formData = {
                             subjectId,
                             subjectName,
-                            questions
+                            questions,
+                            teacherName
                         }
                         console.log('aaaa', formData);
 
@@ -222,6 +235,10 @@
 
 
                         console.log('save');
+                        }else{
+                            alert('Vui lòng nhập tên giáo viên')
+                        }
+                    
                     }else{
                         alert('Vui lòng nhập tên môn học')
                         // $('#subjectNameRequire').css('display', 'inline-block')
@@ -236,4 +253,4 @@
                     $('#Quizz-'+id).remove();
                     console.log('Delete', id);
                 })
-            </script>
+                </script>

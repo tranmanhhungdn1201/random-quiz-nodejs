@@ -1,13 +1,26 @@
 const uuid = require('uuid')
 const { LEVEL_EASY, LEVEL_MEDIUM, LEVEL_HARD } = require('../lib/constants');
 
-function splitQuestion(data, num) {
+function splitQuestion(dataArr, num) {
+    let data = dataArr.filter(item => item != '')
     let arr = [];
     console.log('length', data.length);
     let id = "0"; //uuid.v4();
     while (data.length > num) {
         let questionArr = data.splice(0, 5);
-        let regexExtract = /(^[DKV])*\(([DKV])\)(.*)/s.exec(questionArr[0])
+        let regexExtract = /(^[KV])*\(([KV])\)(.*)/s.exec(questionArr[0])
+        let regexExtract2 = /Câu\ \d+.(.*)/s.exec(questionArr[0])
+
+        let ABCD = (content) => {
+            let exec = /[ABCD].(.*)/.exec(content)
+            return exec ? exec[1].trim() : content.trim()
+        }
+
+        let A = ABCD(questionArr[1])
+        let B = ABCD(questionArr[2])
+        let C = ABCD(questionArr[3])
+        let D = ABCD(questionArr[4])
+
 
         if (regexExtract) {
             let questionObj = {
@@ -15,24 +28,50 @@ function splitQuestion(data, num) {
                 id: uuid.v4(),
                 content: regexExtract[3].trim(),
                 answers: [{
-                        content: questionArr[1],
+                        content: A,
                         isTrue: true
                     },
                     {
-                        content: questionArr[2],
+                        content: B,
                         isTrue: false
                     },
                     {
-                        content: questionArr[3],
+                        content: C,
                         isTrue: false
                     },
                     {
-                        content: questionArr[4],
+                        content: D,
                         isTrue: false
                     }
                 ],
-                result: questionArr[1],
+                result: A,
                 level: regexExtract[2]
+            };
+            arr = [...arr, questionObj];
+        } else if (regexExtract2) {
+            let questionObj = {
+                idSubject: id,
+                id: uuid.v4(),
+                content: regexExtract2[1].trim(),
+                answers: [{
+                        content: A,
+                        isTrue: true
+                    },
+                    {
+                        content: B,
+                        isTrue: false
+                    },
+                    {
+                        content: C,
+                        isTrue: false
+                    },
+                    {
+                        content: D,
+                        isTrue: false
+                    }
+                ],
+                result: A,
+                level: 'D'
             };
             arr = [...arr, questionObj];
         }
@@ -77,8 +116,8 @@ function checkQuestionExistInDb(questions, questionsDB) {
     return [countDuplicateQuestion, arrayQuestionDuplicate];
 }
 
-function getNumTypeQuestion(data){
-    if(data.length === 0) return {};
+function getNumTypeQuestion(data) {
+    if (data.length === 0) return {};
     const num = data.length;
     const numE = data.filter(quiz => quiz.level === LEVEL_EASY).length;
     const numM = data.filter(quiz => quiz.level === LEVEL_MEDIUM).length;
@@ -110,11 +149,15 @@ function countTypeOfQuestions(questions) {
 // xoa dau trong tieng viet
 function removeAccents(str) {
     return str.normalize('NFD')
-              .replace(/[\u0300-\u036f]/g, '')
-              .replace(/đ/g, 'd').replace(/Đ/g, 'D')
-              .split('')
-              .map(letter => letter.toLowerCase())
-              .join('');
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/đ/g, 'd').replace(/Đ/g, 'D')
+        .split('')
+        .map(letter => letter.toLowerCase())
+        .join('');
+}
+
+function dateToString(date) {
+    return `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()} ${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
 }
 
 module.exports = {
@@ -124,5 +167,6 @@ module.exports = {
     checkQuestionExistInDb,
     getNumTypeQuestion,
     countTypeOfQuestions,
-    removeAccents
+    removeAccents,
+    dateToString
 }

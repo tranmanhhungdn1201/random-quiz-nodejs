@@ -1,8 +1,8 @@
 var docx4js = require('docx4js');
 var fs = require("fs");
-var { Document, Packer, Paragraph, TextRun, AlignmentType, HeadingLevel, Table, TableCell, TableRow, WidthType, BorderStyle} = require("docx");
+var { Document, Packer, Paragraph, TextRun, AlignmentType, HeadingLevel, Table, TableCell, TableRow, WidthType, BorderStyle } = require("docx");
 let a = require('docx')
-// console.log('aaa', a);
+    // console.log('aaa', a);
 var WordExtractor = require("word-extractor");
 var extractor = new WordExtractor();
 var { splitQuestion, checkQuestionExistInDb } = require('../helpers/functions')
@@ -65,18 +65,20 @@ async function exportExam(req, res) {
         stringA
     })
 }
-function findResult(answers){
+
+function findResult(answers) {
     let Answer = {
         0: 'A',
         1: 'B',
         2: 'C',
         3: 'D'
     }
-    let index = answers.findIndex(item=>item.isTrue);
+    let index = answers.findIndex(item => item.isTrue);
     return Answer[index]
-    
+
 }
-function createTableHeader(data){
+
+function createTableHeader(data) {
     let table = [
         new TableRow({
             children: [
@@ -197,10 +199,10 @@ function createTableHeader(data){
     return table
 }
 
-function createTableAnswer(dataArr){
+function createTableAnswer(dataArr) {
     let cells = []
     let rows = []
-    dataArr.forEach((item, index)=>{
+    dataArr.forEach((item, index) => {
         cells.push(
             new TableCell({
                 children: [
@@ -213,16 +215,16 @@ function createTableAnswer(dataArr){
                             })
                         ]
                     }),
-                ], 
+                ],
             })
         )
-        if((index === (dataArr.length-1)) && (cells.length !== 10)){
+        if ((index === (dataArr.length - 1)) && (cells.length !== 10)) {
             rows.push(new TableRow({
                 children: cells
             }))
             cells = []
         }
-        if((index+1) % 10 === 0){
+        if ((index + 1) % 10 === 0) {
             rows.push(new TableRow({
                 children: cells
             }))
@@ -232,7 +234,7 @@ function createTableAnswer(dataArr){
     return rows
 }
 
-function createFileAnswer(data, index){
+function createFileAnswer(data, index) {
     const table = new Table({
         rows: createTableAnswer(data)
     });
@@ -242,7 +244,7 @@ function createFileAnswer(data, index){
     // Documents contain sections, you can have multiple sections per document, go here to learn more about sections
     // This simple example will only contain one section
     const children = data.reduce((content, quiz, i) => {
-        return [...content,       
+        return [...content,
             new Paragraph({
                 children: [
                     new TextRun({
@@ -333,8 +335,8 @@ function createFileAnswer(data, index){
             spacing: {
                 after: 200,
             },
-        }) ,
-        table ,
+        }),
+        table,
         new Paragraph({
             children: [
                 new TextRun({
@@ -354,13 +356,13 @@ function createFileAnswer(data, index){
     });
 }
 
-function createFileExam(data, index){
+function createFileExam(data, index) {
     // Create document
     const doc = new Document();
     // Documents contain sections, you can have multiple sections per document, go here to learn more about sections
     // This simple example will only contain one section
     const children = data.reduce((content, quiz, i) => {
-        return [...content,       
+        return [...content,
             new Paragraph({
                 children: [
                     new TextRun({
@@ -450,7 +452,7 @@ function createFileExam(data, index){
             spacing: {
                 after: 200,
             },
-        })  
+        })
     ]);
     doc.addSection({
         properties: {},
@@ -462,12 +464,12 @@ function createFileExam(data, index){
     });
 }
 
-function createPage(req, res){
+function createPage(req, res) {
 
     // Create document
     const doc = new Document();
 
-    
+
     const table = new Table({
         rows: [
             new TableRow({

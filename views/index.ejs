@@ -15,6 +15,12 @@
                         <%=item.medium%> câu</div>
                     <div class="Subject__Item__Info__Hard"><b>Khó: </b>
                         <%=item.hard%> câu</div>
+                    <div class="Subject__Item__Info__Total"><b>Giáo viên: </b></b>
+                        <%=item.teacherName || 'Chưa cập nhật'%>
+                    </div>
+                    <div class="Subject__Item__Info__Total"><b>Ngày tạo: </b></b>
+                        <%=item.createdAtString || 'Chưa cập nhật'%>
+                    </div>
                 </div>
             </a>
             <% }) %>
