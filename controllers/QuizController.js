@@ -420,12 +420,16 @@ function joinArray(arr, n, numExam){
     let lenArrJoin = arrJoin.length;
     if(numItem === 0){
       for(let i = 0, j = 0; i < numExam; j++, i++){
-        let idx = j === arrRest.length - 1 ? 0 : j + 1;
-        if(j === arrRest.length){
-          j = 0;
-          idx = 1;
-        }
-        arrJoin[i] = [Object.assign({}, arrRest[j]), Object.assign({}, arrRest[idx])];
+        if(arrRest.length > 1){
+            let idx = j === arrRest.length - 1 ? 0 : j + 1;
+            if(j === arrRest.length){
+              j = 0;
+              idx = 1;
+            }
+            arrJoin[i] = [Object.assign({}, arrRest[j]), Object.assign({}, arrRest[idx])];
+          } else {
+            arrJoin[i] = [Object.assign({}, arrRest[0])];
+          }
       }
     }
     if(arrSplit[0].length !== n  && numItem > 0) {
@@ -464,15 +468,23 @@ function joinArray(arr, n, numExam){
   }
 
 function createExam2(numOfTest, numOfEasy, numOfMedium, numOfHard, easies, mediums, hards){
-    const arrE = joinArray(easies, numOfEasy, numOfTest);
-    console.log('numOfEasy', numOfEasy)
-    // const arrM = joinArray(mediums, numOfMedium, numOfTest);
-    // const arrH = joinArray(hards, numOfHard, numOfTest);
+    let arrE = [];
+    let arrM = [];
+    let arrH = [];
+    if(numOfEasy > 0){
+        arrE = joinArray(easies, numOfEasy, numOfTest);
+    }
+    if(numOfMedium > 0){
+        arrM = joinArray(mediums, numOfMedium, numOfTest);
+    }
+    if(numOfHard > 0){
+        arrH = joinArray(hards, numOfHard, numOfTest);
+    }
     let tests = [];
     for(let i = 0; i < arrE.length; i++){
-        // tests = [...tests, [...arrE[i], ...arrM[i], ... arrH[i]]];
+        tests = [...tests, [...arrE[i], ...arrM[i], ... arrH[i]]];
     }
-    return arrE;
+    return tests;
 }
 
 function calPercent(arr1, arr2){

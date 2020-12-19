@@ -53,17 +53,23 @@ function joinArray(arr, n, numExam){
   let numItem = Math.floor(arr.length/numExam);
   let numRest = n - numItem;
   let arrSplit = splitArray(arr, numItem, numExam);
+  console.log('arrSplit', arrSplit)
+  console.log('numItem', numItem)
   let arrRest = arrSplit.pop();
   let arrJoin = [...arrSplit];
   let lenArrJoin = arrJoin.length;
   if(numItem === 0){
     for(let i = 0, j = 0; i < numExam; j++, i++){
-      let idx = j === arrRest.length - 1 ? 0 : j + 1;
-      if(j === arrRest.length){
-        j = 0;
-        idx = 1;
+      if(arrRest.length > 1){
+        let idx = j === arrRest.length - 1 ? 0 : j + 1;
+        if(j === arrRest.length){
+          j = 0;
+          idx = 1;
+        }
+        arrJoin[i] = [Object.assign({}, arrRest[j]), Object.assign({}, arrRest[idx])];
+      } else {
+        arrJoin[i] = [Object.assign({}, arrRest[0])];
       }
-      arrJoin[i] = [Object.assign({}, arrRest[j]), Object.assign({}, arrRest[idx])];
     }
   }
   if(arrSplit[0].length !== n  && numItem > 0) {
@@ -104,7 +110,7 @@ function joinArray(arr, n, numExam){
   return arrJoin;
 }
 
-const test = joinArray(quizes, 2, 4)
+const test = joinArray([{"id":0,"":0,"level":"k"}], 1, 3)
 const a1 = [
   { id: 0, content: 0, level: 'k' },
   { id: 1, content: 1, level: 'v' },
