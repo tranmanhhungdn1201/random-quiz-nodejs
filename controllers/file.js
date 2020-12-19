@@ -198,32 +198,61 @@ function createTableHeader(subject){
     return table
 }
 
-function createTableAnswer(dataArr){
+function createTableAnswer(dataArr) {
     let cells = []
     let rows = []
-    dataArr.forEach((item, index)=>{
+    dataArr.forEach((item, index) => {
         cells.push(
             new TableCell({
                 children: [
-                    new Paragraph({
-                        children: [
-                            new TextRun({
-                                text: `  ${index+1}${findResult(item.answers)}\t`,
-                                bold: true,
-                                size: 28
+                    new Table({
+                        rows: [
+                            new TableRow({
+                                children: [
+                                    new TableCell({
+                                        children: [
+                                            new Paragraph({
+                                                children: [
+                                                    new TextRun({
+                                                        text: `  ${index+1}\t`,
+                                                        bold: true,
+                                                        size: 26
+                                                    })
+                                                ]
+                                            })
+                                        ],
+                                    }),
+                                ],
+                            }),
+                            new TableRow({
+                                children: [
+                                    new TableCell({
+                                        children: [
+                                            new Paragraph({
+                                                children: [
+                                                    new TextRun({
+                                                        text: `  ${findResult(item.answers)}\t`,
+                                                        bold: true,
+                                                        size: 26
+                                                    })
+                                                ]
+                                            })
+                                        ],
+                                    }),
+                                ],
                             })
-                        ]
-                    }),
-                ], 
+                        ],
+                    })
+                ],
             })
         )
-        if((index === (dataArr.length-1)) && (cells.length !== 10)){
+        if ((index === (dataArr.length - 1)) && (cells.length !== 10)) {
             rows.push(new TableRow({
                 children: cells
             }))
             cells = []
         }
-        if((index+1) % 10 === 0){
+        if ((index + 1) % 10 === 0) {
             rows.push(new TableRow({
                 children: cells
             }))
@@ -233,10 +262,183 @@ function createTableAnswer(dataArr){
     return rows
 }
 
+function createTableAnswer2(dataArr){
+
+    // let rows = [
+    //     new TableRow({
+    //         children: [
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  1\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  2\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  3\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  4\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  5\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  6\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  7\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  8\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  9\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  10\t`,bold: true,size: 26})]})],
+    //             }),
+    //         ],
+    //     }),
+    //     new TableRow({
+    //         children: [
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  A\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  B\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  D\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  A\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  A\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  A\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  A\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  A\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  A\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  A\t`,bold: true,size: 26})]})],
+    //             }),
+    //         ],
+    //     }),
+    //     new TableRow({
+    //         children: [
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  11\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  12\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  13\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  14\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  15\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  16\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  17\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  18\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  19\t`,bold: true,size: 26})]})],
+    //             }),
+    //         ],
+    //     }),
+    //     new TableRow({
+    //         children: [
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  A\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  B\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  D\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  A\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  A\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  A\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  A\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  A\t`,bold: true,size: 26})]})],
+    //             }),
+    //             new TableCell({
+    //                 children: [new Paragraph({ children: [new TextRun({text: `  A\t`,bold: true,size: 26})]})],
+    //             }),
+               
+    //         ],
+    //     })
+    // ]
+
+    let block10Index = [];
+    let block10Answer = [];
+    let rows = []
+    dataArr.forEach((item, index)=>{
+        block10Index.push(
+            new TableCell({
+                children: [new Paragraph({ children: [new TextRun({text: `  ${index+1}\t`,bold: true,size: 26})]})],
+            })
+        )
+        block10Answer.push(
+            new TableCell({
+                children: [new Paragraph({ children: [new TextRun({text: `  ${findResult(item.answers)}\t`,bold: false,size: 26})]})],
+            })
+        )
+        if (((index + 1) % 10 === 0) || ((index === (dataArr.length - 1)) && (block10Index.length !== 10))) {
+            rows.push(
+                new TableRow({
+                    children: block10Index
+                })
+            )
+            rows.push(
+                new TableRow({
+                    children: block10Answer
+                })
+            )
+            block10Answer = [];
+            block10Index = [];
+        }
+    })
+
+    return rows
+}
+
 function createFileAnswer(data, index){
     const table = new Table({
         rows: createTableAnswer(data)
     });
+
+    const table2 = new Table({
+        rows: createTableAnswer2(data)
+    })
 
     // Create document
     const doc = new Document();
@@ -361,14 +563,15 @@ function createFileAnswer(data, index){
                     after: 200,
                 },
             }) ,
-            table ,
+            // table ,
+            table2,
             new Paragraph({
                 children: [
                     new TextRun({
                         text: '\n'
                     })
                 ]
-            })
+            }),
         ]
     });
 
