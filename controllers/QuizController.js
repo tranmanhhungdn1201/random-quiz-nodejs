@@ -3,7 +3,7 @@ const FileSync = require('lowdb/adapters/FileSync');
 const adapter = new FileSync('db.json');
 const db = low(adapter);
 const { shuffle, getNumTypeQuestion, removeAccents } = require('../helpers/functions');
-const { makeTest, makeExams } = require('../helpers/file');
+const { makeTest, makeExams, makeExamsByPercent } = require('../helpers/file');
 const { LEVEL_EASY, LEVEL_MEDIUM, LEVEL_HARD } = require('../lib/constants');
 const uuid = require('uuid');
 var { Document, Packer, Paragraph, TextRun, AlignmentType, HeadingLevel, Table, TableCell, TableRow, WidthType, BorderStyle} = require("docx");
@@ -22,9 +22,9 @@ async function filterQuestions(data){
     let strFilter = '';
     if(search)  strFilter = removeAccents(search);
     let questions = await db.get('questions')
-                        .filter(dataFilter)
-                        .filter(quiz => removeAccents(quiz.content).indexOf(strFilter) !== -1)
-                        .value();
+        .filter(dataFilter)
+        .filter(quiz => removeAccents(quiz.content).indexOf(strFilter) !== -1)
+        .value();
     return questions;
 }
 
@@ -38,16 +38,16 @@ async function list(req, res){
     let skip = (page - 1)*limit;
     const slugSubject = req.params.slug;
     const subject = await db.get('subjects')
-                    .find({ slug: slugSubject })
-                    .value();
+        .find({ slug: slugSubject })
+        .value();
     if (!slugSubject || !subject) {
         return;
     }
 
     const allQuestions = await db.get('questions')
-                    .filter({idSubject: subject.id})
-                    .value();
-    
+        .filter({idSubject: subject.id})
+        .value();
+
     const dataFilter = {
         idSubject: subject.id,
         level,
@@ -59,7 +59,7 @@ async function list(req, res){
     const questionsShuffle = questions.map(quiz => {
         let arr = Object.assign(quiz);
         if(Array.isArray(arr.answers))
-        shuffle(arr.answers);
+            shuffle(arr.answers);
         return arr;
     });
 
@@ -96,11 +96,13 @@ function postCreateExam(req, res){
     const easies = questionsInSub.filter(quiz => quiz.level === LEVEL_EASY);
     const mediums = questionsInSub.filter(quiz => quiz.level === LEVEL_MEDIUM);
     const hards = questionsInSub.filter(quiz => quiz.level === LEVEL_HARD);
-    const { type, subjectId, numOfExam, numInExam, numEasy, numMedium, numHard} = req.body;
+    const { type, subjectId, numOfExam, numInExam, numEasy, numMedium, numHard, numPercent } = req.body;
     let exams;
-    console.log('type', req.body);
+
     if(+type === 1){
         exams = makeTest(+numOfExam, +numEasy, +numMedium, +numHard, easies, mediums, hards, []);
+    } else if (+type === 3) {
+        exams = makeExamsByPercent(+numPercent, +numEasy, +numMedium, +numHard, easies, mediums, hards)
     } else {
         exams = makeExams(+numOfExam, +numEasy, +numMedium, +numHard, easies, mediums, hards);
     }
@@ -199,8 +201,8 @@ function createNewQuestion(req, res) {
         level
     };
     db.get('questions')
-    .push(newQuestion)
-    .write();
+        .push(newQuestion)
+        .write();
 
     return res.json({
         success: true,
@@ -229,9 +231,9 @@ function updateQuestion(req, res) {
         level
     };
     db.get('questions')
-    .find({id: id})
-    .assign(updateQuestion)
-    .write(updateQuestion);
+        .find({id: id})
+        .assign(updateQuestion)
+        .write(updateQuestion);
 
     return res.json({
         success: true,
@@ -243,13 +245,13 @@ function destroyQuestion(req, res) {
     const question = db
         .get('questions')
         .find({id}).value();
-    if(!question) {
-        return res.json({
-            success: false,
-        });
-    }
-    db.get('questions')
-        .remove({id})
+        if(!question) {
+            return res.json({
+                success: false,
+            });
+        }
+        db.get('questions')
+            .remove({id})
         .write()
 
     return res.json({
@@ -276,7 +278,7 @@ function createFileExam(data, type = '0', subject = {name: '........'}){
     // Documents contain sections, you can have multiple sections per document, go here to learn more about sections
     // This simple example will only contain one section
     const children = data.reduce((content, quiz, i) => {
-        return [...content,       
+        return [...content,
             new Paragraph({
                 children: [
                     new TextRun({
@@ -371,7 +373,7 @@ function createFileExam(data, type = '0', subject = {name: '........'}){
             spacing: {
                 after: 200,
             },
-        })  
+        })
     ]);
     doc.addSection({
         properties: {},
