@@ -226,7 +226,8 @@ function makeExamsByPercent(percent, numEasy, numMedium, numHard, easies, medium
                     ...countNumberOfType(sameInTest.got)
                 }
             }
-        let Result = []
+        
+        let Result = [[...Test1.e, ...Test1.h, ...Test1.m]]
         let count = 0
         while (
             origin.easiesRemain.length !== 0 &&
@@ -262,7 +263,7 @@ function makeExamsByPercent(percent, numEasy, numMedium, numHard, easies, medium
         return Result;
     }
     let _result = []
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 50; i++) {
         let Result = createTest(dataSample)
         if (Result.length > _result.length) _result = Result
     }
