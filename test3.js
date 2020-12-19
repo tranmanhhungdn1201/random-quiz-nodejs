@@ -14,9 +14,8 @@ let question = [{"id":0,"content":0,"level":"k"},{"id":1,"content":1,"level":"v"
 let easies = question.filter(item=>item.level==="d")
 let mediums = question.filter(item=>item.level==="v")
 let hards = question.filter(item=>item.level==="k")
-console.log('#easies', easies.length);
-console.log('#mediums', mediums.length);
-console.log('#hards', hards.length);
+let quizes = [{"id":0,"content":0,"level":"k"},{"id":1,"content":1,"level":"v"},{"id":2,"content":2,"level":"v"},{"id":3,"content":3,"level":"k"},{"id":4,"content":4,"level":"k"},{"id":5,"content":5,"level":"v"},{"id":6,"content":6,"level":"v"},{"id":7,"content":7,"level":"v"},{"id":8,"content":8,"level":"v"},{"id":9,"content":9,"level":"k"},{"id":10,"content":10,"level":"d"}, {"id":11,"content":11,"level":"k"}, {"id":12,"content":13,"level":"k"}, {"id":14,"content":14,"level":"k"}];
+let quizes1 = [{"id":0,"":0,"level":"k"},{"id":1,"content":1,"level":"v"},{"id":2,"content":2,"level":"v"}];
 
 function shuffle(a) {
   let j, x, i;
@@ -29,71 +28,107 @@ function shuffle(a) {
   return a;
 }
 
-function getNQuestionsInArray(arrayQuestion, n){
-  let questionShuffled = shuffle(JSON.parse(JSON.stringify(arrayQuestion)));
-  let arrayQuizDup = questionShuffled.filter((item) => item.isDup);
-  let lengthQuizDup = arrayQuizDup.length;
-//   console.log('lengthQuizDup: ' + lengthQuizDup);
-//   console.log('questionShuffled: ' + questionShuffled.filter((item, i) => item.isDup || i < (n - lengthQuizDup)).length);
-  return [...arrayQuizDup, ...questionShuffled.filter((item, i) => i < (n - lengthQuizDup))];
-//   return shuffle([...arrayQuizDup, ...questionShuffled.filter((item, i) => i < (n - lengthQuizDup))]);
+function splitArray(arr, n, size){
+  let arrN = [];
+  console.log('arr.length', arr.length)
+  console.log('n', n)
+  console.log('size', size)
+  for(let i = 0; i < size; i++){
+    if(n === 0){
+      arrN = [...arrN, []];
+      continue;
+    }
+    if(arr.length < size){
+      arrN = [...arrN, ...arr];
+    } else {
+      let indexEnd = i === 0 ? n : (i + 1)*n;
+      arrN = [...arrN, arr.slice(i*n, indexEnd)];
+    }
+  }
+  arrN = [...arrN, arr.slice(size*n)];
+  return arrN;
 }
 
-function include(item, array){
-  return array.some(_item =>_item.id === item.id);
+function joinArray(arr, n, numExam){
+  let numItem = Math.floor(arr.length/numExam);
+  let numRest = n - numItem;
+  let arrSplit = splitArray(arr, numItem, numExam);
+  let arrRest = arrSplit.pop();
+  let arrJoin = [...arrSplit];
+  let lenArrJoin = arrJoin.length;
+  if(numItem === 0){
+    for(let i = 0, j = 0; i < numExam; j++, i++){
+      let idx = j === arrRest.length - 1 ? 0 : j + 1;
+      if(j === arrRest.length){
+        j = 0;
+        idx = 1;
+      }
+      arrJoin[i] = [Object.assign({}, arrRest[j]), Object.assign({}, arrRest[idx])];
+    }
+  }
+  if(arrSplit[0].length !== n  && numItem > 0) {
+    arrRest = arrSplit.pop().map(item => Object.assign({isDup: true}, item))
+    for(let i = 0; i < arrJoin.length; i++){
+      let index = 0
+      if(arrRest.length > 1){
+        index = arrRest[i] ? i : Math.floor(i/arrRest.length - 1);
+      }
+      let num = numRest;
+      if(numRest === arrRest.length){
+        arrJoin[i] = [...arrJoin[i], ...arrRest]
+        num--
+        continue;
+      }else if(arrRest[index]) {
+        arrJoin[i] = [...arrJoin[i], arrRest[index]]
+        num--
+      }
+      let idx = i;
+      while(num < 0){
+        if(idx === 0){
+          let itemLast = [...[...arrJoin[lenArrJoin - 1]].slice(-num)];
+          console.log('itemLast', itemLast)
+          itemLast.map(item => item.isDup = true)
+          arrJoin[idx] = [...arrJoin[idx], ...itemLast];
+        }else if(idx !== lenArrJoin){
+          let itemLast1 =[...[...arrJoin[idx - 1].filter(item => !item.isDup)].slice(-num)];
+          console.log('itemLast1', itemLast1)
+          itemLast1.map(item => item.isDup = true)
+          arrJoin[idx] = [...arrJoin[idx], ...itemLast1];
+        }
+        num--;
+        idx++;
+      }
+    }
+  }
+  console.log(arrJoin);
+  return arrJoin;
 }
 
-function makeExceptChosen(arrayQuestions, chosen, percent, type =''){
-  let numOfPercent = Math.floor(percent/100*chosen.length);
-//   console.log('length: ' + type +' --- '+ arrayQuestions.filter(item => !include(item, chosen)).length);
-//   console.log('percent: ' + type +' --- '+ [...chosen].filter((item, i) => i < numOfPercent).map(x => Object.assign(x, {isDup: true})).length);
-  //clear isDup
-  chosen.map(item => {
-    let iTemp = Object.assign(item);
-    delete iTemp['isDup'];
-    return iTemp;
-  });
-  return [
-    ...arrayQuestions.filter(item => !include(item, chosen)),
-    ...chosen.filter((item, i) => i < numOfPercent).map(x => Object.assign(x, {isDup: true}))
-  ]
+const test = joinArray(quizes, 2, 4)
+const a1 = [
+  { id: 0, content: 0, level: 'k' },
+  { id: 1, content: 1, level: 'v' },
+  { id: 2, content: 2, level: 'v' },
+  { id: 9, content: 9, level: 'k' },
+  { id: 10, content: 10, level: 'd' }
+]
+const a2 = [
+  { id: 3, content: 3, level: 'k' },
+  { id: 4, content: 4, level: 'k' },
+  { id: 5, content: 5, level: 'v' },
+  { id: 9, content: 9, level: 'k' },
+  { id: 10, content: 10, level: 'd' }
+]
+// console.log(calPercent(a1, a2))
+// console.log(calPercent(test[0], test[1]))
+// console.log(calPercent(test[1], test[2]))
+// console.log(calPercent(test[0], test[2]))
+
+function calPercent(arr1, arr2){
+  let count = 0;
+  arr1.forEach((item1, index)=>{
+      if(arr2.some(item2 => item1.id === item2.id) ) count += 1;
+  })
+  // console.log('count', count, count/arr1.length);
+  return count/arr1.length*100;
 }
-let sode = 0;
-function makeTest(numOfTest, numOfEasy, numOfMedium, numOfHard, easies, mediums, hards, full){
-  let _easy = getNQuestionsInArray(easies, numOfEasy)
-  let _mediums = getNQuestionsInArray(mediums, numOfMedium)
-  let _hards = getNQuestionsInArray(hards, numOfHard)
-  let result = [
-    ..._easy,
-    ..._mediums,
-    ..._hards,
-  ]
-  console.log('de ', result)
-  if(result.length === 20){
-      sode++;
-  }else{
-      console.log('so de chuan', sode);
-      return full;
-  }
-  full = [...full, result];
-  if(numOfTest === 0){
-    return full;
-  }else{
-      let easy =  makeExceptChosen(easies, _easy, 30, 'de')
-      let medium =  makeExceptChosen(mediums, _mediums, 30, 'trungbinh')
-      let hard = makeExceptChosen(hards, _hards, 30, 'kho')
-    //   let easy;
-    //   let medium;
-    //   let hard; 
-    //   do{
-    //     percent += 10;
-    //     easy =  makeExceptChosen(easies, _easy, percent)
-    //     medium =  makeExceptChosen(mediums, _mediums, percent)
-    //     hard = makeExceptChosen(hards, _hards, percent)
-    //   }while(easy.length !== numOfEasy && medium.length !== numOfMedium && hard.length !== numOfHard)
-     
-    return makeTest(numOfTest-1, numOfEasy, numOfMedium, numOfHard, easy, medium, hard, full);
-  }
-}
-let tests = makeTest(5, 10, 5, 5, easies, mediums, hards, [])
-console.log('Deee', tests);

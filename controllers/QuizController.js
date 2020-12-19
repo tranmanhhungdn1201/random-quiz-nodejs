@@ -98,14 +98,16 @@ function postCreateExam(req, res){
     const hards = questionsInSub.filter(quiz => quiz.level === LEVEL_HARD);
     const { type, subjectId, numOfExam, numInExam, numEasy, numMedium, numHard} = req.body;
     let exams;
-    console.log('type', req.body);
     if(+type === 1){
-        exams = makeTest(+numOfExam, +numEasy, +numMedium, +numHard, easies, mediums, hards, []);
+        // exams = splitArray(easies, 0, 4);
+        exams = createExam2(+numOfExam, +numEasy, +numMedium, +numHard, easies, mediums, hards);
+        // exams = makeTest(+numOfExam, +numEasy, +numMedium, +numHard, easies, mediums, hards, []);
     } else {
         exams = makeExams(+numOfExam, +numEasy, +numMedium, +numHard, easies, mediums, hards);
     }
     return res.json({
         success: true,
+        maxPercent: maxPercentArray(exams),
         exams
     });
 }
@@ -383,6 +385,127 @@ function createFileExam(data, type = '0', subject = {name: '........'}){
     });
 }
 
+// create exam 2
+
+function splitArray(arr, n, size){
+    let arrN = [];
+    console.log('n', n);
+    console.log('size', size);
+    for(let i = 0; i < size; i++){
+        if(n === 0){
+            arrN = [...arrN, []];
+            continue;
+        }
+        if(arr.length < size){
+            arrN = [...arrN, arr];
+        } else {
+            let indexEnd = i === 0 ? n : (i + 1)*n;
+            arrN = [...arrN, arr.slice(i*n, indexEnd)];
+        }
+    }
+    arrN = [...arrN, arr.slice(size*n)];
+    console.log('arrN', arrN.length)
+    return arrN;
+}
+
+function joinArray(arr, n, numExam){
+    let numItem = Math.floor(arr.length/numExam) > n ? n : Math.floor(arr.length/numExam);
+    let numRest = n - numItem;
+    let arrSplit = splitArray(arr, numItem, numExam);
+    let arrRest = arrSplit.pop();
+    let arrJoin = [...arrSplit];
+    let lenArrJoin = arrJoin.length;
+    if(numItem === 0){
+      for(let i = 0, j = 0; i < numExam; j++, i++){
+        let idx = j === arrRest.length - 1 ? 0 : j + 1;
+        if(j === arrRest.length){
+          j = 0;
+          idx = 1;
+        }
+        arrJoin[i] = [Object.assign({}, arrRest[j]), Object.assign({}, arrRest[idx])];
+      }
+    }
+    if(arrSplit[0].length !== n  && numItem > 0) {
+      arrRest = arrSplit.pop().map(item => Object.assign({isDup: true}, item))
+      for(let i = 0; i < arrJoin.length; i++){
+        let index = 0
+        if(arrRest.length > 1){
+          index = arrRest[i] ? i : Math.floor(i/arrRest.length - 1);
+        }
+        let num = numRest;
+        if(numRest === arrRest.length){
+          arrJoin[i] = [...arrJoin[i], ...arrRest]
+          num--
+          continue;
+        }else if(arrRest[index]) {
+          arrJoin[i] = [...arrJoin[i], arrRest[index]]
+          num--
+        }
+        let idx = i;
+        while(num > 0){
+          if(idx === 0){
+            let itemLast = [...[...arrJoin[lenArrJoin - 1]].slice(-num)];
+            itemLast.map(item => item.isDup = true)
+            arrJoin[idx] = [...arrJoin[idx], ...itemLast];
+          }else if(idx < lenArrJoin){
+            let itemLast1 =[...[...arrJoin[idx - 1].filter(item => !item.isDup)].slice(-num)];
+            itemLast1.map(item => item.isDup = true)
+            arrJoin[idx] = [...arrJoin[idx], ...itemLast1];
+          }
+          num--;
+          idx++;
+        }
+      }
+    }
+    return arrJoin;
+  }
+
+function createExam2(numOfTest, numOfEasy, numOfMedium, numOfHard, easies, mediums, hards){
+    const arrE = joinArray(easies, numOfEasy, numOfTest);
+    console.log('numOfEasy', numOfEasy)
+    // const arrM = joinArray(mediums, numOfMedium, numOfTest);
+    // const arrH = joinArray(hards, numOfHard, numOfTest);
+    let tests = [];
+    for(let i = 0; i < arrE.length; i++){
+        // tests = [...tests, [...arrE[i], ...arrM[i], ... arrH[i]]];
+    }
+    return arrE;
+}
+
+function calPercent(arr1, arr2){
+    let count = 0;
+    arr1.forEach((item1, index)=>{
+        if(arr2.some(item2 => item1.id === item2.id) ) count += 1;
+    })
+    return count/arr1.length*100;
+}
+
+function maxPercentArray(arr){
+    let max = 0;
+    let idx1 = 0;
+    let idx2 = 1;
+    for(let i = 0; i < arr.length - 1; i++){
+        for(let j = i + 1; j < arr.length; j++){
+            console.log('percenttttttt1');
+            let percent = calPercent(arr[i], arr[j]);
+            // console.log(i, j, percent);
+            if(max < percent){
+                console.log('percenttttttt');
+                console.log(i, j, percent);
+                idx1 = i;
+                idx2 = j;
+                max = percent;
+            }
+        }
+    }
+
+    return {
+        max,
+        idx1,
+        idx2
+    };
+}
+
 module.exports = {
     list,
     getCreateExam,
@@ -392,4 +515,5 @@ module.exports = {
     updateQuestion,
     destroyQuestion,
     exportFileSubject,
+    createExam2,
 }

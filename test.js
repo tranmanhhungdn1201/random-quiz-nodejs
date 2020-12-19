@@ -30,6 +30,9 @@ function shuffle(a) {
 }
 
 function getNQuestionsInArray(arrayQuestion, n){
+  if(arrayQuestion[0] && arrayQuestion[0]['level'] === 'd'){
+    console.log('easy', arrayQuestion);
+  }
   let questionShuffled = shuffle(JSON.parse(JSON.stringify(arrayQuestion)));
   let arrayQuizDup = [];
   let arrayQuiz = [];
@@ -59,36 +62,75 @@ function makeExceptChosen(arrayQuestions, chosen, percent){
   return [
     ...arrayQuestions.filter(item => !include(item, chosen)),
     ...chosen.filter((item, i) => i < numOfPercent).map(x => Object.assign(x, {isDup: true}))
-  ]
+  ];
 }
 
 let sode = 0;
-function makeTest(numOfTest, numOfEasy, numOfMedium, numOfHard, easies, mediums, hards, full){
-  let _easy = getNQuestionsInArray(easies, numOfEasy)
-  let _mediums = getNQuestionsInArray(mediums, numOfMedium)
-  let _hards = getNQuestionsInArray(hards, numOfHard)
+function makeTest(numOfTest, numOfEasy, numOfMedium, numOfHard, easies, mediums, hards, full, percent){
+  let _easy = [];
+  let _mediums = [];
+  let _hards = [];
+  if(easies.length > numOfEasy){
+    _easy = getNQuestionsInArray(easies, numOfEasy)
+  }
+  else {
+    console.log('d out')
+    return full;
+  }
+  console.log(_mediums.length, numOfMedium)
+  if(mediums.length > numOfMedium){
+    _mediums = getNQuestionsInArray(mediums, numOfMedium)
+  }
+  else {
+    console.log('tb out')
+    return full;
+  }
+  if(hards.length > numOfHard){
+    _hards = getNQuestionsInArray(hards, numOfHard)
+  }
+  else {
+    console.log('k out')
+    return full;
+  }
   let result = [
     ..._easy,
     ..._mediums,
     ..._hards,
   ];
-  if(result.length === 20){
+  let numInExam = numOfEasy + numOfMedium + numOfHard;
+  if(result.length === numInExam){
       sode++;
-  }else{
+  } else {
       console.log('so de chuan', sode);
       return full;
   }
   full = [...full, result];
   if(numOfTest === 0){
     return full;
-  }else{
-      let easy =  makeExceptChosen(easies, _easy, 30)
-      let medium =  makeExceptChosen(mediums, _mediums, 30)
-      let hard = makeExceptChosen(hards, _hards, 30)
-    return makeTest(numOfTest-1, numOfEasy, numOfMedium, numOfHard, easy, medium, hard, full);
+  } else {
+    let checkE = true;
+    let checkM = true;
+    let checkH = true;
+    let easy = makeExceptChosen(easies, _easy, percent)
+    let medium = makeExceptChosen(mediums, _mediums, percent)
+    let hard = makeExceptChosen(hards, _hards, percent)
+    if(easy.length < numOfEasy){
+      easy = easies;
+      checkE = false;
+    }
+    if(medium.length < numOfMedium){
+      medium = mediums;
+      checkM = false;
+    }
+    if(easy.length < numOfHard){
+      easy = hards;
+      checkH = false;
+    }
+    return makeTest(numOfTest - 1, numOfEasy, numOfMedium, numOfHard, easy, medium, hard, full);
   }
 }
-// let tests = makeTest(5, 10, 5, 5, easies, mediums, hards, [])
+let tests = makeTest(5, 10, 5, 5, easies, mediums, hards, [], 30)
+console.log(tests);
 // console.log('Deee', tests);
 // let arr = [{"name":"subject","value":"5953400309730983"},{"name":"numOfExam","value":""},{"name":"numInExam","value":""},{"name":"numEasy","value":""},{"name":"numMedium","value":""},{"name":"numHard","value":""}];
 // let arrF = arr.reduce((obj, item) => {
@@ -98,34 +140,35 @@ function makeTest(numOfTest, numOfEasy, numOfMedium, numOfHard, easies, mediums,
 // }, {});
 // console.log(arrF)
 
-function makeQuestion(numOfTest, numOfQuestionInTest, arr){
-    let step = Math.floor(arr.length/numOfTest);
-    let test = [];
-    let start = 0
-    for(let i = 0; i < numOfTest; i++){
-        if(i !== 0) start += step
-        test.push(arr.filter((item, index) => {
-            if((start + numOfQuestionInTest) > arr.length){
-                return (index >= start && index<arr.length) || index < ((start + numOfQuestionInTest - arr.length))
-            }else{
-                return index >= start && index < (start+numOfQuestionInTest)
-            }
-        }))
-    }
-    return test;
-}
+// cách 2
+// function makeQuestion(numOfTest, numOfQuestionInTest, arr){
+//     let step = Math.floor(arr.length/numOfTest);
+//     let test = [];
+//     let start = 0
+//     for(let i = 0; i < numOfTest; i++){
+//         if(i !== 0) start += step
+//         test.push(arr.filter((item, index) => {
+//             if((start + numOfQuestionInTest) > arr.length){
+//                 return (index >= start && index<arr.length) || index < ((start + numOfQuestionInTest - arr.length))
+//             }else{
+//                 return index >= start && index < (start+numOfQuestionInTest)
+//             }
+//         }))
+//     }
+//     return test;
+// }
 
-function makeExams(numOfTest, numE, numM, numH, easies, mediums, hards){
-  let exams = [];
-  let es = make(numOfTest, numE, easies);
-  let md = make(numOfTest, numM, mediums);
-  let hd = make(numOfTest, numH, hards);
-  if(es.length !== md.length || es.length !== hd.length || md.length !== hd.length)
-    return []
-  for(let i = 0; i < numOfTest; i++){
-    exams = [...exams, [...es[i], ...md[i], ...hd[i]]];
-  }
-  return exams;
-}
+// function makeExams(numOfTest, numE, numM, numH, easies, mediums, hards){
+//   let exams = [];
+//   let es = make(numOfTest, numE, easies);
+//   let md = make(numOfTest, numM, mediums);
+//   let hd = make(numOfTest, numH, hards);
+//   if(es.length !== md.length || es.length !== hd.length || md.length !== hd.length)
+//     return []
+//   for(let i = 0; i < numOfTest; i++){
+//     exams = [...exams, [...es[i], ...md[i], ...hd[i]]];
+//   }
+//   return exams;
+// }
 
-makeExam(4, 20, 10, 10, easies, mediums, hards);
+// makeExam(4, 20, 10, 10, easies, mediums, hards);

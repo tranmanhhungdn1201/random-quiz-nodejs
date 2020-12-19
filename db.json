@@ -29,6 +29,22 @@
       "id": "a2400611-cba9-4ed7-bb30-dbae579b455d",
       "name": "ABCD",
       "slug": "ABCD"
+    },
+    {
+      "id": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "name": "a2",
+      "slug": "a2",
+      "teacherName": "Hùng",
+      "createdAt": "2020-11-14T13:00:04.187Z",
+      "createdAtString": "20:0:4 14/10/2020"
+    },
+    {
+      "id": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "name": "a1",
+      "slug": "a1",
+      "teacherName": "Hùng",
+      "createdAt": "2020-11-14T13:11:26.910Z",
+      "createdAtString": "20:11:26 14/10/2020"
     }
   ],
   "questions": [
@@ -2263,6 +2279,1326 @@
       "id": "2375ca7e-bff8-4366-a6b7-526ed97756a3",
       "idSubject": "a2400611-cba9-4ed7-bb30-dbae579b455d",
       "level": "K"
+    },
+    {
+      "answers": [
+        {
+          "content": "a. Là nền quốc phòng mang tính chất \"vì dân, do dân, của dân\"",
+          "isTrue": true
+        },
+        {
+          "content": "b. Phát triển theo phương hướng toàn dân, toàn diện, độc lập, tự chủ, tự lực, tự cường và ngày càng hiện đại, kết hợp chặt chẽ kinh tế với quốc phòng và an ninh, dưới sự lãnh đạo của Đảng, sự quản lí, điều hành của Nhà nước, do Nhân dân làm chủ,",
+          "isTrue": false
+        },
+        {
+          "content": "c. Nhằm giữ vững hoà bình, ổn định của đất nước, sẵn sàng đánh bại mọi hành động xâm lược và bạo loạn lật đổ của các thế lực đế quốc, phản động; bảo vệ vững chắc Tổ quốc Việt Nam xã hội chủ nghĩa.\"",
+          "isTrue": false
+        },
+        {
+          "content": "d. Tất cả phương án trên",
+          "isTrue": false
+        }
+      ],
+      "content": "Quốc phòng toàn dân là:",
+      "id": "f29a4956-c4c4-4f6b-88f0-54029635d49c",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "a. \"Nền quốc phòng toàn dân là sức mạnh quốc phòng của đất nước được xây dựng trên nền tảng nhân lực, vật lực, tinh thần mang tính chất toàn dân, toàn diện, độc lập, tự chủ, tự cường\".",
+          "isTrue": true
+        },
+        {
+          "content": "b. Nền quốc phòng toàn dân là sức mạnh quốc phòng của đất nước được xây dựng trên các tiềm lực chính trị tinh thần, tiềm lực về kinh tế .",
+          "isTrue": false
+        },
+        {
+          "content": "c. Nền quốc phòng toàn dân là sức mạnh quốc phòng của đất nước được xây dựng trên các tiềm lực quân sự an ninh và tiềm lực khoa học công nghệ.",
+          "isTrue": false
+        },
+        {
+          "content": "d. Tất cả các phương án trên",
+          "isTrue": false
+        }
+      ],
+      "content": "Nền quốc phòng toàn dân là gì?",
+      "id": "05718ec5-3ee2-452a-884c-7af32c1eb4da",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "LĐ của các thế lực đế quốc, phản động, bảo vệ vững chắc Tổ quốc Việt Nam và chế độ XHCN.",
+          "isTrue": true
+        },
+        {
+          "content": "b. Tạo ra môi trưởng ổn định để phát triển kinh tế xã hội",
+          "isTrue": false
+        },
+        {
+          "content": "c. Tạo nên sức mạnh tổng hợp để sẵn sàng chống chiến tranh xâm lược của các thế lực đế quốc.",
+          "isTrue": false
+        },
+        {
+          "content": "",
+          "isTrue": false
+        }
+      ],
+      "content": "Xây dựng nền quốc toàn toàn dân vững mạnh nhằm mục đích là:",
+      "id": "d7f600f1-d0d4-482b-8bff-797e6100014b",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "a. Tất cả phương án",
+          "isTrue": true
+        },
+        {
+          "content": "b. Là sự nghiệp của toàn dân, do Nhân dân tiến hành, lực lượng an ninh Nhân dân làm nòng cốt dưới sự lãnh đạo của Đảng và sự quản lí của Nhà nước.",
+          "isTrue": false
+        },
+        {
+          "content": "c. Kết hợp phong trào toàn dân bảo vệ an ninh Tổ quốc với các biện pháp nghiệp vụ của lực lượng chuyên trách, nhằm đập tan mọi âm mưu và hành động xâm phạm an ninh quốc gia và trật tự an toàn xã hội, cùng với quốc phòng toàn dân bảo vệ vững chắc Tổ quốc Việt Nam xã hội chủ nghĩa.",
+          "isTrue": false
+        },
+        {
+          "content": "ninh quốc gia có nhiệm vụ: đấu tranh làm thất bại mọi âm mưu hoạt động xâm phạm an ninh quốc gia, bảo vệ chế độ xã hội chủ nghĩa, bảo vệ Đảng, chính quyền, các lực lượng vũ trang và Nhân dân\".",
+          "isTrue": false
+        }
+      ],
+      "content": "An ninh nhân dân là gì?",
+      "id": "6af5e42d-285a-48ff-a608-f9f56bacbad5",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "a. Là sức mạnh về tinh thần, vật chất, sự đoàn kết và truyền thống dựng nước, giữ nước của toàn dân tộc được huy động vào sự nghiệp bảo vệ an ninh quốc gia, trong đó lực lượng chuyên trách bảo vệ an ninh Nhân dân làm nòng cốt.",
+          "isTrue": true
+        },
+        {
+          "content": "b. Là sức mạnh về tinh thần vật chất của toàn dân được huy động trên mặt trận phòng chống tội phạm.",
+          "isTrue": false
+        },
+        {
+          "content": "c. Là sức mạnh về sự đoàn kết và truyền thống dựng nước và giữ nước của toàn dân được huy động vào sự nghiệp bảo vệ Tổ quốc.",
+          "isTrue": false
+        },
+        {
+          "content": "d. Là sức mạnh tổng hợp của toàn dân, của cả hệ thống chính trị được huy động trong sự nghiệp bảo vệ an ninh quốc gia.",
+          "isTrue": false
+        }
+      ],
+      "content": "Nền an ninh nhân dân là:",
+      "id": "d8657da5-53c4-4270-998f-00c7733301a2",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "a. Nền quốc phòng, an ninh vì dân, của dân và do toàn thể nhân dân tiến hành.",
+          "isTrue": true
+        },
+        {
+          "content": "b. Nền quốc phòng toàn dân, an ninh nhân dân của ta chỉ có mục đích duy nhất là tự vệ chính đáng .",
+          "isTrue": false
+        },
+        {
+          "content": "c. Nền quốc phòng toàn dân, an ninh nhân dân được xây dựng toàn diện và từng bước hiện đại.",
+          "isTrue": false
+        },
+        {
+          "content": "d.  Nền quốc phòng, an ninh có sức mạnh tổng hợp do nhiều yếu tố tạo thành.",
+          "isTrue": false
+        }
+      ],
+      "content": "Đặc trưng nào thể hiện truyền thống, kinh nghiệm của dân tộc trong xây dựng nền quốc phòng ở nước ta?",
+      "id": "fb9253f8-982f-4ebd-bfcf-f7b273e95f5c",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "ỉ có mục đích duy nhất là tự vệ chính đáng.",
+          "isTrue": true
+        },
+        {
+          "content": "b. Vì dân, của dân và do toàn thể nhân dân tiến hành.",
+          "isTrue": false
+        },
+        {
+          "content": "c. Được xây dựng toàn diện và từng bước hiện đại.",
+          "isTrue": false
+        },
+        {
+          "content": "d.  Nền quốc phòng toàn dân gắn chặt với nền an ninh nhân dân",
+          "isTrue": false
+        }
+      ],
+      "content": "Đặc trưng nào sau đây thể hiện sự khác nhau về bản chất trong xây dựng nền quốc phòng, an ninh của những quốc gia có độc lập chủ quyền đi theo con đường XHCN với các quốc gia không đi theo con đường XHCN?",
+      "id": "02a82cfe-f3b2-4d32-9fe2-eaea159e4b9a",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "a. Yếu tố bên trong",
+          "isTrue": true
+        },
+        {
+          "content": "b. Yếu tố bên ngoài",
+          "isTrue": false
+        },
+        {
+          "content": "c. Yếu tố dân tộc",
+          "isTrue": false
+        },
+        {
+          "content": "d. Yếu tố thời đại",
+          "isTrue": false
+        }
+      ],
+      "content": "Yếu tố giữ vai trò quyết định đến sức mạnh tổng hợp của nền quốc phòng, an ninh ở nước ta?",
+      "id": "b119602d-0219-459d-a1de-092dee33b2d6",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "a. Lực lượng toàn dân (lực lượng chính trị) và lực lượng vũ trang nhân dân.",
+          "isTrue": true
+        },
+        {
+          "content": "b. Lực lượng quân đội nhân dân, công an nhân dân, dân quân tự vệ.",
+          "isTrue": false
+        },
+        {
+          "content": "c. Lực lượng toàn dân và lực lượng quân đội nhân dân",
+          "isTrue": false
+        },
+        {
+          "content": "d. Lực lượng chính trị và lực lượng công an nhân dân",
+          "isTrue": false
+        }
+      ],
+      "content": "Nền quốc phòng toàn dân, an ninh nhân dân Việt Nam gồm những lực lượng nào?",
+      "id": "5f403e23-aa3a-44a4-bb6d-08e91f1bb96f",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "a. Tiềm lực chính trị, tinh thần",
+          "isTrue": true
+        },
+        {
+          "content": "b. Tiềm lực kinh tế",
+          "isTrue": false
+        },
+        {
+          "content": "c. Tiềm lực khoa học, công nghệ",
+          "isTrue": false
+        },
+        {
+          "content": "d. Tiềm lực quân sự, an ninh",
+          "isTrue": false
+        }
+      ],
+      "content": "Tiềm lực nào sau đây giữ vai trò là nhân tố cơ bản tạo nên sức mạnh của quốc phòng, an ninh?",
+      "id": "3e054f02-5346-4813-a078-433bc062bd60",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "a. Nhân lực, vật lực, tài lực của quốc gia có thể huy động cho quốc phòng, an ninh và tính cơ động của nền kinh tế đất nư\u001f\u001fớc trong mọi hoàn cảnh.",
+          "isTrue": true
+        },
+        {
+          "content": "b. Là khả năng về kinh tế của đất nư\u001f\u001fớc",
+          "isTrue": false
+        },
+        {
+          "content": "ểu hiện ở tính cơ động của nền kinh tế đất nư\u001f\u001fớc trong mọi điều kiện hoàn cảnh.",
+          "isTrue": false
+        },
+        {
+          "content": "d.  Nhân lực, vật lực, tài chính của quốc gia.",
+          "isTrue": false
+        }
+      ],
+      "content": "Tiềm lực kinh tế của nền quốc phòng toàn dân, an ninh nhân dân được biểu hiện ở yếu tố cơ bản nào:",
+      "id": "c00c04df-3b85-48b0-ad51-535e52801d1c",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "a. Tiềm lực kinh tế",
+          "isTrue": true
+        },
+        {
+          "content": "b. Tiềm lực khoa học, công nghệ",
+          "isTrue": false
+        },
+        {
+          "content": "c. Tiềm lực chính trị, tinh thần",
+          "isTrue": false
+        },
+        {
+          "content": "d. Tiềm lực quân sự, an ninh",
+          "isTrue": false
+        }
+      ],
+      "content": "Tiềm lực nào giữ vai trò tạo nên sức mạnh vật chất, cơ sở vật chất của các tiềm lực khác?",
+      "id": "ba932957-c347-4c4e-81dc-ff369bcf060d",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "a. Tiềm lực quân sự, an ninh",
+          "isTrue": true
+        },
+        {
+          "content": "b. Tiềm lực khoa học, công nghệ",
+          "isTrue": false
+        },
+        {
+          "content": "c. Tiềm lực kinh tế",
+          "isTrue": false
+        },
+        {
+          "content": "d. Tiềm lực chính trị, tinh thần",
+          "isTrue": false
+        }
+      ],
+      "content": "Tiềm lực nào giữ vai trò là nhân tố cơ bản, biểu hiện tập trung, trực tiếp sức mạnh quân sự, an ninh của nhà nước giữ vai trò nòng cốt để bảo vệ Tổ quốc trong mọi tình huống?",
+      "id": "c0350c38-d874-4055-ac28-b43199b38804",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "a. Mục đích tự vệ, chống thù trong, giặc ngoài để bảo vệ Tổ quốc",
+          "isTrue": true
+        },
+        {
+          "content": "b. Phương thức tổ chức lực lượng",
+          "isTrue": false
+        },
+        {
+          "content": "c. Mục tiêu cụ thể được phân công",
+          "isTrue": false
+        },
+        {
+          "content": "d. Phương thức tổ chức và hoạt động.",
+          "isTrue": false
+        }
+      ],
+      "content": "Nền quốc phòng toàn dân và nền an ninh nhân dân thống nhất ở nội dung nào?",
+      "id": "c380925d-7b0b-4783-89c7-2d598885ebe2",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "a. Tiềm lực chính trị tinh thần, kinh tế, khoa học công nghệ.",
+          "isTrue": true
+        },
+        {
+          "content": "b. Tiềm lực con người.",
+          "isTrue": false
+        },
+        {
+          "content": "c. Vũ khí trang bị, kỹ thuật hiện đại.",
+          "isTrue": false
+        },
+        {
+          "content": "d. Nguồn tài chính của quốc gia.",
+          "isTrue": false
+        }
+      ],
+      "content": "Tiềm lực quân sự - an ninh được xây dựng trên cơ sở nền tảng của tiềm lực nào?",
+      "id": "046cba69-c0d9-4fad-b450-476aa1a88804",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "a. Nền quốc phòng - an ninh có sức mạnh tổng hợp do nhiều yếu tố tạo thành.",
+          "isTrue": true
+        },
+        {
+          "content": "ninh nhân dân được xây dựng toàn diện và từng bước hiện đại.",
+          "isTrue": false
+        },
+        {
+          "content": "ninh nhân dân.",
+          "isTrue": false
+        },
+        {
+          "content": "d. Xây dựng con người vững mạnh về chính trị và hiện đại hóa vũ khí trang bị.",
+          "isTrue": false
+        }
+      ],
+      "content": "Đặc trưng nào phản ánh sức mạnh tổng hợp trong xây dựng nền quốc phòng - an ninh?",
+      "id": "c26ca226-1a38-4589-8663-0931bda04975",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "a. Tạo ra sức mạnh tổng hợp, tạo thế chủ động trong xây dựng và bảo vệ Tổ quốc.",
+          "isTrue": true
+        },
+        {
+          "content": "b. Tạo thế chủ động cho sự nghiệp xây dựng và bảo vệ Tổ quốc.",
+          "isTrue": false
+        },
+        {
+          "content": "c. Tạo sức mạnh tổng hợp của đất nước.",
+          "isTrue": false
+        },
+        {
+          "content": "d. Tạo sức mạnh để có khả năng thực hiện răn đe về quân sự.",
+          "isTrue": false
+        }
+      ],
+      "content": "Xây dựng nền quốc phòng toàn dân, an ninh nhân dân vững mạnh nhằm mục đích gì?",
+      "id": "fd08c347-0a3c-4b00-9e67-e31cbd1a807e",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "a. Lực lượng vũ trang nhân dân.",
+          "isTrue": true
+        },
+        {
+          "content": "b. Lực lượng quân đội nhân dân",
+          "isTrue": false
+        },
+        {
+          "content": "c. Lực lượng công an nhân dân",
+          "isTrue": false
+        },
+        {
+          "content": "d. Lực lượng toàn dân.",
+          "isTrue": false
+        }
+      ],
+      "content": "Lực lượng nào giữ vai trò nòng cốt trong xây dựng nền Quốc phòng toàn dân, An ninh nhân dân ở nước ta hiện nay?",
+      "id": "c33f4e62-c237-48fa-beb7-59fa8ef83a91",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "a. Xây dựng lực lượng vũ trang nhân dân cách mạng, chính quy, tinh nhuệ và từng bước hiện đại.",
+          "isTrue": true
+        },
+        {
+          "content": "b. Xây dựng lực lượng vũ trang cách mạng, hiện đại, chính quy, vững mạnh.",
+          "isTrue": false
+        },
+        {
+          "content": "c. Xây dựng quân đội nhân dân cách mạng, chính quy, tinh nhuệ, hiện đại",
+          "isTrue": false
+        },
+        {
+          "content": "d. Xây dựng công an nhân dân cách mạng, chính quy, tinh nhuệ, hiện đại",
+          "isTrue": false
+        }
+      ],
+      "content": "Phương hướng xây dựng lực lượng vũ trang nhân dân hiện nay được Đảng ta xác định như thế nào?",
+      "id": "0bf30b79-aeb7-4d99-8d7f-94a774acda77",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "a. Toàn dân.",
+          "isTrue": true
+        },
+        {
+          "content": "b. Quân đội nhân dân.",
+          "isTrue": false
+        },
+        {
+          "content": "ng an nhân dân.",
+          "isTrue": false
+        },
+        {
+          "content": "d. Hệ thống chính trị.",
+          "isTrue": false
+        }
+      ],
+      "content": "Xây dựng nền quốc phòng toàn dân, an ninh nhân dân là trách nhiệm của ai?",
+      "id": "61f51941-00c7-482e-b525-35e5aa92456c",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "a.  Tất cả các phương án trên.",
+          "isTrue": true
+        },
+        {
+          "content": "b. Tạo sức mạnh tổng hợp của đất nước",
+          "isTrue": false
+        },
+        {
+          "content": "c. Giữ vững hoà bình, ổn định, đẩy lùi, ngăn chặn nguy cơ chiến tranh, sẵn sàng đánh thắng chiến tranh xâm lược dưới mọi hình thức và quy mô.",
+          "isTrue": false
+        },
+        {
+          "content": "d. Tạo thế chủ động cho sự nghiệp xây dựng và bảo vệ Tổ quốc.",
+          "isTrue": false
+        }
+      ],
+      "content": "Hiện nay xây dựng nền quốc phòng toàn dân, an ninh nhân dân vững mạnh để làm gì?",
+      "id": "30bddeab-5e71-44ae-a1ce-55ef1903c982",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "a. Sự tổ chức, bố trí lực lượng, tiềm lực mọi mặt của đất nước và của toàn dân trên toàn bộ lãnh thổ theo yêu cầu của quốc phòng, an ninh, bảo vệ Tổ quốc Việt Nam xã hội chủ nghĩa.",
+          "isTrue": true
+        },
+        {
+          "content": "b. Sự tổ chức, bố trí tiềm lực mọi mặt của đất nước và của toàn dân trên toàn bộ lãnh thổ theo yêu cầu của quốc phòng, an ninh.",
+          "isTrue": false
+        },
+        {
+          "content": "c. Sự phân vùng chiến lược về quốc phòng, an ninh kết hợp với vùng kinh tế trên cơ sở quy hoạch các vùng dân cư theo nguyên tắc bảo vệ đi đôi với xây dựng đất nước.",
+          "isTrue": false
+        },
+        {
+          "content": "d. Triển khai các lực lượng trong thế trận; tổ chức phòng thủ dân sự, kết hợp cải tạo địa hình với xây dựng hạ tầng và các công trình quốc phòng, an ninh.",
+          "isTrue": false
+        }
+      ],
+      "content": "Thế trận quốc phòng, an ninh là ...?",
+      "id": "2a6b2ee4-4592-4ea3-b3a8-d3d2fae080ef",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "a. Sức mạnh tổng hợp của nền quốc phòng toàn dân, an ninh nhân dân.",
+          "isTrue": true
+        },
+        {
+          "content": "b. Sức mạnh của quân đội nhân dân Việt Nam.",
+          "isTrue": false
+        },
+        {
+          "content": "c. Sức mạnh về vũ khí, trang bị kỹ thuật và phương tiện chiến tranh.",
+          "isTrue": false
+        },
+        {
+          "content": "d. Sức mạnh của yếu tố chính trị tinh thần.",
+          "isTrue": false
+        }
+      ],
+      "content": "Cơ sở, tiền đề và là biện pháp để nhân dân đánh thắng kẻ thù xâm lược là?",
+      "id": "2d4b206f-3f99-4aac-9181-8571b8ddb617",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "a. Toàn dân, toàn diện, độc lập tự chủ, tự lực, tự cường, từng bước hiện đại.",
+          "isTrue": true
+        },
+        {
+          "content": "b. Toàn dân, toàn diện và từng bước hiện đại.",
+          "isTrue": false
+        },
+        {
+          "content": "c. Xây dựng công an nhân dân cách mạng, chính quy, tinh nhuệ, từng bước hiện đại.",
+          "isTrue": false
+        },
+        {
+          "content": "d. Xây dựng quân đội nhân dân cách mạng, chính quy, tinh nhuệ, từng bước hiện đại.",
+          "isTrue": false
+        }
+      ],
+      "content": "Phương châm xây dựng nền quốc phòng toàn dân của Đảng ta trong giai đoạn hiện nay là?",
+      "id": "569d5749-c6d0-4016-9092-74f919dd978c",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "a. Xây dựng nền quốc phòng toàn dân theo phương châm: toàn dân, toàn diện, độc lập tự chủ, tự lực, tự cường, từng bước hiện đại.",
+          "isTrue": true
+        },
+        {
+          "content": "o đảm an ninh chính trị, kinh tế, văn hóa và xã hội; duy trì trật tự, kỷ cương và an toàn xã hội, giữ vững ổn định chính trị của đất n\u001fước.",
+          "isTrue": false
+        },
+        {
+          "content": "c. Xây dựng nền quốc phòng toàn dân nhằm ngăn chặn và đẩy lùi mọi nguy cơ xâm l\u001fược, sẵn sàng đánh thắng chiến tranh xâm l\u001fược, bảo vệ vững chắc Tổ quốc Việt Nam xã hội chủ nghĩa trong mọi tình huống.",
+          "isTrue": false
+        },
+        {
+          "content": "d. Kết hợp kinh tế với quốc phòng - an ninh, quốc phòng - an ninh với đối ngoại, sức mạnh dân tộc và sức mạnh thời đại tạo nên sức mạnh tổng hợp bảo vệ Tổ quốc xã hội chủ nghĩa.",
+          "isTrue": false
+        }
+      ],
+      "content": "Quan điểm tổng quát, bao trùm chỉ đạo xây dựng nền quốc phòng toàn dân của nước ta trong thời kỳ mới là?",
+      "id": "e6bd41ec-1cfa-4dbb-b5c7-12a0b97c30db",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": ".",
+          "isTrue": true
+        },
+        {
+          "content": "b. Tạo môi trường thuận lợi để phát triển kinh tế, xây dựng đất nước.",
+          "isTrue": false
+        },
+        {
+          "content": "c. Tạo môi trường hòa bình, tận dụng được khoa học công nghệ tiên tiến của các nước để xây dựng và bảo vệ Tổ quốc.",
+          "isTrue": false
+        },
+        {
+          "content": "d. Tạo môi trường hòa bình, đồng thời tranh thủ sự giúp đỡ từ bên ngoài.",
+          "isTrue": false
+        }
+      ],
+      "content": "Quan điểm gắn chặt hoạt động quốc phòng - an ninh với hoạt động đối ngoại nhằm mục đích gì?",
+      "id": "e029b48e-6801-4958-93f9-f886ade17b34",
+      "idSubject": "9da6a5bf-1a01-4d57-9473-b45de7afe54f",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Quan điểm của chủ nghĩa Mác - Lênin",
+          "isTrue": true
+        },
+        {
+          "content": "Quan điểm của các nhà triết học Hy Lạp cổ đại",
+          "isTrue": false
+        },
+        {
+          "content": "Quan điểm của C.Ph.Claurơvít",
+          "isTrue": false
+        },
+        {
+          "content": "Quan điểm của chủ nghĩa duy tâm, tôn giáo",
+          "isTrue": false
+        }
+      ],
+      "content": "Quan điểm mang tính cách mạng và khoa học khi bàn về chiến tranh là quan điểm nào sau đây?",
+      "id": "05575121-9ca7-49e5-85a1-c2727c1b0fdf",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Hiện tượng chính trị xã hội có tính lịch sử",
+          "isTrue": true
+        },
+        {
+          "content": "Nghệ thuật kiếm chác nô lệ",
+          "isTrue": false
+        },
+        {
+          "content": "Sự trừng trị của thượng đế đối với loài người",
+          "isTrue": false
+        },
+        {
+          "content": "Hành vi bạo lực dùng để đối phương phục tùng ý chí của mình",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo quan điểm của chủ nghĩa Mác- Lênin, chiến tranh là?",
+      "id": "13064aef-4b80-422c-808e-b8efe36441a5",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Sự xuất hiện và tồn tại của chế độ chiếm hữu tư nhân về tư liệu sản xuất",
+          "isTrue": true
+        },
+        {
+          "content": "Sự xuất hiện và tồn tại của giai cấp và đối kháng giai cấp",
+          "isTrue": false
+        },
+        {
+          "content": "Ý muốn và sự sai khiến của chúa",
+          "isTrue": false
+        },
+        {
+          "content": "Bản tính hiếu chiến của con người",
+          "isTrue": false
+        }
+      ],
+      "content": "Nguồn gốc kinh tế (nguồn gốc sâu xa, suy đến cùng) của chiến tranh là gì?",
+      "id": "e7583329-6767-4927-a1d3-d83850dcf5df",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Chế độ chiếm hữu nô lệ",
+          "isTrue": true
+        },
+        {
+          "content": "Chế độ công xã nguyên thủy",
+          "isTrue": false
+        },
+        {
+          "content": "Chế độ tư bản chủ nghĩa",
+          "isTrue": false
+        },
+        {
+          "content": "Chế độ xã hội chủ nghĩa",
+          "isTrue": false
+        }
+      ],
+      "content": "Chiến tranh xuất hiện lần đầu tiên trong chế độ xã hội nào?",
+      "id": "d5668c76-8742-4cab-8f43-7792a97af03a",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Chủ nghĩa đế quốc",
+          "isTrue": true
+        },
+        {
+          "content": "Chủ nghĩa khủng bố",
+          "isTrue": false
+        },
+        {
+          "content": "Chủ nghĩa cực đoan hồi giáo",
+          "isTrue": false
+        },
+        {
+          "content": "Tất cả các phương án trên",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo quan điểm của V.I.Lênin, trong thời đại ngày nay chiến tranh là \"bạn đường\" của chủ nghĩa nào?",
+      "id": "bb35411a-d8fb-486a-acd3-f30aff352974",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Sự tiếp tục của chính trị bằng các biện pháp khác (cụ thể là bằng bạo lực)",
+          "isTrue": true
+        },
+        {
+          "content": "Sự tiếp tục của chính trị bằng kinh tế",
+          "isTrue": false
+        },
+        {
+          "content": "Sự tiếp tục của chính trị bằng khoa học, công nghệ",
+          "isTrue": false
+        },
+        {
+          "content": "Sự tiếp tục của chính trị bằng ngoại giao",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo quan điểm của chủ nghĩa Mác - Lênin, bản chất của chiến tranh được hiểu như thế nào?",
+      "id": "40a22738-4ed9-494e-9064-41f2bc35897d",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Chính trị chi phối, quyết định chiến tranh",
+          "isTrue": true
+        },
+        {
+          "content": "Chính trị và vhiến tranh có vai trò ngang bằng nhau",
+          "isTrue": false
+        },
+        {
+          "content": "Chính trị phụ thuộc vào chiến tranh",
+          "isTrue": false
+        },
+        {
+          "content": "Chính trị hỗ trợ cho chiến tranh",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo quan điểm của chủ nghĩa Mác- Lênin, mối quan hệ giữa chiến tranh và chính trị là mối quan hệ đa chiều, đan xen, tác động lẫn nhau, trong đó chính trị có vai trò như thế nào đối với chiến tranh?",
+      "id": "5f247ef7-3ce3-446d-97c7-cf85704b6e5d",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Chiến tranh chống xâm lược",
+          "isTrue": true
+        },
+        {
+          "content": "Chiến tranh xâm lược",
+          "isTrue": false
+        },
+        {
+          "content": "Chiến tranh công nghệ cao",
+          "isTrue": false
+        },
+        {
+          "content": "Chiến tranh chống khủng bố",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo tư tưởng Hồ Chí Minh, đâu là cuộc chiến tranh chính nghĩa?",
+      "id": "5da6927a-a810-4c71-9ba6-ad04346348c9",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Chiến tranh nhân dân dưới sự lãnh đạo của Đảng",
+          "isTrue": true
+        },
+        {
+          "content": "Chiến tranh của lực lượng vũ trang dưới sự lãnh đạo của Đảng",
+          "isTrue": false
+        },
+        {
+          "content": "Chiến tranh nhân dân dưới sự điều hành của Nhà nước",
+          "isTrue": false
+        },
+        {
+          "content": "Chiến tranh của giai cấp công nhân dưới sự lãnh đạo của Đảng",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo tư tưởng Hồ Chí Minh, chiến tranh giải phóng dân tộc của nhân dân ta là?",
+      "id": "39665ba1-95fe-4530-9cc3-793d1fa3c021",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Chế độ chiếm hữu tư nhân về tư liệu sản xuất và sự đối kháng giai cấp trong xã hội",
+          "isTrue": true
+        },
+        {
+          "content": "Do thần linh, thượng đế sinh ra",
+          "isTrue": false
+        },
+        {
+          "content": "Do ý muốn của thủ lĩnh (người đứng đầu)",
+          "isTrue": false
+        },
+        {
+          "content": "Do sự xuất hiện của chiến tranh",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo quan điểm của chủ nghĩa Mác- Lênin, nguồn gốc nảy sinh ra quân đội là?",
+      "id": "a21d9db4-4489-4d23-916d-228155fa1845",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Bản chất giai cấp, nhà nước sinh ra và nuôi dưỡng, sử dụng quân đội đó",
+          "isTrue": true
+        },
+        {
+          "content": "Các tổ chức chính trị xã hội",
+          "isTrue": false
+        },
+        {
+          "content": "Hệ thống chỉ huy các cấp trong quân đội",
+          "isTrue": false
+        },
+        {
+          "content": "Bản chất giai cấp, nhà nước của phe đối lập",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo quan điểm của chủ nghĩa Mác- Lênin, bản chất của quân đội phụ thuộc vào?",
+      "id": "0e4465a4-f260-4e1b-80ad-0944bfeaa7f5",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Yếu tố chính trị tinh thần",
+          "isTrue": true
+        },
+        {
+          "content": "Vũ khí, trang bị, phương tiện kỹ thuật",
+          "isTrue": false
+        },
+        {
+          "content": "Năng lực chỉ huy quản lý, điều hành",
+          "isTrue": false
+        },
+        {
+          "content": "Nghệ thuật quân sự",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo quan điểm của V.I.Lênin, \"trong những điều kiện xác định\" yếu tố nào có vai trò quyết định đến sức mạnh chiến đấu của quân đội?",
+      "id": "024c0bbe-e454-4c3f-bea7-f2059f508ce8",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đảng cộng sản lãnh đạo Hồng quân, tăng cường bản chất giai cấp công nhân",
+          "isTrue": true
+        },
+        {
+          "content": "Đoàn kết thống nhất quân đội với nhân dân",
+          "isTrue": false
+        },
+        {
+          "content": "Xây dựng chính qui",
+          "isTrue": false
+        },
+        {
+          "content": "Sẵn sàng chiến đấu",
+          "isTrue": false
+        }
+      ],
+      "content": "Trong hệ thống các nguyên tắc xây dựng quân đội kiểu mới của V.I.Lênin, nguyên tắc nào sau đây là nguyên tắc quan trọng nhất, quyết định đến sức mạnh chiến đấu và chiến thắng của Hồng quân?",
+      "id": "12173749-d9b6-4616-9f23-342f721563ab",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Giai cấp công nhân",
+          "isTrue": true
+        },
+        {
+          "content": "Giai cấp nông dân",
+          "isTrue": false
+        },
+        {
+          "content": "Giai cấp tư sản",
+          "isTrue": false
+        },
+        {
+          "content": "Giai cấp địa chủ phong kiến",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo tư tưởng Hồ Chí Minh, Quân đội nhân dân Việt Nam mang bản chất của giai cấp nào?",
+      "id": "35741a4e-570e-46b5-92f1-c6062b9365b7",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đội quân chiến đấu",
+          "isTrue": true
+        },
+        {
+          "content": "Đội quân công tác",
+          "isTrue": false
+        },
+        {
+          "content": "Đội quân lao động sản xuất",
+          "isTrue": false
+        },
+        {
+          "content": "Đội quân phòng chống thiên tai",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo tư tưởng Hồ Chí Minh, chức năng có vị trí hàng đầu, quan trọng nhất của Quân đội nhân dân Việt Nam là?",
+      "id": "c0ed7377-15ae-4e9f-ac29-77274f1ecc35",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đảng lãnh đạo tuyệt đối, trực tiếp về mọi mặt đối với quân đội",
+          "isTrue": true
+        },
+        {
+          "content": "Đảng lãnh đạo tuyệt đối về mọi mặt đối với quân đội",
+          "isTrue": false
+        },
+        {
+          "content": "Đảng lãnh đạo trực tiếp về mọi mặt đối với quân đội",
+          "isTrue": false
+        },
+        {
+          "content": "Đảng giao quyền lãnh đạo cho nhà nước đối với quân đội",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo tư tưởng Hồ Chí Minh, nguyên tắc xây dựng quân đội kiển mới, quân đội của giai cấp vô sản là gì?",
+      "id": "c6c45e2e-ba68-4273-95a0-ed4f8d9fcc38",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Tuyên truyền và vận động quần chúng nhân dân",
+          "isTrue": true
+        },
+        {
+          "content": "Xây dựng quân đội hùng mạnh",
+          "isTrue": false
+        },
+        {
+          "content": "Tích cực tăng gia sản xuất",
+          "isTrue": false
+        },
+        {
+          "content": "Sẵn sàng chiến đấu với kẻ thù",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo tư tưởng Hồ Chí Minh, chức năng \"Đội quân công tác\" của quân đội nhân dân Việt Nam được thể hiện ở nội dung chủ yếu nào?",
+      "id": "3c5a320b-4248-44eb-b188-8c761e46ffa1",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Là một tất yếu khách quan",
+          "isTrue": true
+        },
+        {
+          "content": "Là không cần thiết trong thời bình",
+          "isTrue": false
+        },
+        {
+          "content": "Là quan trọng hàng đầu",
+          "isTrue": false
+        },
+        {
+          "content": "Là ý muốn chủ quan của người lãnh đạo",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo quan điểm của chủ nghĩa Mác- Lênin, sự nghiệp bảo vệ Tổ quốc xã hội chủ nghĩa được hiểu như thế nào?",
+      "id": "a5f16186-de19-4953-85bc-5e27114d371f",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Sức mạnh tổng hợp của cả dân tộc, cả nước, kết hợp với sức mạnh thời đại",
+          "isTrue": true
+        },
+        {
+          "content": "Sức mạnh của nhà nước",
+          "isTrue": false
+        },
+        {
+          "content": "Sức mạnh của lực lượng vũ trang",
+          "isTrue": false
+        },
+        {
+          "content": "Sức mạnh của quần chúng nhân dân",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo tư tưởng Hồ Chí Minh, sức mạnh bảo vệ Tổ quốc là?",
+      "id": "2e74077b-560d-4a57-9256-6cd4279cf2b5",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Đảng cộng sản Việt Nam",
+          "isTrue": true
+        },
+        {
+          "content": "Nhà nước cộng hòa xã hội chủ nghĩa Việt Nam",
+          "isTrue": false
+        },
+        {
+          "content": "Quân đội nhân dân Việt Nam",
+          "isTrue": false
+        },
+        {
+          "content": "Mặt trận tổ quốc Việt Nam",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo tư tưởng Hồ Chí Minh, lực lượng lãnh đạo sự nghiệp bảo vệ Tổ quốc Việt Nam XHCN là?",
+      "id": "899a24f7-76a1-488b-a362-dfde34801f45",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Chế độ tư hữu, đối kháng giai cấp, áp bức bóc lột",
+          "isTrue": true
+        },
+        {
+          "content": "Do thần linh, thượng đế sinh ra",
+          "isTrue": false
+        },
+        {
+          "content": "Chế độ công hữu về tư liệu sản xuất",
+          "isTrue": false
+        },
+        {
+          "content": "Do sự ham mê của những nhà hoạt động quân sự",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo quan điểm của chủ nghĩa Mác- Lênin, nguồn gốc của chiến tranh là?",
+      "id": "94b76370-4008-4920-b9f5-9f51375045ae",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Bạo lực cách mạng",
+          "isTrue": true
+        },
+        {
+          "content": "Lý luận cách mạng",
+          "isTrue": false
+        },
+        {
+          "content": "Đấu tranh vũ trang",
+          "isTrue": false
+        },
+        {
+          "content": "Đấu tranh chính trị",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo tư tưởng Hồ Chí Minh, muốn chống lại bạo lực phản cách mạng để \"giành lấy chính quyền và bảo vệ chính quyền\" phải dùng cái gì?",
+      "id": "c9ddd6cc-fee3-4dad-8940-4470e7428f96",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Tất cả các phương án",
+          "isTrue": true
+        },
+        {
+          "content": "Chiến tranh chỉ là một phần, một thủ đoạn của chính trị, chiến tranh là một trong những công cụ (cùng các công cụ khác: kinh tế, văn hoá, ngoại giao…) để thực thi các mục đích chính trị, đường lối chính trị của nhà nước",
+          "isTrue": false
+        },
+        {
+          "content": "Chiến tranh không làm gián đoạn chính trị ngược lại mọi chức năng, nhiệm vụ chính trị đều được thực hiện trong chiến tranh",
+          "isTrue": false
+        },
+        {
+          "content": "Chiến tranh là sự tiếp tục của chính trị dưới hình thức bạo lực vũ trang",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo quan điểm của chủ nghĩa Mác- Lênin, \"Bản chất chiến tranh là sự tiếp tục của chính trị bằng các biện pháp khác (cụ thể là bằng bạo lực)\" có nghĩa là gì?",
+      "id": "a49a30f5-c614-4cff-bb9b-f7f1adab2b06",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Điều kiện kinh tế",
+          "isTrue": true
+        },
+        {
+          "content": "Vũ khí trang bị",
+          "isTrue": false
+        },
+        {
+          "content": "Khoa học quân sự",
+          "isTrue": false
+        },
+        {
+          "content": "Con người",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo quan điểm của C.Mác- Ph.Ăngghen, sức mạnh chiến đấu của quân đội phụ thuộc vào nhiều yếu tố như: con người, điều kiện kinh tế, chính trị, văn hoá, xã hội, vũ khí trang bị, khoa học quân sự. Trong đó, yếu tố nào có vai trò quyết định?",
+      "id": "e05ef4b3-091c-423e-b9b6-8fa423f0ef12",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Tất cả các phương án trên",
+          "isTrue": true
+        },
+        {
+          "content": "Đảng phải đề ra chủ trương, chính sách phù hợp với tình hình, có sáng kiến để lôi kéo quần chúng",
+          "isTrue": false
+        },
+        {
+          "content": "Đảng lãnh đạo bằng đội ngũ đảng viên gương mẫu hy sinh của Đảng",
+          "isTrue": false
+        },
+        {
+          "content": "Đảng hướng dẫn, giám sát các hoạt động của các cấp, các ngành, các tổ chức xã hội, các đoàn thể nhân dân lao động",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo quan điểm của chủ nghĩa Mác- Lênin, Đảng Cộng sản lãnh đạo mọi mặt sự nghiệp bảo vệ tổ quốc xã hội chủ nghĩa như thế nào?",
+      "id": "e41fd8e1-03e9-4f37-9371-43768fd10116",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Độc lập dân tộc và chủ nghĩa xã hội",
+          "isTrue": true
+        },
+        {
+          "content": "Độc lập dân tộc",
+          "isTrue": false
+        },
+        {
+          "content": "Thống nhất toàn vẹn lãnh thổ",
+          "isTrue": false
+        },
+        {
+          "content": "Lợi ích quốc gia dân tộc",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo tư tưởng Hồ Chí Minh, mục tiêu bảo vệ Tổ quốc và là mục tiêu xuyên suốt trong tư tưởng Hồ Chí Minh là gì?",
+      "id": "74794095-c9d9-42cd-9d19-0c529ff9b993",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Tất cả các phương án trên",
+          "isTrue": true
+        },
+        {
+          "content": "Xoá bỏ chế độ tư hữu về tư liệu sản xuất",
+          "isTrue": false
+        },
+        {
+          "content": "Xoá bỏ giai cấp và đối kháng giai cấp, xoá bỏ áp bức bóc lột",
+          "isTrue": false
+        },
+        {
+          "content": "Xây dựng thành công chủ nghĩa xã hội trên phạm vi toàn thế giới",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo quan điểm của chủ nghĩa Mác- Lênin, muốn xoá bỏ chiến tranh phải làm gì?",
+      "id": "99921c71-4ed4-4259-80bd-774e8489d7b6",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Một là, xây dựng một đội quân hùng mạnh và sẵn sàng chiến đấu. Hai là, thiết thực tham gia lao động sản xuất góp phần xây dựng chủ nghĩa xã hội",
+          "isTrue": true
+        },
+        {
+          "content": "Một là, xây dựng một đội quân hùng mạnh. Hai là, sẵn sàng chiến đấu.",
+          "isTrue": false
+        },
+        {
+          "content": "Một là, sẵn sàng chiến đấu và chiến đấu. Hai là, thiết thực tham gia lao động sản xuất góp phần xây dựng chủ nghĩa xã hội",
+          "isTrue": false
+        },
+        {
+          "content": "Một là, xây dựng một đội quân hùng mạnh và sẵn sàng chiến đấu. Hai là, tuyên truyền vận động quần chúng góp phần xây dựng chủ nghĩa xã hội",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo tư tưởng Hồ Chí Minh, hai nhiệm vụ chính của Quân đội ta là gì?",
+      "id": "d573fac4-2c5a-4062-9474-0edb66f97e4e",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
+    },
+    {
+      "answers": [
+        {
+          "content": "Chiến tranh xâm lược",
+          "isTrue": true
+        },
+        {
+          "content": "Chiến tranh chống xâm lược",
+          "isTrue": false
+        },
+        {
+          "content": "Chiến tranh công nghệ cao",
+          "isTrue": false
+        },
+        {
+          "content": "Chiến tranh chống khủng bố",
+          "isTrue": false
+        }
+      ],
+      "content": "Theo tư tưởng Hồ Chí Minh, đâu là cuộc chiến tranh phi nghĩa?",
+      "id": "ee6cbe19-5954-469e-ac3f-53069324459b",
+      "idSubject": "a8a6f080-f15e-4daa-a744-e930d9d8e677",
+      "level": "D"
     }
   ]
 }

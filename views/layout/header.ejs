@@ -118,62 +118,63 @@
                         if (files.length > 0) {
                             fd.append('file', files[0]);
 
-                            // $.ajax({
-                            //     url: '/upload',
-                            //     type: 'post',
-                            //     data: fd,
-                            //     contentType: false,
-                            //     processData: false,
-                            //     success: async function(response) {
-                            //         if (response != 0) {
-                            //             await localStorage.removeItem("QuizzRandom")
-                            //             await localStorage.setItem('QuizzRandom', JSON.stringify(response.data))
-                            //                 // location.href = '/sua-doi'
-                            //             responseToHtmlModal(response.data, response.countDuplicate, response.subjects)
-                            //             $('#modalEditUpload').modal('show')
-
-                            //         } else {
-                            //             alert('file not uploaded');
-                            //         }
-                            //     },
-                            // });
+                            $.ajax({
+                                url: '/upload',
+                                type: 'post',
+                                data: fd,
+                                contentType: false,
+                                processData: false,
+                                success: async function(response) {
+                                    if (response != 0) {
+                                        await localStorage.removeItem("QuizzRandom")
+                                        await localStorage.setItem('QuizzRandom', JSON.stringify(response.data))
+                                            // location.href = '/sua-doi'
+                                        responseToHtmlModal(response.data, response.countDuplicate, response.subjects)
+                                        $('#modalEditUpload').modal('show')
+                                        $("#file").val(null);
+                                    } else {
+                                        alert('file not uploaded');
+                                        $("#file").val(null);
+                                    }
+                                },
+                            });
                         } else {
                             alert("Please select a file.");
                         }
                     })
 
-                        $('#file').on('change', () => {
-                            var fd = new FormData();
-                            var files = $('#file')[0].files;
-                            if (files.length > 0) {
-                                fd.append('file', files[0]);
+                        // $('#file').on('change', () => {
+                        //     var fd = new FormData();
+                        //     var files = $('#file')[0].files;
+                        //     if (files.length > 0) {
+                        //         fd.append('file', files[0]);
 
-                                $.ajax({
-                                    url: '/upload',
-                                    type: 'post',
-                                    data: fd,
-                                    contentType: false,
-                                    processData: false,
-                                    success: async function(response) {
-                                        if (response != 0) {
-                                            await localStorage.removeItem("QuizzRandom")
-                                            await localStorage.setItem('QuizzRandom', JSON.stringify(response.data))
-                                                // location.href = '/sua-doi'
-                                            responseToHtmlModal(response.data, response.countDuplicate, response.subjects)
-                                            $('#modalEditUpload').modal('show')
-                                            $("#file").val(null);
+                        //         $.ajax({
+                        //             url: '/upload',
+                        //             type: 'post',
+                        //             data: fd,
+                        //             contentType: false,
+                        //             processData: false,
+                        //             success: async function(response) {
+                        //                 if (response != 0) {
+                        //                     await localStorage.removeItem("QuizzRandom")
+                        //                     await localStorage.setItem('QuizzRandom', JSON.stringify(response.data))
+                        //                         // location.href = '/sua-doi'
+                        //                     responseToHtmlModal(response.data, response.countDuplicate, response.subjects)
+                        //                     $('#modalEditUpload').modal('show')
+                        //                     $("#file").val(null);
 
-                                        } else {
-                                            alert('file not uploaded');
-                                            $("#file").val(null);
+                        //                 } else {
+                        //                     alert('file not uploaded');
+                        //                     $("#file").val(null);
 
-                                        }
-                                    },
-                                });
-                            } else {
-                                alert("Please select a file.");
-                            }
-                        })
+                        //                 }
+                        //             },
+                        //         });
+                        //     } else {
+                        //         alert("Please select a file.");
+                        //     }
+                        // })
 
                         $('body').on('click', '#ListSubject', function() {
                             let option = $(this).val()
