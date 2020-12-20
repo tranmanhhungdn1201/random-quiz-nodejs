@@ -74,6 +74,7 @@
         </div>
         <hr>
         <div class="container ListExam" id="list-exam">
+            <h6>Số phần trăm trùng lớn nhất: <span id="percentMax"></span></h6>
             <div class="row">
 
             </div>
@@ -117,6 +118,7 @@
                         if (res.success && res.exams.length > 0 && res.exams[0].length) {
                             localStorage.removeItem('exams');
                             localStorage.setItem('exams', JSON.stringify(res.exams));
+                            $('#percentMax').text(`${res.maxPercent.max} (đề ${+res.maxPercent.idx1 + 1} và ${+res.maxPercent.idx2 + 1})`);
                             createExam(res.exams);
                         } else {
                             const errors = res.errors.map(err => `<li>${err.message}</li>`)
@@ -225,6 +227,7 @@
                 `
             })
             $('#modalPreviewExam').modal('show');
+            $('#' + idElementQuestion).html('');
             $('#' + idElementQuestion).append(htmlQuestion);
         }
 

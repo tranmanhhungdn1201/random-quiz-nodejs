@@ -14,7 +14,7 @@ let question = [{"id":0,"content":0,"level":"k"},{"id":1,"content":1,"level":"v"
 let easies = question.filter(item=>item.level==="d")
 let mediums = question.filter(item=>item.level==="v")
 let hards = question.filter(item=>item.level==="k")
-let quizes = [{"id":0,"content":0,"level":"k"},{"id":1,"content":1,"level":"v"},{"id":2,"content":2,"level":"v"},{"id":3,"content":3,"level":"k"},{"id":4,"content":4,"level":"k"},{"id":5,"content":5,"level":"v"},{"id":6,"content":6,"level":"v"},{"id":7,"content":7,"level":"v"},{"id":8,"content":8,"level":"v"},{"id":9,"content":9,"level":"k"},{"id":10,"content":10,"level":"d"}, {"id":11,"content":11,"level":"k"}, {"id":12,"content":13,"level":"k"}, {"id":14,"content":14,"level":"k"}];
+let quizes = [{"id":0,"content":0,"level":"k"},{"id":1,"content":1,"level":"v"},{"id":2,"content":2,"level":"v"},{"id":3,"content":3,"level":"k"},{"id":4,"content":4,"level":"k"},{"id":5,"content":5,"level":"v"},{"id":6,"content":6,"level":"v"},{"id":7,"content":7,"level":"v"},{"id":8,"content":8,"level":"v"},{"id":9,"content":9,"level":"k"},{"id":10,"content":10,"level":"d"}, {"id":11,"content":11,"level":"k"}, {"id":12,"content":12,"level":"k"}, {"id":13,"content":13,"level":"k"}];
 let quizes1 = [{"id":0,"":0,"level":"k"},{"id":1,"content":1,"level":"v"},{"id":2,"content":2,"level":"v"}];
 
 function shuffle(a) {
@@ -50,12 +50,14 @@ function splitArray(arr, n, size){
 }
 
 function joinArray(arr, n, numExam){
-  let numItem = Math.floor(arr.length/numExam);
+  let numItem = Math.floor(arr.length/numExam) > n ? n : Math.floor(arr.length/numExam);
   let numRest = n - numItem;
   let arrSplit = splitArray(arr, numItem, numExam);
   console.log('arrSplit', arrSplit)
   console.log('numItem', numItem)
-  let arrRest = arrSplit.pop();
+  // let arrRest = arrSplit.pop();
+  let arrRest = arrSplit.pop().map(item => Object.assign({isDup: true}, item))
+  console.log('rest', arrSplit)
   let arrJoin = [...arrSplit];
   let lenArrJoin = arrJoin.length;
   if(numItem === 0){
@@ -72,8 +74,8 @@ function joinArray(arr, n, numExam){
       }
     }
   }
+  
   if(arrSplit[0].length !== n  && numItem > 0) {
-    arrRest = arrSplit.pop().map(item => Object.assign({isDup: true}, item))
     for(let i = 0; i < arrJoin.length; i++){
       let index = 0
       if(arrRest.length > 1){
@@ -89,28 +91,59 @@ function joinArray(arr, n, numExam){
         num--
       }
       let idx = i;
-      while(num < 0){
+      while(num > 0 && idx < lenArrJoin){
+        console.log('idx', idx);
+        console.log('numStart',  num);
         if(idx === 0){
-          let itemLast = [...[...arrJoin[lenArrJoin - 1]].slice(-num)];
-          console.log('itemLast', itemLast)
-          itemLast.map(item => item.isDup = true)
+          let itemLast = [...[...arrJoin[lenArrJoin - 1].filter(item => !item.isDup)].slice(-num)];
+          if(itemLast.length === 0 || calPercent(itemLast, arrJoin[idx]) === 100){
+            itemLast = [selectItemAnotherDiffArr(arrJoin[idx], arr)];
+            num--;
+          }else{
+            num = num - itemLast.length;
+          }
+          itemLast = itemLast.map(item => Object.assign({isDup: true}, item));
           arrJoin[idx] = [...arrJoin[idx], ...itemLast];
-        }else if(idx !== lenArrJoin){
-          let itemLast1 =[...[...arrJoin[idx - 1].filter(item => !item.isDup)].slice(-num)];
-          console.log('itemLast1', itemLast1)
-          itemLast1.map(item => item.isDup = true)
+        } else {
+          let itemLast1 = [...[...arrJoin[idx - 1].filter(item => !item.isDup)].slice(-num)];
+          if(itemLast1.length === 0 || calPercent(itemLast1, arrJoin[idx]) === 100){
+            itemLast1 = [selectItemAnotherDiffArr(arrJoin[idx], arr)];
+            num--;
+          }else{
+            num = num - itemLast1.length;
+          }
+          itemLast1 = itemLast1.map(item => Object.assign({isDup: true}, item));
           arrJoin[idx] = [...arrJoin[idx], ...itemLast1];
         }
-        num--;
-        idx++;
+        console.log('numEnd',  num);
       }
     }
   }
-  console.log(arrJoin);
+  console.log('arrJoin', arrJoin);
   return arrJoin;
 }
 
-const test = joinArray([{"id":0,"":0,"level":"k"}], 1, 3)
+function selectItemAnotherDiffArr(arr, arrOrigin){
+  let arrDiff = [];
+  for(let i = 0; i < arrOrigin.length; i++){
+    let item = arr.some(item => item.id === arrOrigin[i].id);
+    console.log(item)
+    if(!item){
+      arrDiff = [...arrDiff, arrOrigin[i]];
+    }
+  }
+  console.log('getItemRandomArr', arr, arrOrigin);
+  console.log('arrDiff', arrDiff);
+  return getItemRandomArr(arrDiff);
+}
+
+function getItemRandomArr(arr){
+  let idxR = Math.floor(Math.random() * arr.length);
+  
+  return arr[idxR];
+}
+
+const test = joinArray(quizes, 10, 3)
 const a1 = [
   { id: 0, content: 0, level: 'k' },
   { id: 1, content: 1, level: 'v' },

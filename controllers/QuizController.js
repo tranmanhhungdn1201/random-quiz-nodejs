@@ -415,25 +415,26 @@ function joinArray(arr, n, numExam){
     let numItem = Math.floor(arr.length/numExam) > n ? n : Math.floor(arr.length/numExam);
     let numRest = n - numItem;
     let arrSplit = splitArray(arr, numItem, numExam);
-    let arrRest = arrSplit.pop();
+    // let arrRest = arrSplit.pop();
+    let arrRest = arrSplit.pop().map(item => Object.assign({isDup: true}, item))
     let arrJoin = [...arrSplit];
     let lenArrJoin = arrJoin.length;
     if(numItem === 0){
       for(let i = 0, j = 0; i < numExam; j++, i++){
         if(arrRest.length > 1){
-            let idx = j === arrRest.length - 1 ? 0 : j + 1;
-            if(j === arrRest.length){
-              j = 0;
-              idx = 1;
-            }
-            arrJoin[i] = [Object.assign({}, arrRest[j]), Object.assign({}, arrRest[idx])];
-          } else {
-            arrJoin[i] = [Object.assign({}, arrRest[0])];
+          let idx = j === arrRest.length - 1 ? 0 : j + 1;
+          if(j === arrRest.length){
+            j = 0;
+            idx = 1;
           }
+          arrJoin[i] = [Object.assign({}, arrRest[j]), Object.assign({}, arrRest[idx])];
+        } else {
+          arrJoin[i] = [Object.assign({}, arrRest[0])];
+        }
       }
     }
+    
     if(arrSplit[0].length !== n  && numItem > 0) {
-      arrRest = arrSplit.pop().map(item => Object.assign({isDup: true}, item))
       for(let i = 0; i < arrJoin.length; i++){
         let index = 0
         if(arrRest.length > 1){
@@ -449,22 +450,47 @@ function joinArray(arr, n, numExam){
           num--
         }
         let idx = i;
-        while(num > 0){
+        while(num > 0 && idx < lenArrJoin){
           if(idx === 0){
-            let itemLast = [...[...arrJoin[lenArrJoin - 1]].slice(-num)];
-            itemLast.map(item => item.isDup = true)
+            let itemLast = [...[...arrJoin[lenArrJoin - 1].filter(item => !item.isDup)].slice(-num)];
+            if(itemLast.length === 0 || calPercent(itemLast, arrJoin[idx]) === 100){
+              itemLast = [selectItemAnotherDiffArr(arrJoin[idx], arr)];
+              num--;
+            }else{
+              num = num - itemLast.length;
+            }
+            itemLast = itemLast.map(item => Object.assign({isDup: true}, item));
             arrJoin[idx] = [...arrJoin[idx], ...itemLast];
-          }else if(idx < lenArrJoin){
-            let itemLast1 =[...[...arrJoin[idx - 1].filter(item => !item.isDup)].slice(-num)];
-            itemLast1.map(item => item.isDup = true)
+          } else {
+            let itemLast1 = [...[...arrJoin[idx - 1].filter(item => !item.isDup)].slice(-num)];
+            if(itemLast1.length === 0 || calPercent(itemLast1, arrJoin[idx]) === 100){
+              itemLast1 = [selectItemAnotherDiffArr(arrJoin[idx], arr)];
+              num--;
+            }else{
+              num = num - itemLast1.length;
+            }
+            itemLast1 = itemLast1.map(item => Object.assign({isDup: true}, item));
             arrJoin[idx] = [...arrJoin[idx], ...itemLast1];
           }
-          num--;
-          idx++;
         }
       }
     }
     return arrJoin;
+  }
+
+  function selectItemAnotherDiffArr(arr, arrOrigin){
+    let arrDiff = [];
+    for(let i = 0; i < arr.length; i++){
+      if(arrOrigin.some(item => item.id !== arr[i].id)){
+        arrDiff = [...arrDiff,  arr[i]];
+      }
+    }
+    return getItemRandomArr(arrDiff);
+  }
+  
+  function getItemRandomArr(arr){
+    let idxR = Math.floor(Math.random() * arr.length);
+    return arr[idxR];
   }
 
 function createExam2(numOfTest, numOfEasy, numOfMedium, numOfHard, easies, mediums, hards){
@@ -482,7 +508,7 @@ function createExam2(numOfTest, numOfEasy, numOfMedium, numOfHard, easies, mediu
     }
     let tests = [];
     for(let i = 0; i < arrE.length; i++){
-        tests = [...tests, [...arrE[i], ...arrM[i], ... arrH[i]]];
+        tests = [...tests, [...arrE[i],  ...(arrM[i] ? arrM[i] : []), ...(arrH[i] ? arrH[i] : [])]];
     }
     return tests;
 }
