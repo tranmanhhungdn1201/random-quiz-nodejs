@@ -104,7 +104,55 @@ function shuffle(array) {
     return array;
 }
 
+
+const createArrFromLittleToMany = (easies, mediums, hards, easiesInTest1, mediumsInTest1, hardsInTest1) => {
+    let obj = {
+        easyPercent: Math.floor(easiesInTest1.length/easies.length),
+        mediumPercent: Math.floor(mediumsInTest1.length/mediums.length),
+        hardPercent: Math.floor(hardsInTest1.length/hards.length),
+    }
+        
+    const maxArr = (easyPercent, mediumPercent, hardPercent, easiesInTest1, mediumsInTest1, hardsInTest1) => {
+        let arrMax = [easyPercent]
+        let arrQuestion = [easiesInTest1];
+        if(easyPercent<mediumPercent) {
+            arrQuestion.push(mediumsInTest1)
+            arrMax.push(mediumPercent)
+        }
+        else {
+            arrQuestion.unshift(mediumsInTest1)
+            arrMax.unshift(mediumPercent)
+        }
+        if(hardPercent>arrMax[1]) arrQuestion.push(hardsInTest1)
+        else if(hardPercent<arrMax[0]) arrQuestion.unshift(hardsInTest1)
+        else {
+            const insertAt = (array, index, ...elementsArray) => {
+                array.splice(index, 0, ...elementsArray);
+            }
+            insertAt(arrQuestion, 1, hardsInTest1)
+        }
+        return [...arrQuestion[0], ...arrQuestion[1], ...arrQuestion[2]]
+    }
+    // max(9,7,4, [1,2,3,4,5,6,7,8,9], [3,4,8,7,6,0,9], [5,7,8,9])
+    // => [[5,7,8,9], [3,4,8,7,6,0,9], [1,2,3,4,5,6,7,8,9]]
+    let arr = maxArr(obj.easyPercent, obj.mediumPercent, obj.hardPercent, easiesInTest1, mediumsInTest1, hardsInTest1)
+    return arr
+
+}
+
 function makeExamsByPercent(percent, numEasy, numMedium, numHard, easies, mediums, hards) {
+
+    // this function is creating tests that part of them is same by percent
+    // 1. make a test1 with e, m, h
+    // 2. sort e, m, h in the test1 with percent e/easies, m/mediums,... 
+    // ex: e: 5, m: 3, h: 1 in the test1
+    // test1 is: [[1,2,3,4,5], [6,7,8], [9]] 
+    // after sort: [[9], [6,7,8], [1,2,3,4,5]] same [1,2,3,4,5,6,7,8,9]
+    // get p percent in test1 from start to end
+    // using while in order to get test2, test3,... in eRemain,mRemain,...
+    // eRemain includes easy question that is not in test1, not in same part
+    // in means all tests has the same part
+    // while during eRemain,mRemain,... empty
 
     let shuffle = (array) => {
         let j, x, i;
@@ -219,7 +267,8 @@ function makeExamsByPercent(percent, numEasy, numMedium, numHard, easies, medium
         origin.setHardsRemain(hSame.remain)
         origin.setMediumsRemain(mSame.remain)
         Test1.full = shuffle([...Test1.e, ...Test1.m, ...Test1.h])
-        let sameInTest = getNQuestionInArrByPercent(Test1.full, p)
+        let Test1TmpNoShuffle = createArrFromLittleToMany(origin.easies, origin.mediums, origin.hards, Test1.e, Test1.m, Test1.h)
+        let sameInTest = getNQuestionInArrByPercent(Test1TmpNoShuffle, p)
         let objNumber = {
                 same: {
                     numOfSameQuestions: sameInTest.got.length,
@@ -257,7 +306,8 @@ function makeExamsByPercent(percent, numEasy, numMedium, numHard, easies, medium
             Test.h.forEach(item => { s += item.id + ',' })
             Test.m.forEach(item => { s += item.id + ',' })
             
-            Result.push([...Test.e, ...Test.h, ...Test.m])
+            let tmp = [...Test.e, ...Test.h, ...Test.m]
+            if(tmp.length == m) Result.push(tmp)
         }
 
         return Result;
