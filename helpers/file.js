@@ -107,24 +107,24 @@ function shuffle(array) {
 
 const createArrFromLittleToMany = (easies, mediums, hards, easiesInTest1, mediumsInTest1, hardsInTest1) => {
     let obj = {
-        easyPercent: Math.floor(easiesInTest1.length/easies.length),
-        mediumPercent: Math.floor(mediumsInTest1.length/mediums.length),
-        hardPercent: Math.floor(hardsInTest1.length/hards.length),
+        easyPercent: easiesInTest1.length/easies.length*100,
+        mediumPercent: mediumsInTest1.length/mediums.length*100,
+        hardPercent: hardsInTest1.length/hards.length*100,
     }
         
     const maxArr = (easyPercent, mediumPercent, hardPercent, easiesInTest1, mediumsInTest1, hardsInTest1) => {
         let arrMax = [easyPercent]
         let arrQuestion = [easiesInTest1];
         if(easyPercent<mediumPercent) {
-            arrQuestion.push(mediumsInTest1)
-            arrMax.push(mediumPercent)
-        }
-        else {
             arrQuestion.unshift(mediumsInTest1)
             arrMax.unshift(mediumPercent)
         }
-        if(hardPercent>arrMax[1]) arrQuestion.push(hardsInTest1)
-        else if(hardPercent<arrMax[0]) arrQuestion.unshift(hardsInTest1)
+        else {
+            arrQuestion.push(mediumsInTest1)
+            arrMax.push(mediumPercent)
+        }
+        if(hardPercent<arrMax[1]) arrQuestion.push(hardsInTest1)
+        else if(hardPercent>arrMax[0]) arrQuestion.unshift(hardsInTest1)
         else {
             const insertAt = (array, index, ...elementsArray) => {
                 array.splice(index, 0, ...elementsArray);
@@ -145,7 +145,9 @@ function makeExamsByPercent(percent, numEasy, numMedium, numHard, easies, medium
     // this function is creating tests that part of them is same by percent
     // 1. make a test1 with e, m, h
     // 2. sort e, m, h in the test1 with percent e/easies, m/mediums,... 
-    // ex: e: 5, m: 3, h: 1 in the test1
+    // ex: e: 5, m: 3, h: 1 in the test1, but in data, has 8 easies, 10 mediums, 10 hards
+    // => e/easies = 5/8,  m/mediums = 3/10 = 33%, h/hards = 1/10 = 10%
+    // => sort: [e, m, h]
     // test1 is: [[1,2,3,4,5], [6,7,8], [9]] 
     // after sort: [[9], [6,7,8], [1,2,3,4,5]] same [1,2,3,4,5,6,7,8,9]
     // get p percent in test1 from start to end
