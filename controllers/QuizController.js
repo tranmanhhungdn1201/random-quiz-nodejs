@@ -529,7 +529,7 @@ function maxPercentArray(arr){
         for(let j = i + 1; j < arr.length; j++){
             console.log('percenttttttt1');
             let percent = calPercent(arr[i], arr[j]);
-            // console.log(i, j, percent);
+            console.log(i, j, percent);
             if(max < percent){
                 console.log('percenttttttt');
                 console.log(i, j, percent);
